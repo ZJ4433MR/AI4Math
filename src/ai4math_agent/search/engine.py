@@ -457,6 +457,13 @@ def run_search(
                   "phase_end": phase_end, "release_checkpoints": release_snapshots,
                   "accounting": accounting, "visited_zlib_base64": meter.visited_blob()}
     policy_hash = hashlib.sha256(json.dumps(p, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    if method == "skew":
+        actual_skew_fraction = 1.0
+    elif method in {"static_mix", "agent_policy"} and n % 2 and p["skew_fraction"] > 0:
+        skew_evaluations = release_snapshots[0]["evaluations_before"] if release_snapshots else meter.count
+        actual_skew_fraction = skew_evaluations / meter.count if meter.count else 0.0
+    else:
+        actual_skew_fraction = 0.0
     return {"best": None if meter.best_key is None else evaluate(_sequence(meter.best_key, n)),
             "curve": meter.curve, "evaluations": meter.count, "unique_evaluations": len(meter.seen),
             "elapsed": elapsed, "checkpoint": checkpoint, "termination_reason": reason,
@@ -464,7 +471,7 @@ def run_search(
             "restriction": state.restriction, "accounting": accounting,
             "diagnostics": {"restarts": state.restarts, "stagnation_iterations": state.stagnation_iterations,
                             "current_E": state.energy, "local_best_E": state.local_best_energy,
-                            "effective_skew_fraction": p["skew_fraction"] if n % 2 else 0.0}}
+                            "effective_skew_fraction": actual_skew_fraction}}
 
 
 def release_restriction(checkpoint: dict[str, Any], evaluations: int, seed: int, wall_seconds: float = 1200,

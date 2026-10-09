@@ -1,12 +1,11 @@
 """Evidence checks, with real small tools; PDF fixtures do not mimic research."""
-import copy
-
 import pytest
 
 from ai4math_agent.math.bounds import lower_bound
 from ai4math_agent.math.core import evaluate
 from ai4math_agent.math.exact import exact_profile
-from ai4math_agent.reporting.report import load_report_evidence
+from ai4math_agent.reporting.report import _verify_nested, load_report_evidence
+from ai4math_agent.search.engine import run_search
 from ai4math_agent.storage import seal_manifest, write_json
 from ai4math_agent.verification.reference import check_bound, verify_exact_profile, verify_sequence
 
@@ -90,3 +89,14 @@ def test_report_rejects_tampered_lower_bound(tmp_path):
     seal_manifest(exact, {"mode": "exact"})
     with pytest.raises(ValueError, match="lower-bound certificate mismatch"):
         load_report_evidence(research, evaluation, exact)
+
+
+def test_report_validates_real_partial_search_checkpoints():
+    result = run_search(n=31, method="fixed_tabu", evaluations=500, seed=11)
+    checks = []
+    _verify_nested(result, "TEST:actual-search", checks)
+    assert any(row["kind"] == "witness" for row in checks)
+    assert {row["path"][-1] for row in checks if row["kind"] == "checkpoint"} == {"current", "local_best", "run_best"}
+    result["checkpoint"]["state"]["current"]["E"] += 4
+    with pytest.raises(ValueError, match="checkpoint/stratum E mismatch"):
+        _verify_nested(result, "TEST:actual-search", [])

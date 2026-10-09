@@ -11,12 +11,13 @@ import json
 import math
 import statistics
 from collections import defaultdict
+from numbers import Integral
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from ai4math_agent.storage import file_hash, read_json, validate_manifest, write_json
+from ai4math_agent.storage import digest, file_hash, read_json, validate_manifest, write_json
 from ai4math_agent.verification.reference import (
-    check_bound, profile_digest, verify_exact_profile, verify_sequence,
+    check_bound, evaluate_reference, profile_digest, verify_exact_profile, verify_sequence,
 )
 
 
@@ -39,15 +40,15 @@ def _read_sealed(directory, manifest, relative):
     return read_json(Path(directory) / relative)
 
 
-def _walk_records(value):
+def _walk_records(value, path=()):
     if isinstance(value, dict):
-        if "sequence" in value and "C" in value and "E" in value:
-            yield value
-        for v in value.values():
-            yield from _walk_records(v)
+        if "sequence" in value and "E" in value:
+            yield value, path
+        for key, v in value.items():
+            yield from _walk_records(v, path + (key,))
     elif isinstance(value, list):
-        for v in value:
-            yield from _walk_records(v)
+        for index, v in enumerate(value):
+            yield from _walk_records(v, path + (index,))
 
 
 def _walk_bounds(value):
@@ -62,10 +63,28 @@ def _walk_bounds(value):
 
 
 def _verify_nested(value, source, checks):
-    for record in _walk_records(value):
-        result = verify_sequence(record)
-        _assert(result["valid"], f"{source}: witness mismatch {result['errors']}")
-        checks.append({"source": source, "kind": "witness", "hash": record["hash"]})
+    for record, path in _walk_records(value):
+        checkpoint = any(k in path for k in ("checkpoint", "release_checkpoints", "release", "restart")) and path[-1:] in (("current",), ("local_best",), ("run_best",))
+        stratum = "strata" in path and "witness" not in path
+        if checkpoint or stratum:
+            reference = evaluate_reference(record["sequence"])
+            for key, expected in reference.items():
+                if key not in record:
+                    continue
+                actual = record[key]
+                if isinstance(expected, int):
+                    _assert(isinstance(actual, Integral) and not isinstance(actual, bool) and actual == expected, f"{source}: checkpoint/stratum {key} mismatch")
+                elif key == "C":
+                    _assert(actual == expected and all(isinstance(x, Integral) and not isinstance(x, bool) for x in actual), f"{source}: checkpoint/stratum C mismatch")
+                elif key == "F":
+                    _assert(isinstance(actual, (float, int)) and not isinstance(actual, bool) and math.isfinite(actual) and math.isclose(actual, expected, rel_tol=1e-12), f"{source}: checkpoint/stratum F mismatch")
+                else:
+                    _assert(actual == expected, f"{source}: checkpoint/stratum {key} mismatch")
+            checks.append({"source": source, "path": list(path), "kind": "checkpoint" if checkpoint else "stratum row", "reference_hash": reference["hash"]})
+        else:
+            result = verify_sequence(record)
+            _assert(result["valid"], f"{source}: witness mismatch {result['errors']}")
+            checks.append({"source": source, "path": list(path), "kind": "witness", "hash": record["hash"]})
     for cert in _walk_bounds(value):
         result = check_bound(cert)
         _assert(result["valid"], f"{source}: lower-bound certificate mismatch {result['errors']}")
@@ -175,10 +194,21 @@ def load_report_evidence(research_dir, evaluation_dir, exact_dir):
         _assert(previous_E == best["E"], f"EVAL:{identity}: curve/best mismatch")
         run["evidence_id"] = f"EVAL:{run['n']}:{run['seed']}:{run['method']}"
     if manifests["evaluation"].get("policy_hash"):
-        _assert(manifests["evaluation"]["policy_hash"] == file_hash(directories["research"] / "frozen_policy.json"), "evaluation policy hash mismatch")
+        _assert(manifests["evaluation"]["policy_hash"] == digest(policy), "evaluation policy hash mismatch")
+    if manifests["evaluation"].get("policy_file_hash"):
+        _assert(manifests["evaluation"]["policy_file_hash"] == file_hash(directories["research"] / "frozen_policy.json"), "evaluation policy file hash mismatch")
+    calls = []
+    for name in manifests["research"]["artifacts"]:
+        if name.startswith("calls/") and name.endswith("/metadata.json"):
+            meta = read_json(directories["research"] / name)
+            _assert(meta.get("mode") == manifests["research"]["mode"], f"{name}: backend mode mismatch")
+            calls.append({"path": name, **meta})
+    if manifests["research"]["mode"] == "live":
+        _assert(calls, "live run has no backend metadata")
+        _assert(all(r.get("proposer_metadata", {}).get("mode") == "live" and r.get("skeptic_metadata", {}).get("mode") == "live" for r in research["rounds"]), "live rounds contain offline backend decisions")
     return {"directories": directories, "manifests": manifests, "research": research,
             "policy": policy, "runs": runs, "profiles": profiles, "bounds": bounds,
-            "checks": checks, "mode": manifests["research"]["mode"]}
+            "checks": checks, "mode": manifests["research"]["mode"], "calls": calls}
 
 
 def _text(value, limit=1400):
@@ -187,6 +217,8 @@ def _text(value, limit=1400):
     if isinstance(value, (dict, list)):
         value = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
     value = str(value).replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
+    for before, after in (("²", "^2"), ("⁴", "^4"), ("ℓ", "ell"), ("č", "c"), ("š", "s")):
+        value = value.replace(before, after)
     return value if len(value) <= limit else value[:limit] + "…（完整内容见原始证据）"
 
 
@@ -377,9 +409,16 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
            ["持久状态与报告", "state、rounds、manifest、frozen_policy；报告只读实际 JSON。"]], [125,370])
     backend = research_manifest.get("backend", research_manifest.get("backend_metadata", {}))
     add(f"实际后端：{_text(backend, 1800)}", "ChineseSmall")
-    metadata_fields = ("auth_method", "cli_version", "requested_model", "effective_model", "provider_request_count", "backend_call_attempts", "termination_reason", "start", "end")
+    metadata_fields = ("auth_method", "cli_version", "requested_model", "effective_model", "provider_request_count", "termination_reason", "start", "end")
     table([["manifest 字段", "实际记录"]] + [[k, _text(research_manifest.get(k), 330)] for k in metadata_fields], [165,330])
     add("CLI 进程启动次数与 provider 内部请求数分别记录；不可观测项显示 unknown。dry_run/replay 不升级为 live；skeptic 审查不等于数学证明。全部公开决策摘要和可获得 usage 见原始日志。")
+    usage = defaultdict(int)
+    for call in data["calls"]:
+        for name,value in (call.get("usage") or {}).items():
+            if isinstance(value, int):
+                usage[name] += value
+    add(f"已保存调用元数据 {len(data['calls'])} 条；accepted {sum(c.get('accepted') is True for c in data['calls'])} 条；可观测 usage 汇总：{dict(usage) if usage else 'unknown'}。", "ChineseSmall")
+    add(f"环境：{_text(research_manifest.get('platform'),180)}；硬件：{_text(research_manifest.get('hardware'),220)}。", "ChineseSmall")
     add(f"实际研究账本：{_text(research_manifest.get('budget', research.get('budget')), 1600)}", "ChineseSmall")
     add(f"源码树 SHA-256：{research_manifest.get('source_tree_hash', 'unknown')}\n独立核验代码 SHA-256：{research_manifest.get('verification_code_hash', 'unknown')}", "ChineseSmall")
 
@@ -388,14 +427,22 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
     trajectory = [["轮次", "行动 / 命题", "证据", "公开决策依据（摘要）"]]
     for r in rounds:
         action = r.get("action", r.get("validated_action", {}))
-        trajectory.append([r["round_index"], f"{action.get('action_type')} / {action.get('claim_id') or '-'}", r.get("evidence_id") or "-", _text(action.get("decision_summary"), 150)])
+        summary = str(action.get("decision_summary", "unknown"))
+        trajectory.append([r["round_index"], f"{action.get('action_type')} / {action.get('claim_id') or '-'}", r.get("evidence_id") or "-", summary[:60] + ("…" if len(summary)>60 else "")])
     table(trajectory, [35,125,58,277])
     if rounds:
         selected = next((r for r in rounds if r.get("action", {}).get("action_type") == "revise"), rounds[-1])
         action = selected.get("action", selected.get("validated_action", {}))
         add(f"轮次 {selected['round_index']} 的实际反馈", "ChineseSub")
-        add(_text(selected.get("feedback", selected.get("skeptic")), 950), "ChineseSmall")
-        add(f"下一行动预期信息：{_text(action.get('expected_information'), 500)}", "ChineseSmall")
+        add(_text(selected.get("feedback", selected.get("skeptic")), 450), "ChineseSmall")
+        evidence = next((e for e in research["evidence"] if e["id"] == selected.get("evidence_id")), None)
+        if evidence:
+            result = evidence["result"]
+            concise = {k:result[k] for k in ("status", "truth", "domain", "predicate_kind", "E", "L", "n", "b") if k in result}
+            if result.get("best"):
+                concise["best"] = {k:result["best"][k] for k in ("n","b","E")}
+            add(f"实际工具结果：{_text(concise or result,280)}；核验 valid={evidence['verification'].get('valid')}。", "ChineseSmall")
+        add(f"下一行动预期信息：{_text(action.get('expected_information'), 220)}", "ChineseSmall")
     add("反馈驱动变化是否达到课程目标，以原始决策理由和前轮证据为准；未发生的反例、模型调用或研究修订没有补入时间线。")
 
     title(6, "小长度精确能量谱")
@@ -505,6 +552,7 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
             writer.writerow([run["evidence_id"],run["n"],run["seed"],run["method"],b["E"],b["F_numerator"],b["F_denominator"],b["F"],b["b"],r["evaluations"],r.get("elapsed",r.get("wall_seconds")),b["hash"]])
     audit = {"mode":data["mode"],"input_manifests":{kind:{"path":str(path / "manifest.json"),"sha256":file_hash(path / "manifest.json")} for kind,path in data["directories"].items()},
              "checks":data["checks"],"rounds":len(rounds),"evaluation_rows":len(runs),"font_path":str(font_path),"page_count":len(reader.pages),
+             "reporter_code_sha256":file_hash(Path(__file__)),
              "pdf_sha256":file_hash(output),"csv_sha256":file_hash(csv_path),"limitations":["No asymptotic problem solution", "No world-record claim", "Visual QA must inspect rendered pages"]}
     write_json(output.with_suffix(".audit.json"),audit)
     return output

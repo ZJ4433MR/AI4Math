@@ -113,6 +113,14 @@ def test_static_release_checkpoint_sequence_identity_and_seed_determinism():
     assert result["curve"] == other["curve"]
 
 
+def test_diagnostics_report_actual_restriction_fraction():
+    assert run_search(9, "fixed_tabu", 101, 11)["diagnostics"]["effective_skew_fraction"] == 0
+    assert run_search(9, "random", 101, 11)["diagnostics"]["effective_skew_fraction"] == 0
+    assert run_search(9, "skew", 101, 11)["diagnostics"]["effective_skew_fraction"] == 1
+    mixed = run_search(9, "static_mix", 401, 11)
+    assert mixed["diagnostics"]["effective_skew_fraction"] == 200/401
+
+
 @pytest.mark.parametrize("kwargs", [
     {"method": "skew", "n": 8},
     {"method": "fixed_b", "b": 2},

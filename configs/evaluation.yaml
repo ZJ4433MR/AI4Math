@@ -1,8 +1,19 @@
-lengths: [89, 107, 127]
-seeds: [1001, 1002, 1003, 1004, 1005]
-methods: [random, fixed_tabu, static_mix, agent_policy]
+lengths:
+- 89
+- 107
+- 127
+seeds:
+- 1001
+- 1002
+- 1003
+- 1004
+- 1005
+methods:
+- random
+- fixed_tabu
+- static_mix
+- agent_policy
 evaluations_per_run: 50000
 run_wall_seconds: 180
 output_root: results/evaluation
-# Set policy_path to an actual frozen policy before evaluate.
-policy_path: null
+policy_path: results/research/2026-10-09T145817.516168_0000/frozen_policy.json
