@@ -4,6 +4,7 @@ import importlib.metadata
 import platform
 import shutil
 import subprocess
+import sys
 import time
 from pathlib import Path
 import yaml
@@ -187,6 +188,11 @@ def verify_run(directory):
 
 
 def main():
+    # Windows legacy console encodings cannot print mathematical superscripts.
+    # Evidence files are always UTF-8; keep the public CLI stream consistent.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(description="Evidence-grounded general mathematical research agent with LABS plugin")
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("doctor"); p.add_argument("--live-probe", action="store_true"); p.add_argument("--model")

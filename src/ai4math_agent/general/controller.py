@@ -1,6 +1,7 @@
 """Real model → extensible tools → checked evidence → skeptic → revised plan."""
 from __future__ import annotations
 import json
+import sys
 import time
 from pathlib import Path
 from ai4math_agent.agent.schema import output_schema
@@ -15,6 +16,11 @@ CLAIM_CERTIFICATE_STATUSES = {"formal_certificate_available", "formal_counterexa
 
 class SessionBudgetError(RuntimeError):
     pass
+
+
+def _public_print(message):
+    encoding = getattr(sys.stdout, "encoding", None) or "utf-8"
+    print(str(message).encode(encoding, "backslashreplace").decode(encoding), flush=True)
 
 
 class WiringBackend:
@@ -221,7 +227,7 @@ def solve(problem, backend_name="codex_cli", model="gpt-6.1-sol", max_rounds=12,
         return backend.decide(context, output_schema(schema), call_dir)
 
     persist()
-    print(f"general run: {directory.resolve()}", flush=True)
+    _public_print(f"general run: {directory.resolve()}")
     try:
         while len(state["rounds"]) < max_rounds and state["termination_reason"] == "running":
             if state["budget"]["backend_attempts"] >= config["max_backend_attempts"] or state["budget"]["elapsed_seconds"] >= session_seconds:
@@ -262,7 +268,7 @@ def solve(problem, backend_name="codex_cli", model="gpt-6.1-sol", max_rounds=12,
             state["rounds"].append(record)
             write_json(directory / "rounds" / f"{index:03d}.json", record)
             persist()
-            print(f"round {index}: {evidence['tool']} -> {evidence['result'].get('status')} | {action.decision_summary[:180]}", flush=True)
+            _public_print(f"round {index}: {evidence['tool']} -> {evidence['result'].get('status')} | {action.decision_summary[:180]}")
         if state["termination_reason"] == "running":
             state["termination_reason"] = "budget_exhausted"
     except KeyboardInterrupt:

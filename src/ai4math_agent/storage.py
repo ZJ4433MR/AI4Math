@@ -6,6 +6,7 @@ import os
 import platform
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -27,7 +28,16 @@ def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
-    os.replace(temp, path)
+    # Windows readers can briefly hold a handle without FILE_SHARE_DELETE.
+    # Bound the retry, preserving atomic replacement and genuine I/O failures.
+    for attempt in range(8):
+        try:
+            os.replace(temp, path)
+            break
+        except PermissionError:
+            if attempt == 7:
+                raise
+            time.sleep(min(0.01 * 2**attempt, 0.16))
 
 
 def read_json(path):
