@@ -1,0 +1,102 @@
+{
+  "validated_at": "2026-10-09T17:47:23.427310+00:00",
+  "live_runs": [
+    {
+      "run_id": "2026-10-09T173120.080994_0000",
+      "title": "整数立方和的结构与证明",
+      "mode": "live",
+      "producer_commit": "30e8528cfd6eff1f83173a9f416973359bc2a172",
+      "rounds": 7,
+      "backend_attempts": 14,
+      "termination_reason": "finished",
+      "verification": {
+        "valid": true,
+        "mode": "live",
+        "formal_rechecks": [
+          {
+            "evidence_id": "EV004",
+            "status": "induction_verified"
+          },
+          {
+            "evidence_id": "EV005",
+            "status": "induction_verified"
+          }
+        ],
+        "rounds": 7,
+        "termination_reason": "finished",
+        "limitation": "Hash integrity and formal tool outputs checked. Natural-language semantic alignment/proof drafts and generated experiments are not machine proofs."
+      },
+      "state_sha256": "2708979861c5a8f8387da2ec1feca461117064c8f660206c3e8d9c90f1f31e05",
+      "report_sha256": "0fa4aea45685e38645852bc9c47b00ae66aed759c142d015e08140f75d3cd403"
+    },
+    {
+      "run_id": "2026-10-09T173130.851756_0000",
+      "title": "多项式生成素数的边界",
+      "mode": "live",
+      "producer_commit": "30e8528cfd6eff1f83173a9f416973359bc2a172",
+      "rounds": 11,
+      "backend_attempts": 22,
+      "termination_reason": "finished",
+      "verification": {
+        "valid": true,
+        "mode": "live",
+        "formal_rechecks": [
+          {
+            "evidence_id": "EV004",
+            "status": "finite_domain_verified"
+          },
+          {
+            "evidence_id": "EV005",
+            "status": "finite_domain_verified"
+          },
+          {
+            "evidence_id": "EV008",
+            "status": "symbolic_identity_verified"
+          }
+        ],
+        "rounds": 11,
+        "termination_reason": "finished",
+        "limitation": "Hash integrity and formal tool outputs checked. Natural-language semantic alignment/proof drafts and generated experiments are not machine proofs."
+      },
+      "state_sha256": "21761b1d4a062597e306452e73add2aad2c7861bef894ad3b0712fcea212f041",
+      "report_sha256": "739a4a66ae99725fd797072faf08dd42be4e30f9cb49b8f3891d242313331f72"
+    },
+    {
+      "run_id": "2026-10-09T173914.153710_0000",
+      "title": "二维向量面积、内积与恒等式",
+      "mode": "live",
+      "producer_commit": "5a412b0653fe74efa06e67108cd07b931f20e01c",
+      "rounds": 8,
+      "backend_attempts": 16,
+      "termination_reason": "finished",
+      "verification": {
+        "valid": true,
+        "mode": "live",
+        "formal_rechecks": [
+          {
+            "evidence_id": "EV003",
+            "status": "symbolic_identity_verified"
+          },
+          {
+            "evidence_id": "EV006",
+            "status": "finite_domain_verified"
+          }
+        ],
+        "rounds": 8,
+        "termination_reason": "finished",
+        "limitation": "Hash integrity and formal tool outputs checked. Natural-language semantic alignment/proof drafts and generated experiments are not machine proofs."
+      },
+      "state_sha256": "f8bed0279dfeabdc2852d5a38ff0d1f1a24b4e2d129c501de8af85143ed6aea1",
+      "report_sha256": "910f6dc1921943443db078757f59a3bcdd13124f5773a95a81c51efbd6f12fec"
+    }
+  ],
+  "total_rounds": 26,
+  "total_backend_attempts": 52,
+  "offline_tests": {
+    "passed": 104,
+    "platform": "Windows Python3.12.14"
+  },
+  "http_ui_checks": "Actual start/poll/stop/seal/resume/report/tamper checks passed; dry_run explicitly used for UI wiring, not research evidence.",
+  "console_incident": "First powersum research completed with valid reports but CLI final progress print exited1 dueGBK superscript; fixed in5a412b0, subsequent adhoc livevector run exited0.",
+  "proof_scope": "Only supplied formal propositions certified. Natural language alignment and generic proof drafts remain model-reviewed candidates."
+}

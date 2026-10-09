@@ -1,0 +1,99 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "action_type": {
+      "enum": [
+        "plan",
+        "propose",
+        "revise",
+        "tool",
+        "proof",
+        "finish"
+      ],
+      "title": "Action Type",
+      "type": "string"
+    },
+    "claim_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Claim Id"
+    },
+    "hypothesis": {
+      "anyOf": [
+        {
+          "maxLength": 4000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hypothesis"
+    },
+    "parent_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Parent Id"
+    },
+    "tool_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tool Name"
+    },
+    "arguments_json": {
+      "maxLength": 24000,
+      "title": "Arguments Json",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "decision_summary": {
+      "maxLength": 3000,
+      "minLength": 5,
+      "title": "Decision Summary",
+      "type": "string"
+    },
+    "expected_information": {
+      "maxLength": 1600,
+      "minLength": 5,
+      "title": "Expected Information",
+      "type": "string"
+    }
+  },
+  "required": [
+    "action_type",
+    "claim_id",
+    "hypothesis",
+    "parent_id",
+    "tool_name",
+    "arguments_json",
+    "evidence_ids",
+    "decision_summary",
+    "expected_information"
+  ],
+  "title": "Decision",
+  "type": "object"
+}

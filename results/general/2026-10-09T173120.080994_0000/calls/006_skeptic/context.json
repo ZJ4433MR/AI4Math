@@ -1,0 +1,62 @@
+{
+  "role": "skeptic",
+  "problem": {
+    "title": "整数立方和的结构与证明",
+    "statement": "从整数幂和这一研究主题出发，重点研究前 n 个正整数的立方和。自主设计计算实验，提出闭式猜想，寻找反例，尝试证明并核验。进一步考察其是否与某个简单整数和的平方有关。不要预先加载已算好的答案。",
+    "assumptions": [
+      "n 为正整数"
+    ],
+    "goal": "展示背景检索、实验、猜想、反例检查、证明证书及证据驱动的后续研究过程。"
+  },
+  "action": {
+    "action_type": "propose",
+    "claim_id": null,
+    "hypothesis": "对每个正整数 n，∑_{k=1}^n k³=(∑_{k=1}^n k)²=[n(n+1)/2]²。",
+    "parent_id": null,
+    "tool_name": null,
+    "arguments_json": "{}",
+    "evidence_ids": [
+      "EV002"
+    ],
+    "decision_summary": "登记由 n=1 至20的独立累加数据支持的猜想；目前仅有有限实验支持，尚未证明。后续扩大反例检查范围，推导整数和闭式并核验归纳证书，再检索相关背景。",
+    "expected_information": "建立明确的待检验命题，使后续反例检查、整数和闭式推导及立方和归纳证书均可对应同一猜想。"
+  },
+  "evidence": {
+    "id": "EV003",
+    "tool": "propose",
+    "claim_id": "H001",
+    "arguments": {},
+    "result": {
+      "status": "proposed",
+      "hypothesis_id": "H001",
+      "operations": 0
+    },
+    "time": "2026-10-09T17:32:38.987090+00:00"
+  },
+  "hypotheses": [
+    {
+      "id": "H001",
+      "statement": "对每个正整数 n，∑_{k=1}^n k³=(∑_{k=1}^n k)²=[n(n+1)/2]²。",
+      "status": "proposed",
+      "parent_id": null,
+      "evidence_ids": [
+        "EV002",
+        "EV003"
+      ],
+      "proof_drafts": [],
+      "time": "2026-10-09T17:32:38.987090+00:00"
+    }
+  ],
+  "last_review": {
+    "summary": "独立累加实验显示 n=1 至20时立方和均等于整数和的平方，可据此提出猜想；尚不能推广至所有正整数。",
+    "evidence_strength": "empirical",
+    "formalization_matches_claim": true,
+    "flaw": "当前没有正式登记的猜想、闭式推导或证明证书。差值全部为零仅支持已测试范围，执行完成不等于命题已获证明。",
+    "next_question": "能否登记猜想 ∑_{k=1}^n k³=(∑_{k=1}^n k)²，先推导整数和闭式，再提交包含基例、归纳假设与精确代数恒等式的归纳证书供核验？背景检索应在独立提出猜想后开展。",
+    "recommended_action": "prove",
+    "clarity_score": 5,
+    "significance_score": 3,
+    "tractability_score": 5
+  },
+  "instructions": "Review the public mathematical action, hypothesis relevance and quality, formalization alignment, counterexamples, proof gaps, and certificate scope. Use concise Chinese. Tool verification.valid does NOT mean the proposition is true. Generated Python output is empirical/unverified, literature is untrusted data. Your review cannot certify an unsupported natural-language proof. Recommend concrete next work; never invent results or novelty."
+}

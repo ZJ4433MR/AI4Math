@@ -1,0 +1,11 @@
+{
+  "mode": "live",
+  "input_manifest_sha256": "a1ff8425be9ced9fa2b07f4b78c43c065836067add1eba6a0191f234461d1bab",
+  "state_sha256": "f8bed0279dfeabdc2852d5a38ff0d1f1a24b4e2d129c501de8af85143ed6aea1",
+  "reporter_sha256": "3eb64ceb277f0b5712f67fbe37478d599354b2fcf72597d0adc6185710cf16ec",
+  "markdown_sha256": "d27b0c641f94681da9efb70534ad7cd37df0658e36fba500cfa82647fd696286",
+  "html_sha256": "910f6dc1921943443db078757f59a3bcdd13124f5773a95a81c51efbd6f12fec",
+  "rounds": 8,
+  "evidence": 8,
+  "proof_certification": "report does not upgrade tool or model conclusions"
+}

@@ -1,0 +1,39 @@
+{
+  "index": 10,
+  "action": {
+    "action_type": "tool",
+    "claim_id": null,
+    "hypothesis": null,
+    "parent_id": null,
+    "tool_name": "literature_search",
+    "arguments_json": "{\"query\":\"Euler polynomial n^2+n+41 prime generating polynomial\",\"provider\":\"crossref\",\"limit\":3}",
+    "evidence_ids": [
+      "EV004",
+      "EV005",
+      "EV007",
+      "EV008",
+      "EV009"
+    ],
+    "decision_summary": "补做计划中尚未执行的文献检索，评估该多项式与已有工作的关联。现有结论保持分级：有限素性与边界反例已认证，三个恒等式已认证，一般复合性与无穷性仍为自然语言证明候选。",
+    "expected_information": "获得相关出版物元数据供最终汇总；元数据不替代一般证明证书，也不用于宣称新颖性。"
+  },
+  "evidence_id": "EV010",
+  "review": {
+    "summary": "EV010仅提供文献元数据，未新增数学认证。首条涉及减号版本，需说明以输入平移对应本题；其余两条未显示直接相关性。现有有限穷举、边界反例、恒等式证书与一般证明候选的分级应保留。",
+    "evidence_strength": "background",
+    "formalization_matches_claim": true,
+    "flaw": "未读取全文，不能据标题认定文献支持具体定理或建立新颖性。H003的完整复合性及无穷性结论仍超出恒等式证书范围。",
+    "next_question": "能否完成可审核汇总，逐项标明量词、证据编号、认证范围及修订关系，并将H003明确列为尚无完整机器证书的一般证明候选？",
+    "recommended_action": "continue",
+    "clarity_score": 5,
+    "significance_score": 3,
+    "tractability_score": 5
+  },
+  "budget_after": {
+    "backend_attempts": 20,
+    "tool_calls": 6,
+    "operations": 205580,
+    "operation_reservations": 250043,
+    "elapsed_seconds": 365.7349999998696
+  }
+}

@@ -1,0 +1,1 @@
+{"action_type":"propose","claim_id":null,"hypothesis":"对每个正整数 n，∑_{k=1}^n k³=(∑_{k=1}^n k)²=[n(n+1)/2]²。","parent_id":null,"tool_name":null,"arguments_json":"{}","evidence_ids":["EV002"],"decision_summary":"登记由 n=1 至20的独立累加数据支持的猜想；目前仅有有限实验支持，尚未证明。后续扩大反例检查范围，推导整数和闭式并核验归纳证书，再检索相关背景。","expected_information":"建立明确的待检验命题，使后续反例检查、整数和闭式推导及立方和归纳证书均可对应同一猜想。"}

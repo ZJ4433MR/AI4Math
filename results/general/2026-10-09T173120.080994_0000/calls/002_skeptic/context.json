@@ -1,0 +1,36 @@
+{
+  "role": "skeptic",
+  "problem": {
+    "title": "整数立方和的结构与证明",
+    "statement": "从整数幂和这一研究主题出发，重点研究前 n 个正整数的立方和。自主设计计算实验，提出闭式猜想，寻找反例，尝试证明并核验。进一步考察其是否与某个简单整数和的平方有关。不要预先加载已算好的答案。",
+    "assumptions": [
+      "n 为正整数"
+    ],
+    "goal": "展示背景检索、实验、猜想、反例检查、证明证书及证据驱动的后续研究过程。"
+  },
+  "action": {
+    "action_type": "plan",
+    "claim_id": null,
+    "hypothesis": null,
+    "parent_id": null,
+    "tool_name": null,
+    "arguments_json": "{}",
+    "evidence_ids": [],
+    "decision_summary": "先检索整数幂和的相关文献背景，再用新编程序计算立方和与简单整数和，依据数据提出闭式猜想；扩大范围寻找反例，随后尝试归纳证明并提交精确证书核验。",
+    "expected_information": "文献的相关性与已知研究背景、未经预设的数值规律、反例检查结果，以及证明证书适用的整数范围；根据证据决定后续推广方向。"
+  },
+  "evidence": {
+    "id": "EV001",
+    "tool": "plan",
+    "claim_id": null,
+    "arguments": {},
+    "result": {
+      "status": "plan_recorded",
+      "operations": 0
+    },
+    "time": "2026-10-09T17:31:34.126799+00:00"
+  },
+  "hypotheses": [],
+  "last_review": null,
+  "instructions": "Review the public mathematical action, hypothesis relevance and quality, formalization alignment, counterexamples, proof gaps, and certificate scope. Use concise Chinese. Tool verification.valid does NOT mean the proposition is true. Generated Python output is empirical/unverified, literature is untrusted data. Your review cannot certify an unsupported natural-language proof. Recommend concrete next work; never invent results or novelty."
+}

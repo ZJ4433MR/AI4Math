@@ -1,0 +1,36 @@
+{
+  "index": 9,
+  "action": {
+    "action_type": "revise",
+    "claim_id": null,
+    "hypothesis": "对所有整数k、n，f(x)=x²+x+41满足f(41k)=41(41k²+k+1)、f(41k+40)=41(41k²+81k+41)及f(n+1)-f(n)=2n+2。这三个恒等式已获EV008认证。原H003关于指定同余类的复合性及无穷多个互异复合数取值的完整结论，仍仅有一般自然语言证明候选，不属于该恒等式证书的认证范围。",
+    "parent_id": "H003",
+    "tool_name": null,
+    "arguments_json": "{}",
+    "evidence_ids": [
+      "EV007",
+      "EV008"
+    ],
+    "decision_summary": "按审核意见缩小认证声明至三个恒等式，保留H003及其证明候选，避免将恒等式认证误报为完整无穷性认证。现有工具不支持一般不等式认证；后续须补做文献检索尝试再汇总。",
+    "expected_information": "建立与EV008严格对应的修订声明，明确区分机器认证恒等式与未获完整机器认证的一般结论。"
+  },
+  "evidence_id": "EV009",
+  "review": {
+    "summary": "H004已将认证声明缩小至EV008覆盖的三个恒等式，修正了H003的证书范围错配。有限区间素性、n=40反例及一般证明候选的证据等级区分清楚。",
+    "evidence_strength": "symbolic_certificate",
+    "formalization_matches_claim": true,
+    "flaw": "H004的恒等式部分未见范围错配；H003的真因子不等式、严格递增性及无穷多个互异复合数取值仍未获完整机器认证。EV009仅记录修订提案，不构成新增数学认证。",
+    "next_question": "能否汇总H001的有限穷举、H002的边界反例、H004的恒等式证书及H003的一般证明候选，并明确工具无法认证的部分？文献检索不能替代缺失的证明证书。",
+    "recommended_action": "continue",
+    "clarity_score": 5,
+    "significance_score": 4,
+    "tractability_score": 5
+  },
+  "budget_after": {
+    "backend_attempts": 18,
+    "tool_calls": 5,
+    "operations": 205580,
+    "operation_reservations": 250042,
+    "elapsed_seconds": 331.71899999980815
+  }
+}

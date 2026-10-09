@@ -1,0 +1,167 @@
+{
+  "execution_status": "completed",
+  "status": "empirical_unverified",
+  "evidence_strength": "empirical_unverified",
+  "conclusion_status": "unverified",
+  "user_claims_trusted": false,
+  "result": {
+    "raw_data": [
+      {
+        "n": 1,
+        "integer_sum": 1,
+        "cube_sum": 1,
+        "integer_sum_squared": 1,
+        "difference": 0
+      },
+      {
+        "n": 2,
+        "integer_sum": 3,
+        "cube_sum": 9,
+        "integer_sum_squared": 9,
+        "difference": 0
+      },
+      {
+        "n": 3,
+        "integer_sum": 6,
+        "cube_sum": 36,
+        "integer_sum_squared": 36,
+        "difference": 0
+      },
+      {
+        "n": 4,
+        "integer_sum": 10,
+        "cube_sum": 100,
+        "integer_sum_squared": 100,
+        "difference": 0
+      },
+      {
+        "n": 5,
+        "integer_sum": 15,
+        "cube_sum": 225,
+        "integer_sum_squared": 225,
+        "difference": 0
+      },
+      {
+        "n": 6,
+        "integer_sum": 21,
+        "cube_sum": 441,
+        "integer_sum_squared": 441,
+        "difference": 0
+      },
+      {
+        "n": 7,
+        "integer_sum": 28,
+        "cube_sum": 784,
+        "integer_sum_squared": 784,
+        "difference": 0
+      },
+      {
+        "n": 8,
+        "integer_sum": 36,
+        "cube_sum": 1296,
+        "integer_sum_squared": 1296,
+        "difference": 0
+      },
+      {
+        "n": 9,
+        "integer_sum": 45,
+        "cube_sum": 2025,
+        "integer_sum_squared": 2025,
+        "difference": 0
+      },
+      {
+        "n": 10,
+        "integer_sum": 55,
+        "cube_sum": 3025,
+        "integer_sum_squared": 3025,
+        "difference": 0
+      },
+      {
+        "n": 11,
+        "integer_sum": 66,
+        "cube_sum": 4356,
+        "integer_sum_squared": 4356,
+        "difference": 0
+      },
+      {
+        "n": 12,
+        "integer_sum": 78,
+        "cube_sum": 6084,
+        "integer_sum_squared": 6084,
+        "difference": 0
+      },
+      {
+        "n": 13,
+        "integer_sum": 91,
+        "cube_sum": 8281,
+        "integer_sum_squared": 8281,
+        "difference": 0
+      },
+      {
+        "n": 14,
+        "integer_sum": 105,
+        "cube_sum": 11025,
+        "integer_sum_squared": 11025,
+        "difference": 0
+      },
+      {
+        "n": 15,
+        "integer_sum": 120,
+        "cube_sum": 14400,
+        "integer_sum_squared": 14400,
+        "difference": 0
+      },
+      {
+        "n": 16,
+        "integer_sum": 136,
+        "cube_sum": 18496,
+        "integer_sum_squared": 18496,
+        "difference": 0
+      },
+      {
+        "n": 17,
+        "integer_sum": 153,
+        "cube_sum": 23409,
+        "integer_sum_squared": 23409,
+        "difference": 0
+      },
+      {
+        "n": 18,
+        "integer_sum": 171,
+        "cube_sum": 29241,
+        "integer_sum_squared": 29241,
+        "difference": 0
+      },
+      {
+        "n": 19,
+        "integer_sum": 190,
+        "cube_sum": 36100,
+        "integer_sum_squared": 36100,
+        "difference": 0
+      },
+      {
+        "n": 20,
+        "integer_sum": 210,
+        "cube_sum": 44100,
+        "integer_sum_squared": 44100,
+        "difference": 0
+      }
+    ],
+    "scope": "Integers n from 1 through 20; empirical comparison only"
+  },
+  "operations": 287,
+  "error": null,
+  "policy_version": "restricted-math-python-v1",
+  "security_notice": "Policy-checked resource-bounded Python runner; not an OS security sandbox. Generated computations and embedded claims remain empirical and unverified.",
+  "limits": {
+    "memory_limit_bytes": 268435456,
+    "memory_limit_enforced": true,
+    "os_cpu_limit_enforced": true
+  },
+  "timeout_seconds": 1.0,
+  "max_operations": 1000,
+  "elapsed_seconds": 0.3577199000865221,
+  "code_original_bytes": 350,
+  "code_saved_truncated": false,
+  "code_original_sha256": "83cdf2a88b31a6c011239eb688f0c46d9a1dbf4f0d7e8455622bc82f79e7dbdf"
+}

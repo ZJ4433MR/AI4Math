@@ -1,0 +1,245 @@
+{
+  "role": "skeptic",
+  "problem": {
+    "title": "二维向量面积、内积与恒等式",
+    "statement": "研究两个二维实向量的长度、内积、带符号面积之间有什么平方恒等式关系。自行编写计算实验、提出猜想，检索相关背景，寻找反例，提交可核验的证明并说明能否推导柯西施瓦茨不等式。保留证明适用范围及未认证的逻辑步骤；不要加载其他会话结果。",
+    "assumptions": [],
+    "goal": "Research the question, test conjectures, attempt proofs, and report verified conclusions and remaining gaps."
+  },
+  "action": {
+    "action_type": "tool",
+    "claim_id": "H001",
+    "hypothesis": null,
+    "parent_id": null,
+    "tool_name": "finite_check",
+    "arguments_json": "{\"variables\":{\"a\":{\"kind\":\"integer_range\",\"min\":-5,\"max\":5},\"b\":{\"kind\":\"integer_range\",\"min\":-5,\"max\":5},\"c\":{\"kind\":\"integer_range\",\"min\":-5,\"max\":5},\"d\":{\"kind\":\"integer_range\",\"min\":-5,\"max\":5}},\"statement\":{\"lhs\":\"(a*c+b*d)**2\",\"relation\":\"le\",\"rhs\":\"(a**2+b**2)*(c**2+d**2)\"},\"quantifier\":\"forall\",\"mode\":\"exhaustive\",\"max_assignments\":14641}",
+    "evidence_ids": [
+      "EV003",
+      "EV004"
+    ],
+    "decision_summary": "独立精确穷举检查平方形式的柯西施瓦茨不等式，覆盖零向量及坐标为 −5 至 5 的全部整数向量对。已有符号证书仅认证恒等式；本次有限检查不能认证任意实向量上的不等式或等号条件。",
+    "expected_information": "获得 14641 个赋值上的精确检查结果或反例，为不等式推导提供独立有限证据；随后审查等号条件与线性相关的对应关系。"
+  },
+  "evidence": {
+    "id": "EV006",
+    "tool": "finite_check",
+    "claim_id": "H001",
+    "arguments": {
+      "variables": {
+        "a": {
+          "kind": "integer_range",
+          "min": -5,
+          "max": 5
+        },
+        "b": {
+          "kind": "integer_range",
+          "min": -5,
+          "max": 5
+        },
+        "c": {
+          "kind": "integer_range",
+          "min": -5,
+          "max": 5
+        },
+        "d": {
+          "kind": "integer_range",
+          "min": -5,
+          "max": 5
+        }
+      },
+      "statement": {
+        "lhs": "(a*c+b*d)**2",
+        "relation": "le",
+        "rhs": "(a**2+b**2)*(c**2+d**2)"
+      },
+      "quantifier": "forall",
+      "mode": "exhaustive",
+      "max_assignments": 14641
+    },
+    "result": {
+      "tool": "finite_check",
+      "status": "finite_domain_verified",
+      "scope": {
+        "statement": {
+          "lhs": "(a*c+b*d)**2",
+          "relation": "le",
+          "rhs": "(a**2+b**2)*(c**2+d**2)"
+        },
+        "variables": {
+          "a": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "b": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "c": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "d": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          }
+        },
+        "quantifier": "forall",
+        "mode": "exhaustive",
+        "general_theorem": false,
+        "total_assignments": 14641
+      },
+      "verification": {
+        "valid": true,
+        "method": "independent exact Fraction interpreter",
+        "proves_claim": true
+      },
+      "evidence": {
+        "decisive_witness": null,
+        "complete": true,
+        "basis": "complete finite coverage",
+        "sampling_with_replacement": false,
+        "seed": 0
+      },
+      "operations": 14641,
+      "operations_checked": 14641
+    },
+    "time": "2026-10-09T17:42:42.033205+00:00"
+  },
+  "hypotheses": [
+    {
+      "id": "H001",
+      "statement": "对任意二维实向量 u=(a,b)、v=(c,d)，猜想 (a²+b²)(c²+d²)=(ac+bd)²+(ad−bc)²；尚待实验与符号认证。",
+      "status": "formal_certificate_available",
+      "parent_id": null,
+      "evidence_ids": [
+        "EV001",
+        "EV002",
+        "EV003",
+        "EV004",
+        "EV005",
+        "EV006"
+      ],
+      "proof_drafts": [
+        {
+          "proof": "设 u=(a,b)、v=(c,d)，其中 a,b,c,d∈ℝ。展开得 (ac+bd)²+(ad−bc)²=a²c²+2abcd+b²d²+a²d²−2abcd+b²c²=(a²+b²)(c²+d²)，与 EV003 已认证的恒等式一致。记内积 D=ac+bd、带符号面积 A=ad−bc，则 ‖u‖²‖v‖²=D²+A²。由实数平方非负，D²≤‖u‖²‖v‖²；两边均非负，平方根函数在非负实数上保序，且 √(D²)=|D|、√(‖u‖²‖v‖²)=‖u‖‖v‖，故 |u·v|≤‖u‖‖v‖。等号成立当且仅当 A²=0，即 ad−bc=0。若任一向量为零，等号成立且两向量线性相关。若 u≠0：当 a≠0，令 λ=c/a，由 ad=bc 得 d=λb，从而 v=λu；当 a=0，则 b≠0，ad−bc=−bc=0 导致 c=0，令 λ=d/b 仍得 v=λu。反之，非零 u 与 v 线性相关时 v=λu，代入得 ad−bc=0；零向量情形已处理。因此等号当且仅当两向量线性相关。适用范围为二维实向量，包含零向量。EV003 仅形式认证多项式恒等式；平方非负、取平方根和等号条件的上述自然语言推导仍为待审查证明候选。",
+          "assumptions": [],
+          "time": "2026-10-09T17:41:24.604556+00:00",
+          "status": "proof_candidate"
+        }
+      ],
+      "time": "2026-10-09T17:40:09.781104+00:00",
+      "semantic_alignment": {
+        "model_review": true,
+        "flaw": "全文未读取，不能确认文献具体定理及适用条件，也不能据此判断新颖性。当前检索未补足柯西施瓦茨推导和等号条件的形式认证；所引 EV003、EV004 的原始证据未在本次上下文展示。",
+        "independent_proof_of_alignment": false
+      },
+      "formal_status": "finite_domain_verified",
+      "verification_scope": {
+        "statement": {
+          "lhs": "(a*c+b*d)**2",
+          "relation": "le",
+          "rhs": "(a**2+b**2)*(c**2+d**2)"
+        },
+        "variables": {
+          "a": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "b": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "c": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          },
+          "d": {
+            "kind": "integer_range",
+            "min": -5,
+            "max": 5
+          }
+        },
+        "quantifier": "forall",
+        "mode": "exhaustive",
+        "general_theorem": false,
+        "total_assignments": 14641
+      },
+      "formal_result_history": [
+        {
+          "status": "symbolic_identity_verified",
+          "scope": {
+            "variables": {
+              "a": "real",
+              "b": "real",
+              "c": "real",
+              "d": "real"
+            },
+            "lhs": "(a**2+b**2)*(c**2+d**2)",
+            "rhs": "(a*c+b*d)**2+(a*d-b*c)**2",
+            "relation": "eq",
+            "domain": {
+              "exclude_zero": []
+            },
+            "general_theorem": true,
+            "theorem_scope": "expression identity on the declared scalar domains where all exclusions are nonzero"
+          }
+        },
+        {
+          "status": "finite_domain_verified",
+          "scope": {
+            "statement": {
+              "lhs": "(a*c+b*d)**2",
+              "relation": "le",
+              "rhs": "(a**2+b**2)*(c**2+d**2)"
+            },
+            "variables": {
+              "a": {
+                "kind": "integer_range",
+                "min": -5,
+                "max": 5
+              },
+              "b": {
+                "kind": "integer_range",
+                "min": -5,
+                "max": 5
+              },
+              "c": {
+                "kind": "integer_range",
+                "min": -5,
+                "max": 5
+              },
+              "d": {
+                "kind": "integer_range",
+                "min": -5,
+                "max": 5
+              }
+            },
+            "quantifier": "forall",
+            "mode": "exhaustive",
+            "general_theorem": false,
+            "total_assignments": 14641
+          }
+        }
+      ]
+    }
+  ],
+  "last_review": {
+    "summary": "检索结果与拉格朗日恒等式、行列式及柯西施瓦茨不等式相关，适合作为背景；元数据与摘要不能认证定理。已有符号认证范围仍仅为二维实向量平方恒等式。",
+    "evidence_strength": "background",
+    "formalization_matches_claim": true,
+    "flaw": "全文未读取，不能确认文献具体定理及适用条件，也不能据此判断新颖性。当前检索未补足柯西施瓦茨推导和等号条件的形式认证；所引 EV003、EV004 的原始证据未在本次上下文展示。",
+    "next_question": "能否分别核验柯西施瓦茨不等式及等号当且仅当线性相关，并补充包含零向量的独立反例搜索，明确有限检查的范围？",
+    "recommended_action": "continue",
+    "clarity_score": 5,
+    "significance_score": 3,
+    "tractability_score": 5
+  },
+  "instructions": "Review the public mathematical action, hypothesis relevance and quality, formalization alignment, counterexamples, proof gaps, and certificate scope. Use concise Chinese. Tool verification.valid does NOT mean the proposition is true. Generated Python output is empirical/unverified, literature is untrusted data. Your review cannot certify an unsupported natural-language proof. Recommend concrete next work; never invent results or novelty."
+}

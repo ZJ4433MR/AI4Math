@@ -1,0 +1,23 @@
+{
+  "execution_status": "operation_limit",
+  "status": "empirical_unverified",
+  "evidence_strength": "empirical_unverified",
+  "conclusion_status": "unverified",
+  "user_claims_trusted": false,
+  "result": null,
+  "operations": 200001,
+  "error": "operation/trace budget exhausted",
+  "policy_version": "restricted-math-python-v1",
+  "security_notice": "Policy-checked resource-bounded Python runner; not an OS security sandbox. Generated computations and embedded claims remain empirical and unverified.",
+  "limits": {
+    "memory_limit_bytes": 268435456,
+    "memory_limit_enforced": true,
+    "os_cpu_limit_enforced": true
+  },
+  "timeout_seconds": 12.0,
+  "max_operations": 200000,
+  "elapsed_seconds": 1.2872217001859099,
+  "code_original_bytes": 1095,
+  "code_saved_truncated": false,
+  "code_original_sha256": "015bbe816d9c1a48e91c078d1ff5f32d6ea60e9e627e9d97235d1b6235c7608f"
+}

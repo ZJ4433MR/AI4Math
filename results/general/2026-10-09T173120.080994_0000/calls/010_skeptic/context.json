@@ -1,0 +1,192 @@
+{
+  "role": "skeptic",
+  "problem": {
+    "title": "整数立方和的结构与证明",
+    "statement": "从整数幂和这一研究主题出发，重点研究前 n 个正整数的立方和。自主设计计算实验，提出闭式猜想，寻找反例，尝试证明并核验。进一步考察其是否与某个简单整数和的平方有关。不要预先加载已算好的答案。",
+    "assumptions": [
+      "n 为正整数"
+    ],
+    "goal": "展示背景检索、实验、猜想、反例检查、证明证书及证据驱动的后续研究过程。"
+  },
+  "action": {
+    "action_type": "tool",
+    "claim_id": "H001",
+    "hypothesis": null,
+    "parent_id": null,
+    "tool_name": "induction_check",
+    "arguments_json": "{\"index\":\"n\",\"summation_index\":\"k\",\"start\":1,\"summand\":\"k**3\",\"formula\":\"n**2*(n+1)**2/4\",\"parameters\":{},\"domain\":{\"exclude_zero\":[]}}",
+    "evidence_ids": [
+      "EV002",
+      "EV004"
+    ],
+    "decision_summary": "提交立方和闭式的独立归纳核验；若通过，再结合已核验的 H002 得到整数和的平方关系。",
+    "expected_information": "核验 n=1 的基例与闭式增量是否等于 (n+1)³，取得覆盖所有正整数 n 的证书或发现证明缺陷。"
+  },
+  "evidence": {
+    "id": "EV005",
+    "tool": "induction_check",
+    "claim_id": "H001",
+    "arguments": {
+      "index": "n",
+      "summation_index": "k",
+      "start": 1,
+      "summand": "k**3",
+      "formula": "n**2*(n+1)**2/4",
+      "parameters": {},
+      "domain": {
+        "exclude_zero": []
+      }
+    },
+    "result": {
+      "tool": "induction_check",
+      "status": "induction_verified",
+      "scope": {
+        "statement": "sum(k**3, k=1..n) = n**2*(n+1)**2/4",
+        "index": "n",
+        "index_domain": {
+          "kind": "integer",
+          "min": 1
+        },
+        "parameters": {},
+        "domain": {
+          "exclude_zero": []
+        },
+        "general_theorem": true
+      },
+      "verification": {
+        "valid": true,
+        "method": "exact polynomial base and induction-step normalization",
+        "proves_claim": true
+      },
+      "evidence": {
+        "base_index": 1,
+        "base_residual_numerator": "0",
+        "base_residual_denominator": "1",
+        "step_residual_numerator": "0",
+        "step_residual_denominator": "1",
+        "domain_check": {
+          "exclude_zero": [],
+          "required_nonzero_factors": [],
+          "missing_nonzero_factors": []
+        },
+        "proof_rule": "base at start plus S(n+1)-S(n)=summand(n+1) proves every integer n>=start by induction"
+      },
+      "operations": 2,
+      "operations_checked": 2
+    },
+    "time": "2026-10-09T17:33:43.727026+00:00"
+  },
+  "hypotheses": [
+    {
+      "id": "H001",
+      "statement": "对每个正整数 n，∑_{k=1}^n k³=(∑_{k=1}^n k)²=[n(n+1)/2]²。",
+      "status": "formal_certificate_available",
+      "parent_id": null,
+      "evidence_ids": [
+        "EV002",
+        "EV003",
+        "EV005"
+      ],
+      "proof_drafts": [],
+      "time": "2026-10-09T17:32:38.987090+00:00",
+      "semantic_alignment": {
+        "model_review": true,
+        "flaw": "EV003仅确认猜想登记。所述 n=1 至20的实验不能证明全称命题；整数和闭式及立方和恒等式均尚无证明证书。",
+        "independent_proof_of_alignment": false
+      },
+      "formal_status": "induction_verified",
+      "verification_scope": {
+        "statement": "sum(k**3, k=1..n) = n**2*(n+1)**2/4",
+        "index": "n",
+        "index_domain": {
+          "kind": "integer",
+          "min": 1
+        },
+        "parameters": {},
+        "domain": {
+          "exclude_zero": []
+        },
+        "general_theorem": true
+      },
+      "formal_result_history": [
+        {
+          "status": "induction_verified",
+          "scope": {
+            "statement": "sum(k**3, k=1..n) = n**2*(n+1)**2/4",
+            "index": "n",
+            "index_domain": {
+              "kind": "integer",
+              "min": 1
+            },
+            "parameters": {},
+            "domain": {
+              "exclude_zero": []
+            },
+            "general_theorem": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "H002",
+      "statement": "对每个正整数 n，∑_{k=1}^n k=n(n+1)/2。",
+      "status": "formal_certificate_available",
+      "parent_id": null,
+      "evidence_ids": [
+        "EV002",
+        "EV004"
+      ],
+      "proof_drafts": [],
+      "time": "2026-10-09T17:33:12.380272+00:00",
+      "formal_status": "induction_verified",
+      "verification_scope": {
+        "statement": "sum(k, k=1..n) = n*(n+1)/2",
+        "index": "n",
+        "index_domain": {
+          "kind": "integer",
+          "min": 1
+        },
+        "parameters": {},
+        "domain": {
+          "exclude_zero": []
+        },
+        "general_theorem": true
+      },
+      "formal_result_history": [
+        {
+          "status": "induction_verified",
+          "scope": {
+            "statement": "sum(k, k=1..n) = n*(n+1)/2",
+            "index": "n",
+            "index_domain": {
+              "kind": "integer",
+              "min": 1
+            },
+            "parameters": {},
+            "domain": {
+              "exclude_zero": []
+            },
+            "general_theorem": true
+          }
+        }
+      ],
+      "semantic_alignment": {
+        "model_review": true,
+        "flaw": "本证书只证明 H002，未证明 H001 的立方和恒等式；H001 仍需独立证明。",
+        "independent_proof_of_alignment": false
+      }
+    }
+  ],
+  "last_review": {
+    "summary": "EV004 的归纳证书覆盖所有正整数 n，且形式化与 H002 完全一致；整数和闭式已获得证明证书，可作为后续证明的辅助结论。",
+    "evidence_strength": "induction_certificate",
+    "formalization_matches_claim": true,
+    "flaw": "本证书只证明 H002，未证明 H001 的立方和恒等式；H001 仍需独立证明。",
+    "next_question": "能否对立方和闭式 [n(n+1)/2]² 提交归纳证书，核验 n=1 基例及闭式从 n 到 n+1 的增量等于 (n+1)³，再结合 H002 得出平方关系？",
+    "recommended_action": "prove",
+    "clarity_score": 5,
+    "significance_score": 3,
+    "tractability_score": 5
+  },
+  "instructions": "Review the public mathematical action, hypothesis relevance and quality, formalization alignment, counterexamples, proof gaps, and certificate scope. Use concise Chinese. Tool verification.valid does NOT mean the proposition is true. Generated Python output is empirical/unverified, literature is untrusted data. Your review cannot certify an unsupported natural-language proof. Recommend concrete next work; never invent results or novelty."
+}

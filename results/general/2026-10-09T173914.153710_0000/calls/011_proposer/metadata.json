@@ -1,0 +1,19 @@
+{
+  "backend": "codex_cli",
+  "mode": "live",
+  "requested_model": "gpt-6.1-sol",
+  "effective_model": null,
+  "provider_request_count": "unknown",
+  "actual_cost": "unknown",
+  "proxy_source": "Windows user system proxy",
+  "exit_code": 0,
+  "usage": {
+    "input_tokens": 23457,
+    "cached_input_tokens": 16256,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 350,
+    "reasoning_output_tokens": 47
+  },
+  "accepted": true,
+  "elapsed": 18.234000000171363
+}

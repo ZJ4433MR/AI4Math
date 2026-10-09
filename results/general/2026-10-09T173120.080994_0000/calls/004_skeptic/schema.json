@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "maxLength": 3000,
+      "minLength": 5,
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidence_strength": {
+      "enum": [
+        "symbolic_certificate",
+        "induction_certificate",
+        "finite_exhaustive",
+        "counterexample",
+        "empirical",
+        "proof_candidate",
+        "background",
+        "insufficient"
+      ],
+      "title": "Evidence Strength",
+      "type": "string"
+    },
+    "formalization_matches_claim": {
+      "title": "Formalization Matches Claim",
+      "type": "boolean"
+    },
+    "flaw": {
+      "maxLength": 2000,
+      "title": "Flaw",
+      "type": "string"
+    },
+    "next_question": {
+      "maxLength": 2000,
+      "minLength": 5,
+      "title": "Next Question",
+      "type": "string"
+    },
+    "recommended_action": {
+      "enum": [
+        "continue",
+        "revise",
+        "prove",
+        "counterexample",
+        "finish"
+      ],
+      "title": "Recommended Action",
+      "type": "string"
+    },
+    "clarity_score": {
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Clarity Score",
+      "type": "integer"
+    },
+    "significance_score": {
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Significance Score",
+      "type": "integer"
+    },
+    "tractability_score": {
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Tractability Score",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "summary",
+    "evidence_strength",
+    "formalization_matches_claim",
+    "flaw",
+    "next_question",
+    "recommended_action",
+    "clarity_score",
+    "significance_score",
+    "tractability_score"
+  ],
+  "title": "Critique",
+  "type": "object"
+}
