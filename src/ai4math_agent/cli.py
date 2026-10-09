@@ -187,7 +187,7 @@ def verify_run(directory):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Evidence-grounded LABS research agent")
+    parser = argparse.ArgumentParser(description="Evidence-grounded general mathematical research agent with LABS plugin")
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("doctor"); p.add_argument("--live-probe", action="store_true"); p.add_argument("--model")
     p = sub.add_parser("exact"); p.add_argument("--n-max", type=int, default=18); p.add_argument("--output", default="results/exact"); p.add_argument("--wall-seconds", type=float, default=600)
@@ -196,6 +196,15 @@ def main():
     p = sub.add_parser("verify"); p.add_argument("--run-dir", required=True)
     p = sub.add_parser("report"); p.add_argument("--research-dir", required=True); p.add_argument("--evaluation-dir"); p.add_argument("--exact-dir", default="results/exact"); p.add_argument("--output", default="reports/AI4Math_LABS_Report.pdf")
     p = sub.add_parser("benchmark"); p.add_argument("--evaluations", type=int, default=5000)
+    p = sub.add_parser("solve", help="Research a new natural-language mathematical problem")
+    p.add_argument("--problem"); p.add_argument("--problem-file"); p.add_argument("--title")
+    p.add_argument("--backend", choices=["codex_cli", "api", "dry_run"], default="codex_cli")
+    p.add_argument("--model", default="gpt-6.1-sol"); p.add_argument("--max-rounds", type=int, default=12)
+    p.add_argument("--max-operations", type=int, default=2000000); p.add_argument("--session-seconds", type=float, default=1800)
+    p.add_argument("--backend-timeout", type=float, default=180); p.add_argument("--output-root", default="results/general"); p.add_argument("--resume")
+    p = sub.add_parser("serve", help="Local live research and process display UI")
+    p.add_argument("--host", default="127.0.0.1"); p.add_argument("--port", type=int, default=8765)
+    p = sub.add_parser("general-report"); p.add_argument("--run-dir", required=True)
     args = parser.parse_args()
     if args.command == "doctor":
         doctor(args.live_probe, args.model)
@@ -207,7 +216,12 @@ def main():
     elif args.command == "evaluate":
         print(evaluation(yaml.safe_load(Path(args.config).read_text(encoding="utf-8")), args.resume))
     elif args.command == "verify":
-        verify_run(args.run_dir)
+        manifest = read_json(Path(args.run_dir) / "manifest.json")
+        if manifest.get("workflow") == "general-v1":
+            from .general.controller import verify_general
+            print(verify_general(args.run_dir))
+        else:
+            verify_run(args.run_dir)
     elif args.command == "report":
         from .reporting.report import build_report
         print(build_report(args.research_dir, args.evaluation_dir, args.exact_dir, args.output))
@@ -221,6 +235,26 @@ def main():
             records.append({"method":method,"n":127,"evaluations":result["evaluations"],"elapsed":result["elapsed"],"rate":result["evaluations"]/result["elapsed"],"verification":verify_sequence(result["best"])})
         write_json("results/benchmark.json", {"records":records, "warmup_evaluations":300, **source_metadata()})
         print(records)
+    elif args.command == "solve":
+        from .general.controller import solve
+        if args.problem and args.problem_file:
+            parser.error("choose --problem or --problem-file")
+        problem = None
+        if args.problem_file:
+            path = Path(args.problem_file)
+            text = path.read_text(encoding="utf-8-sig")
+            problem = yaml.safe_load(text) if path.suffix.lower() in {".json", ".yaml", ".yml"} else {"title": args.title or path.stem, "statement": text}
+        elif args.problem:
+            problem = {"title": args.title or args.problem[:80], "statement": args.problem}
+        elif not args.resume:
+            parser.error("solve requires --problem, --problem-file, or --resume")
+        print(solve(problem, args.backend, args.model, args.max_rounds, args.output_root, args.resume, args.max_operations, args.session_seconds, args.backend_timeout))
+    elif args.command == "serve":
+        from .general.web import serve_general
+        serve_general(args.host, args.port)
+    elif args.command == "general-report":
+        from .general.report import build_general_report
+        print(build_general_report(args.run_dir))
 
 
 if __name__ == "__main__":

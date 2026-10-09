@@ -1,6 +1,25 @@
-# LABS Research Agent
+# AI4Math 数学研究智能体
 
-面向课程作业的数学研究智能体：模型提出命题、选择实验，宿主执行 LABS 数学工具，独立核验器复算，模型读取实际反馈后决定下一步。研究对象是低自相关二值序列，以及条件能量谱 `g_n(b)`。
+可输入新的数学问题或研究主题。真实模型制定计划、检索背景、提出猜想、编写并运行实验程序、寻找反例、提交证明草稿或证书；宿主核验后把证据与审查意见送回模型，由模型决定下一轮。LABS 作为专用工具模块保留。
+
+## 输入新问题与在线展示
+
+```powershell
+.\.venv\Scripts\python.exe -m ai4math_agent solve --problem "研究前 n 个正整数的五次方和，设计实验、提出公式并尝试证明" --max-rounds 12
+.\.venv\Scripts\python.exe -m ai4math_agent solve --problem-file examples/polynomial_primes.yaml --max-rounds 12
+.\.venv\Scripts\python.exe -m ai4math_agent serve
+```
+
+本地展示界面为 `http://127.0.0.1:8765`，可输入问题并启动真实运行，查看行动、工具结果、反例、审查和修订。`results/general/` 每次产生新目录，包含真实模型调用、生成的实验代码、数学证据、资源账本、修订关系及独立的 HTML/Markdown 报告。报告会明确区分保存记录和新运行。
+
+通用实验器执行模型新写的算法；有限检查器接受新的精确有理数/模运算命题；符号核验和归纳核验接受新的表达式和求和公式。它们有超时、操作与输出限制。实验器是受限制的 Python 执行器，**不是操作系统安全沙箱**，不要向它提供不受信任来源的代码。命题不局限于旧 LABS 的五种预设。
+
+模型能研究新问题，不意味着能保证解决任意数学问题。机器证书只认证其显式形式化范围；有限测试不证明无限域命题，自然语言证明保留为待审查草稿，模型对原问题与形式化的对应判断也不算形式证明。背景工具读取 arXiv/Crossref 元数据与摘要，不能冒充读完整篇论文或证明原创性。详见 [通用智能体说明](docs/general-agent.md)。
+
+```powershell
+.\.venv\Scripts\python.exe -m ai4math_agent verify --run-dir results/general/<实际运行目录>
+.\.venv\Scripts\python.exe -m ai4math_agent general-report --run-dir results/general/<实际运行目录>
+```
 
 ## 安装
 
@@ -15,7 +34,7 @@ python -m venv .venv
 
 本机已配置 `.venv`，可直接使用 `.\.venv\Scripts\python.exe`。`requirements.lock` 记录本次实际依赖版本；字体使用 Windows 的 `simhei.ttf`，字体文件不进入仓库。
 
-## 数学工具与真实研究
+## LABS 专题工具与既有真实研究
 
 ```powershell
 .\.venv\Scripts\python.exe -m ai4math_agent doctor
