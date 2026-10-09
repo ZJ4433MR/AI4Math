@@ -1,0 +1,20 @@
+problem_revision: labs-imbalance-v1
+target_lengths:
+- 31
+- 47
+- 67
+seeds:
+- 11
+- 12
+- 13
+max_rounds: 12
+max_evaluations: 600000
+per_round_evaluations: 100000
+max_backend_call_attempts: 40
+exact_wall_seconds: 600
+search_wall_seconds: 1200
+session_wall_seconds: 3600
+backend_timeout_seconds: 180
+model: gpt-6.1-sol
+exact_dir: results/exact
+output_root: results/research

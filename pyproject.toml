@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai4math-agent"
+version = "0.1.0"
+description = "Evidence-grounded LABS mathematical research agent"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pydantic>=2.7", "PyYAML>=6", "matplotlib>=3.8", "reportlab>=4", "pypdf>=5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+fast = ["numba>=0.60"]
+
+[project.scripts]
+ai4math = "ai4math_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

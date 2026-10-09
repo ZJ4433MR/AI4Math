@@ -1,0 +1,15 @@
+numpy==2.3.5
+pydantic==2.13.5
+pydantic-core==2.46.5
+PyYAML==6.0.3
+reportlab==4.4.9
+pypdf==6.10.0
+matplotlib==3.11.2
+numba==0.68.0
+pytest==9.1.1
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.1
+kiwisolver==1.5.1
+llvmlite==0.50.0
+pyparsing==3.3.3
