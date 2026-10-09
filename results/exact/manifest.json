@@ -1,0 +1,40 @@
+{
+  "run_id": "exact",
+  "mode": "exact",
+  "start": "2026-10-09T14:52:05.794984+00:00",
+  "n_max": 18,
+  "git_commit": null,
+  "source_tree_hash": "dde8533d23616cd3ece07698e38d53fc566b42f9a280ee97a6fbcb49b017841e",
+  "verification_code_hash": "248280c2bc7aa7dad28db6c88934a48e8ddcd4a94a4d6203d49192996b02267f",
+  "dependency_lock_hash": "d731fd6647c05d7ebcc42c659250bb6527f20ed3184720c724b68bbff256aebd",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpus": 20
+  },
+  "enumeration_seconds": 0.6700000003911555,
+  "verification_seconds": 0.7049999996088445,
+  "end": "2026-10-09T14:52:07.579437+00:00",
+  "artifacts": {
+    "profile_002.json": "619486695b161bcc94c53203919e09c2b3945340993446a59aedf2ac06d3066a",
+    "profile_003.json": "36304358a92b6d6ead7cf5b6a0fafd4501fee00e773ae33547def3af04e0707b",
+    "profile_004.json": "b690f74bcd0194eafdd1b414e881174fd72c5926a1b98ded6ee8d5841b48bda1",
+    "profile_005.json": "3b330c9b1dbfd8486574aa78b855982d77193318573b5f64d881ab4c971228b9",
+    "profile_006.json": "7133146a065f682c244d412e72a968a391be446ea075e8b2b31ae7d9f2c6f87e",
+    "profile_007.json": "09ca45aab9a684bd28e0160e9dfd877b7c11f701b70a60fc7b0a7926977ed154",
+    "profile_008.json": "076f76b7fc72628f2b2f6817877e2199b3e8315aa3513d861935bec693981705",
+    "profile_009.json": "ef8edd4020fcd30f9c0b7441fa2926c2b8ac4aea53ae0b417ac6e4a1fa886bf9",
+    "profile_010.json": "935de52f63c1f5f800ad308bc92070febd1101f8bb8b559021bcab6e397be51f",
+    "profile_011.json": "8cf018d29292b3648a6fb3e5dd3a0f21551555e101c546e2b75a763b2909a1f8",
+    "profile_012.json": "f4d03bcff0bc6e08c965c31f543e4f059c0d0e68f9e81e8fb9ef374193a2f121",
+    "profile_013.json": "5c39ea74616ba95feaa0a289d55d8a4f687009b799a89a05df7fe7165aec8c6c",
+    "profile_014.json": "3e1637e205666b190a290b878e564cfa0179e081f181efbc0c5210b221aaed4d",
+    "profile_015.json": "0c800a8712066f45a11861ca20fab1ea37ac245a0742e0a140b1429f1fb5e78c",
+    "profile_016.json": "3b70a7f1ab4f55b234112047d45ac5e811ea96350ac8cb9a3c65c12f8f1fe3b5",
+    "profile_017.json": "e432d347ef24638f54cd899e6efb7ed58ce20c6ba628794a0e02bea56328d865",
+    "profile_018.json": "7c010c326fc80c5e302093428bdae59a34bdabec54d08cc8b44fcc1fd67c6171"
+  },
+  "total_wall_seconds": 1.781999999890104,
+  "termination_reason": "complete_or_time_limit"
+}

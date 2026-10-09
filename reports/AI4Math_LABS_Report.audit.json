@@ -1,0 +1,7406 @@
+{
+  "mode": "live",
+  "input_manifests": {
+    "research": {
+      "path": "E:\\agent4math\\results\\research\\2026-10-09T145817.516168_0000\\manifest.json",
+      "sha256": "34d7699ddfc44f79ccce6a16f451df90ca129c25be973d85345dcfc29df69121"
+    },
+    "evaluation": {
+      "path": "E:\\agent4math\\results\\evaluation\\2026-10-09T150913.293456_0000\\manifest.json",
+      "sha256": "9acd918eab09c3c5c5ec1a89bdbcb6e4f5280c0a08c1fd0c9c48849de1e6eb3c"
+    },
+    "exact": {
+      "path": "results\\exact\\manifest.json",
+      "sha256": "b7b625648b89837c2dce3bdc7fae17525c14a3b594c2a70a0f8c3fe50b50fd3d"
+    }
+  },
+  "checks": [
+    {
+      "source": "EV004",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "21a46b6361210ffa33ccff91ed3092ba4bbe97259af174683f5d824c10ed82ba"
+    },
+    {
+      "source": "EV004",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0bb02f50014cee6291e3eb7b4e0147d073e5de9112cf5608fac55f2f535a8bc4"
+    },
+    {
+      "source": "EV004",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5b889c5704471de7cb79deddd07ea7434505392757aa41498ec2449c028be9e6"
+    },
+    {
+      "source": "EV004",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "21a46b6361210ffa33ccff91ed3092ba4bbe97259af174683f5d824c10ed82ba"
+    },
+    {
+      "source": "EV005",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "fb5f1794a99efa42cac9613f79a81997d1c40cd2e3d5128490345f4525054a27"
+    },
+    {
+      "source": "EV005",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c27f3e2d4f3b4e6142f96849496bb44a4b2e5fa1af30ebfbab0902a1b82a9050"
+    },
+    {
+      "source": "EV005",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7eeb9f391d22b99dc8392019beadf96073058a06853024f8acd71b1c6455ccd8"
+    },
+    {
+      "source": "EV005",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fb5f1794a99efa42cac9613f79a81997d1c40cd2e3d5128490345f4525054a27"
+    },
+    {
+      "source": "EV006",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "f2918757cd48b7db23c3aeb88002d0fd4b962a2da9f0f351e450f2b8017dc380"
+    },
+    {
+      "source": "EV006",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c734586ef8bc54b6763935bc27f0639b9c334e0aa59d1fdb3e0923f900010c2f"
+    },
+    {
+      "source": "EV006",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6090536d77b850dcf3949a773d05ee5d2935531e861123c5350702e4db3c7e1c"
+    },
+    {
+      "source": "EV006",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f2918757cd48b7db23c3aeb88002d0fd4b962a2da9f0f351e450f2b8017dc380"
+    },
+    {
+      "source": "EV007",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "6b87c206ecef87448648d47ae25da3417b8d66f92eff64916403ce7bf87db682"
+    },
+    {
+      "source": "EV007",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e79a984587452aae15893b183592d2edc134e9cdddf9d15eca4426573b1856cb"
+    },
+    {
+      "source": "EV007",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0c911baf31ae7e5f86699c94a9ab8cd434eca07e702b1e75407b72622e4d5b09"
+    },
+    {
+      "source": "EV007",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6b87c206ecef87448648d47ae25da3417b8d66f92eff64916403ce7bf87db682"
+    },
+    {
+      "source": "EV008",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "7a9b2bdddecb4fc6209c14a9f08682e88dd74c4ae035969b62b89a61423c4c05"
+    },
+    {
+      "source": "EV008",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dfa4df23ea379b6dae2860030d0589293d70bc91bb72d64047ffe77dbb2df3ef"
+    },
+    {
+      "source": "EV008",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dfa4df23ea379b6dae2860030d0589293d70bc91bb72d64047ffe77dbb2df3ef"
+    },
+    {
+      "source": "EV008",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7a9b2bdddecb4fc6209c14a9f08682e88dd74c4ae035969b62b89a61423c4c05"
+    },
+    {
+      "source": "EV009",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "defcdb7af1673bc787ea74955c9c5c182d7150893b92d3a9260711077361fbd8"
+    },
+    {
+      "source": "EV009",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "687cdf618f93c6d03e66d208372d7b824250c5fbb8cad745a12499a9a26dfaf1"
+    },
+    {
+      "source": "EV009",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4b1b7d336f767bd202fbd219b8f4317e630c5a02fe03df7de9c979e92fd4298c"
+    },
+    {
+      "source": "EV009",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "defcdb7af1673bc787ea74955c9c5c182d7150893b92d3a9260711077361fbd8"
+    },
+    {
+      "source": "EV010",
+      "path": [
+        "checks",
+        0,
+        "counterexample"
+      ],
+      "kind": "witness",
+      "hash": "71282a37d57d246db43e490e8d048322877c9c0d9ae1391256698d9b8674ed7e"
+    },
+    {
+      "source": "EV010",
+      "path": [
+        "counterexample",
+        "counterexample"
+      ],
+      "kind": "witness",
+      "hash": "71282a37d57d246db43e490e8d048322877c9c0d9ae1391256698d9b8674ed7e"
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "1a51d170d9dc3ba42a79066d68c3e49787212db3260397c2f8b8922ef2fe77f1"
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "1a51d170d9dc3ba42a79066d68c3e49787212db3260397c2f8b8922ef2fe77f1"
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "e61b9f584dbe27741cef6e9ee440831d7d94470c0871b0871541f0308916efea"
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "e61b9f584dbe27741cef6e9ee440831d7d94470c0871b0871541f0308916efea"
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "kind": "bound",
+      "n": 2,
+      "b": 0,
+      "L": 1
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "kind": "bound",
+      "n": 2,
+      "b": 2,
+      "L": 1
+    },
+    {
+      "source": "EXACT:profile_002.json",
+      "kind": "complete enumeration",
+      "checked_states": 2,
+      "profile_hash": "089b17f041ef6d611e11cc69cb8b22723502063f9b62d5a98582f8354a105c39"
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "23e75b208b1c0346ea8aacd7f5335ccc01603271ad4ad3395ed52dbcb5254f09"
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "23e75b208b1c0346ea8aacd7f5335ccc01603271ad4ad3395ed52dbcb5254f09"
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "9e07ab64261fb6803c6572f7b5c3098ea68fb45873128af820d42a2262eb900b"
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "9e07ab64261fb6803c6572f7b5c3098ea68fb45873128af820d42a2262eb900b"
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "kind": "bound",
+      "n": 3,
+      "b": 1,
+      "L": 1
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "kind": "bound",
+      "n": 3,
+      "b": 3,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_003.json",
+      "kind": "complete enumeration",
+      "checked_states": 4,
+      "profile_hash": "fa1e4352d74549e8ce1ce32db076b622afa02e376d44e1cd23d41eac91db8b44"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "4b1c941eda63a42835ac5b607ae04bf5775e3414c9036cd85af8f2c49e295997"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "4b1c941eda63a42835ac5b607ae04bf5775e3414c9036cd85af8f2c49e295997"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "347ada3c18d358d76f2876fb20c47574903d0a54fc8b34b3819251db23906d36"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "347ada3c18d358d76f2876fb20c47574903d0a54fc8b34b3819251db23906d36"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "ac91b3ec501b23593f3981b92775f32afb157e91b50c4fcc1b9f70164ac1214c"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "ac91b3ec501b23593f3981b92775f32afb157e91b50c4fcc1b9f70164ac1214c"
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "kind": "bound",
+      "n": 4,
+      "b": 0,
+      "L": 2
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "kind": "bound",
+      "n": 4,
+      "b": 2,
+      "L": 2
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "kind": "bound",
+      "n": 4,
+      "b": 4,
+      "L": 14
+    },
+    {
+      "source": "EXACT:profile_004.json",
+      "kind": "complete enumeration",
+      "checked_states": 8,
+      "profile_hash": "3c8bc83118b194245285f4d322792e3d15830d84ccc0f1023c8afad6f0deb371"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "024d4ff23195bb241642b68c0ff8b0e0b1b788b24f393271517796f7e974b286"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "024d4ff23195bb241642b68c0ff8b0e0b1b788b24f393271517796f7e974b286"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "038a685de507e7aa27a3d896ca7c66e0ef094840dcbd5194bd8b404442cc0315"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "038a685de507e7aa27a3d896ca7c66e0ef094840dcbd5194bd8b404442cc0315"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "cc4da5498be93ad25b8e364e679352ce9e067127c2afb1adf21702b42f2f8794"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "cc4da5498be93ad25b8e364e679352ce9e067127c2afb1adf21702b42f2f8794"
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "kind": "bound",
+      "n": 5,
+      "b": 1,
+      "L": 2
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "kind": "bound",
+      "n": 5,
+      "b": 3,
+      "L": 2
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "kind": "bound",
+      "n": 5,
+      "b": 5,
+      "L": 30
+    },
+    {
+      "source": "EXACT:profile_005.json",
+      "kind": "complete enumeration",
+      "checked_states": 16,
+      "profile_hash": "507c83028d30f1144228cf5c59511b18e58de376c3e6ec4f605cfb126f1bcbd9"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "18603e2598990898509364e41d403a230779ed2b261833b080ef759ec0eb9a8d"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "18603e2598990898509364e41d403a230779ed2b261833b080ef759ec0eb9a8d"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "99ed17364bc51b656404e70c65b8dca4ec620a7a278e1d704bf017311e480722"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "99ed17364bc51b656404e70c65b8dca4ec620a7a278e1d704bf017311e480722"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "041df1aa0ac13ec4ba5a2dca5b970b1de1d3932b1f3c7b06251219c4ab5409bf"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "041df1aa0ac13ec4ba5a2dca5b970b1de1d3932b1f3c7b06251219c4ab5409bf"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "5df95ea1d422bf97f61d1c604a8217a59dfeae3bf639a6c9125e8859d7412243"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "5df95ea1d422bf97f61d1c604a8217a59dfeae3bf639a6c9125e8859d7412243"
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "kind": "bound",
+      "n": 6,
+      "b": 0,
+      "L": 3
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "kind": "bound",
+      "n": 6,
+      "b": 2,
+      "L": 3
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "kind": "bound",
+      "n": 6,
+      "b": 4,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "kind": "bound",
+      "n": 6,
+      "b": 6,
+      "L": 55
+    },
+    {
+      "source": "EXACT:profile_006.json",
+      "kind": "complete enumeration",
+      "checked_states": 32,
+      "profile_hash": "377c223d10f3adfc9484d2927e2c1c649773e35e17edf9073cea7a6cd74e5043"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "aeed508b18cc3e91915fb2e9a656a712f0ce8d6105f07f9c16ae68099d23f79a"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "aeed508b18cc3e91915fb2e9a656a712f0ce8d6105f07f9c16ae68099d23f79a"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "81f8a2158d1103f79f0b4935e56405e5bd12da01add9d4ef27f0f342c2d1202b"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "81f8a2158d1103f79f0b4935e56405e5bd12da01add9d4ef27f0f342c2d1202b"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "97e938b64c00a7742eb02a631daa96010cad752d9e086f9d5af260b168d38733"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "97e938b64c00a7742eb02a631daa96010cad752d9e086f9d5af260b168d38733"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "888594ece28e5e9a6bac991af04bfbfcdb2f32d3f40b9b149f6804e25ac665ad"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "888594ece28e5e9a6bac991af04bfbfcdb2f32d3f40b9b149f6804e25ac665ad"
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "kind": "bound",
+      "n": 7,
+      "b": 1,
+      "L": 3
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "kind": "bound",
+      "n": 7,
+      "b": 3,
+      "L": 3
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "kind": "bound",
+      "n": 7,
+      "b": 5,
+      "L": 15
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "kind": "bound",
+      "n": 7,
+      "b": 7,
+      "L": 91
+    },
+    {
+      "source": "EXACT:profile_007.json",
+      "kind": "complete enumeration",
+      "checked_states": 64,
+      "profile_hash": "6b91504cace99954a5fba4901e554eb928052c9de95cfc38db80fc04002d39cb"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "ee8ef17350209a7276e3662a8c21ec95d038a7fd30c0fbd9a41f397ec49025f1"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "ee8ef17350209a7276e3662a8c21ec95d038a7fd30c0fbd9a41f397ec49025f1"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "c3cd3949a39c1896f2463d89ba0e0c5e39e4371feeb92d965bf109e98835c197"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "c3cd3949a39c1896f2463d89ba0e0c5e39e4371feeb92d965bf109e98835c197"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "e6733a6287347d2e8d19c107203efef325f3f1ea2953f180e52779b529910df7"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "e6733a6287347d2e8d19c107203efef325f3f1ea2953f180e52779b529910df7"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "b693d5baf15e48aa4074b07a2794e284a3f088a2e7c529ecaeb8c36ac21b63ed"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "b693d5baf15e48aa4074b07a2794e284a3f088a2e7c529ecaeb8c36ac21b63ed"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "3c1425b38d52d1967a20a1ce4abe58b11af7d5260e368e378cbbc12574a967e8"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "3c1425b38d52d1967a20a1ce4abe58b11af7d5260e368e378cbbc12574a967e8"
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "bound",
+      "n": 8,
+      "b": 0,
+      "L": 4
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "bound",
+      "n": 8,
+      "b": 2,
+      "L": 4
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "bound",
+      "n": 8,
+      "b": 4,
+      "L": 4
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "bound",
+      "n": 8,
+      "b": 6,
+      "L": 32
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "bound",
+      "n": 8,
+      "b": 8,
+      "L": 140
+    },
+    {
+      "source": "EXACT:profile_008.json",
+      "kind": "complete enumeration",
+      "checked_states": 128,
+      "profile_hash": "10b14b31ccdb1680e628f47ed2534332edc31290396d32da74ab224e5257de3a"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "97aa5f08e61863275cf20908645a08eb95784d1ee058be977310f21929ddb211"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "97aa5f08e61863275cf20908645a08eb95784d1ee058be977310f21929ddb211"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "d4aae74e149f76b7d022de751ad25b3dd2a551f6db445daafa1ec0d9d513be1d"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "d4aae74e149f76b7d022de751ad25b3dd2a551f6db445daafa1ec0d9d513be1d"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "4bcd0a7ad251d3c42f31f598d49ae279dd25a530707ca73a674f0e9d86829f14"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "4bcd0a7ad251d3c42f31f598d49ae279dd25a530707ca73a674f0e9d86829f14"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "09e2374a514bd3455b43e9c4a0e63b205c527a1fcd2d05d13a5b6ab35a20c679"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "09e2374a514bd3455b43e9c4a0e63b205c527a1fcd2d05d13a5b6ab35a20c679"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "6fc45c49d173a71b10a54815d5c24a3c28973e04f933c39ed1a9e7b5c59e4882"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "6fc45c49d173a71b10a54815d5c24a3c28973e04f933c39ed1a9e7b5c59e4882"
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "bound",
+      "n": 9,
+      "b": 1,
+      "L": 4
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "bound",
+      "n": 9,
+      "b": 3,
+      "L": 4
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "bound",
+      "n": 9,
+      "b": 5,
+      "L": 12
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "bound",
+      "n": 9,
+      "b": 7,
+      "L": 56
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "bound",
+      "n": 9,
+      "b": 9,
+      "L": 204
+    },
+    {
+      "source": "EXACT:profile_009.json",
+      "kind": "complete enumeration",
+      "checked_states": 256,
+      "profile_hash": "3856e0e7374da1d757016e9f3813f7b0105e9b4e99244b80a74d04bdc55cf4e6"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "2e863e63361e0303cbb037cce76fc3ff404c1ab65fb9b23f991cd9e3b32908cf"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "2e863e63361e0303cbb037cce76fc3ff404c1ab65fb9b23f991cd9e3b32908cf"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "1a1b89a6d9ae012b1e29e81ee855ba60efac4231d4bac8aa0824eca1b96a22b6"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "1a1b89a6d9ae012b1e29e81ee855ba60efac4231d4bac8aa0824eca1b96a22b6"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "538f567d298e678357918444b72baf51b3c9eae67c29d873be4a16146aa6dd35"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "538f567d298e678357918444b72baf51b3c9eae67c29d873be4a16146aa6dd35"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "649103f42e04951c3e7664556e7eb9c50246508a65924c8bac7547d5abf70f6f"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "649103f42e04951c3e7664556e7eb9c50246508a65924c8bac7547d5abf70f6f"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "7de47594824e372b1cb5d6eaff5d29892e61e1ae7f642cce3f4841e2c3d8e67b"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "7de47594824e372b1cb5d6eaff5d29892e61e1ae7f642cce3f4841e2c3d8e67b"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0839c65fba0226ca85da7a87e856f15fd533df2a8d1ebbbc02e7a1ccf8ed7300"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0839c65fba0226ca85da7a87e856f15fd533df2a8d1ebbbc02e7a1ccf8ed7300"
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 0,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 2,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 4,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 6,
+      "L": 21
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 8,
+      "L": 89
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "bound",
+      "n": 10,
+      "b": 10,
+      "L": 285
+    },
+    {
+      "source": "EXACT:profile_010.json",
+      "kind": "complete enumeration",
+      "checked_states": 512,
+      "profile_hash": "c0bcd198c8bfb0f83b6be7563785b680f44871560cdd71dcc61f8e38f8beee8b"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "3c40d25c2f8a597c87015d16fc5b8321d857c0db97fd9c5f126e5e1feac707fb"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "3c40d25c2f8a597c87015d16fc5b8321d857c0db97fd9c5f126e5e1feac707fb"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "4899b292d0e88a807066be150114ea7c588c65356ccf587163d7579a51eee9f4"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "4899b292d0e88a807066be150114ea7c588c65356ccf587163d7579a51eee9f4"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "275c69fc145e74aec49002858719371a09b56bbe1c599236ab109e0334db8962"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "275c69fc145e74aec49002858719371a09b56bbe1c599236ab109e0334db8962"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "010d22872bcb4baa2c0dbcad49b214f6ca5d256dd77079627098f6d05357125f"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "010d22872bcb4baa2c0dbcad49b214f6ca5d256dd77079627098f6d05357125f"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "8bc0550c1a4e5aa54e84ecad64db957acf7905b3c8ab495a84efd135c489b1cf"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "8bc0550c1a4e5aa54e84ecad64db957acf7905b3c8ab495a84efd135c489b1cf"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "d124fa2628a818b2bbe8c0418f663933c21044061f62178eca3121a8251280e5"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "d124fa2628a818b2bbe8c0418f663933c21044061f62178eca3121a8251280e5"
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 1,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 3,
+      "L": 5
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 5,
+      "L": 9
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 7,
+      "L": 41
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 9,
+      "L": 137
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "bound",
+      "n": 11,
+      "b": 11,
+      "L": 385
+    },
+    {
+      "source": "EXACT:profile_011.json",
+      "kind": "complete enumeration",
+      "checked_states": 1024,
+      "profile_hash": "e2951203d9a77e73ee706272cc14bd420357caa4fc6068bd4ab9edc3ffd74198"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "bd8fab75a735d9ffebe7eae78ae2fcf8e572b4f788bce45e6eaeccb581e6d2c7"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "bd8fab75a735d9ffebe7eae78ae2fcf8e572b4f788bce45e6eaeccb581e6d2c7"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "870c50bee44bd892d9afcbebd7eecb512c2fbfc5ecd1f66f770079fa68fc04d5"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "870c50bee44bd892d9afcbebd7eecb512c2fbfc5ecd1f66f770079fa68fc04d5"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "840ce1facff4cc19ecf8bfb97328f6faf6da6a76d60c3cb809c0dbe2c0f28952"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "840ce1facff4cc19ecf8bfb97328f6faf6da6a76d60c3cb809c0dbe2c0f28952"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "f96b6325fa685a5c71eebe1e31a8ecac70c2d1c2d15d6dea5eae328cfb548f2e"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "f96b6325fa685a5c71eebe1e31a8ecac70c2d1c2d15d6dea5eae328cfb548f2e"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "98305b00737ff85e226a0be7e97b12299705064e9ee54434db9094a4e925a630"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "98305b00737ff85e226a0be7e97b12299705064e9ee54434db9094a4e925a630"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "12ed49b946ad95850ca83bf4aa083482b314e26660716bb603cc5fbb354de732"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "12ed49b946ad95850ca83bf4aa083482b314e26660716bb603cc5fbb354de732"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "8826bae8a79ac125fa26962a79471c83fcd8ab05985e6dbea67943e7c7198acb"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "8826bae8a79ac125fa26962a79471c83fcd8ab05985e6dbea67943e7c7198acb"
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 0,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 2,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 4,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 6,
+      "L": 18
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 8,
+      "L": 66
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 10,
+      "L": 198
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "bound",
+      "n": 12,
+      "b": 12,
+      "L": 506
+    },
+    {
+      "source": "EXACT:profile_012.json",
+      "kind": "complete enumeration",
+      "checked_states": 2048,
+      "profile_hash": "925b5de65e67843824e9ec5bbb88f7b95e6c8e275907a0dff3dfc812bd0e121c"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "9ddaf76cdc09e842766a6baff9ffdb28ca36daa4b5c79ae15c0c2cfa5fce332b"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "9ddaf76cdc09e842766a6baff9ffdb28ca36daa4b5c79ae15c0c2cfa5fce332b"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "29cd7457608dd245f4d6b6561d624527597c019965aff6a850321c09dbb7200a"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "29cd7457608dd245f4d6b6561d624527597c019965aff6a850321c09dbb7200a"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "7c5e422d927bd977836ae609acbc401efb8adba946d373b8364be4321a2e296e"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "7c5e422d927bd977836ae609acbc401efb8adba946d373b8364be4321a2e296e"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0397608d3f546f8c8a2f7dc17a9d0f436fa264e1475cc9e455b5364ce7b98b0d"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0397608d3f546f8c8a2f7dc17a9d0f436fa264e1475cc9e455b5364ce7b98b0d"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "b33f65d3fe55e7c2dc31a5542cba68bf17997c1815ef98b2c33d5e8ade4ed07e"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "b33f65d3fe55e7c2dc31a5542cba68bf17997c1815ef98b2c33d5e8ade4ed07e"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "04d9ec642db8bb835d57f7faef135565748bc4f2d1c51bd885ce0387312a4061"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "04d9ec642db8bb835d57f7faef135565748bc4f2d1c51bd885ce0387312a4061"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "37305ba587fc0dbb4366cda3b27196cc587da4e97bceea18f14d0a56d8812d66"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "37305ba587fc0dbb4366cda3b27196cc587da4e97bceea18f14d0a56d8812d66"
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 1,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 3,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 5,
+      "L": 6
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 7,
+      "L": 30
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 9,
+      "L": 106
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 11,
+      "L": 274
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "bound",
+      "n": 13,
+      "b": 13,
+      "L": 650
+    },
+    {
+      "source": "EXACT:profile_013.json",
+      "kind": "complete enumeration",
+      "checked_states": 4096,
+      "profile_hash": "83d7c8a4267a8f98bb23d6206a49cd7cc7cc7993ace7b5b187d57a9656302828"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "b2d8643f2d8fdf76e30cdcc0b718f5b3b3c610fad1476974f3202e7b686235e3"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "b2d8643f2d8fdf76e30cdcc0b718f5b3b3c610fad1476974f3202e7b686235e3"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "cec7ae0a1fe0a7f1d25f2b4e40ef142b8d3a93c5169076bce697df070882c284"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "cec7ae0a1fe0a7f1d25f2b4e40ef142b8d3a93c5169076bce697df070882c284"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "b0e19396640a0dba8ad7c439d0a7ab2d6e5f696f97db2c44e0594ccbf05911f4"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "b0e19396640a0dba8ad7c439d0a7ab2d6e5f696f97db2c44e0594ccbf05911f4"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "cb85a2457e24ae1055cea3150af8bde2a39917f74488b98148f6f02fcce4572e"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "cb85a2457e24ae1055cea3150af8bde2a39917f74488b98148f6f02fcce4572e"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "7ef6830db6bc1a10dc69fbcb956efbb39fb86de98fbacd1459a15cffbcfca9cd"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "7ef6830db6bc1a10dc69fbcb956efbb39fb86de98fbacd1459a15cffbcfca9cd"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "7a498d3b3accb9b125408e7c8b232b8d1ea31275e2f2a3f45e662a9af42773a0"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "7a498d3b3accb9b125408e7c8b232b8d1ea31275e2f2a3f45e662a9af42773a0"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "b5198b0b7b23e30c997bbec6662e91a6b591ad1c0b4d537df3eb10e2fcd1c1f6"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "b5198b0b7b23e30c997bbec6662e91a6b591ad1c0b4d537df3eb10e2fcd1c1f6"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        7
+      ],
+      "kind": "stratum row",
+      "reference_hash": "39b3e42295cedea5c20b3fd6b3ea3dfd66fd1873fb095694dec91eb2c661455e"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "path": [
+        "strata",
+        7,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "39b3e42295cedea5c20b3fd6b3ea3dfd66fd1873fb095694dec91eb2c661455e"
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 0,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 2,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 4,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 6,
+      "L": 15
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 8,
+      "L": 55
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 10,
+      "L": 155
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 12,
+      "L": 371
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "bound",
+      "n": 14,
+      "b": 14,
+      "L": 819
+    },
+    {
+      "source": "EXACT:profile_014.json",
+      "kind": "complete enumeration",
+      "checked_states": 8192,
+      "profile_hash": "56593a1133022d5453cba0ffb09266216fbb0e3b2747ee8d7809ee1a53a8c6a2"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0f2727934b637d61844f2d4fcf9fff765ef8dd289ec5d4b3a197e84970c03c2c"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0f2727934b637d61844f2d4fcf9fff765ef8dd289ec5d4b3a197e84970c03c2c"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "e94bf4a164d72798b5d5bce7ec10ef20d74aa60a23d7815e40e2b1d5825186d8"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "e94bf4a164d72798b5d5bce7ec10ef20d74aa60a23d7815e40e2b1d5825186d8"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "7cd8eed23ce8355465af2cc835adb81605e7ecc8a93f67c1fbb3c7f2439eaa1e"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "7cd8eed23ce8355465af2cc835adb81605e7ecc8a93f67c1fbb3c7f2439eaa1e"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "31202d5839247bc106ec29315fb25965406a91d31d95096162a6a5c3da19b74e"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "31202d5839247bc106ec29315fb25965406a91d31d95096162a6a5c3da19b74e"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "e65634630fc2c131d5a1d0760b8a9acf8e32be370de036175fc8da3d0e88a0d6"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "e65634630fc2c131d5a1d0760b8a9acf8e32be370de036175fc8da3d0e88a0d6"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "5172eb98bf2543a1f92cba6a9ce73c2376c8efaa1f56f5f690072b02f882f0ba"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "5172eb98bf2543a1f92cba6a9ce73c2376c8efaa1f56f5f690072b02f882f0ba"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "dbc4aeb6d1887d85f6674afa764a11d824acc05796095a8f6c886782fc01c27c"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "dbc4aeb6d1887d85f6674afa764a11d824acc05796095a8f6c886782fc01c27c"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        7
+      ],
+      "kind": "stratum row",
+      "reference_hash": "09ce0cc77ef61db2083a1acdeb3a35b097bbabf32c0cf4624180fa857b1db462"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "path": [
+        "strata",
+        7,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "09ce0cc77ef61db2083a1acdeb3a35b097bbabf32c0cf4624180fa857b1db462"
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 1,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 3,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 5,
+      "L": 7
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 7,
+      "L": 27
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 9,
+      "L": 83
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 11,
+      "L": 219
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 13,
+      "L": 487
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "bound",
+      "n": 15,
+      "b": 15,
+      "L": 1015
+    },
+    {
+      "source": "EXACT:profile_015.json",
+      "kind": "complete enumeration",
+      "checked_states": 16384,
+      "profile_hash": "a46425060a61b7c0841b50390c61b6c28efc34f89ff35a4b8ad72d632c7220ff"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "194546f1bc7613f22637f7bfc9f589056b30afec92286d6f0bf39511933fca8c"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "194546f1bc7613f22637f7bfc9f589056b30afec92286d6f0bf39511933fca8c"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "d72e823c4f2e0612ef7e954b5b7b576d13839e8dcc5186083cf85b8ae92a1064"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "d72e823c4f2e0612ef7e954b5b7b576d13839e8dcc5186083cf85b8ae92a1064"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "d6491d4cbca59aae59076b2ba34d4ed9f34014b90631a3cf67194d06edcfee9d"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "d6491d4cbca59aae59076b2ba34d4ed9f34014b90631a3cf67194d06edcfee9d"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "4453d41f8a0707ad40892c2eddd48ced06421dff184d23d92edce2904ed8ac72"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "4453d41f8a0707ad40892c2eddd48ced06421dff184d23d92edce2904ed8ac72"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "f62e68574f30c568fc6ecc554d6189298863220ea52617a63e0e6f0d8194ce95"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "f62e68574f30c568fc6ecc554d6189298863220ea52617a63e0e6f0d8194ce95"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "f8f45f51fa91c95d123c76ab7fde2f681777ee7e82d39aabbb27affd3e877a06"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "f8f45f51fa91c95d123c76ab7fde2f681777ee7e82d39aabbb27affd3e877a06"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "00267431f979ff1b08a48227497eaba2ed421c5adff06b1610db790a71b70b4e"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "00267431f979ff1b08a48227497eaba2ed421c5adff06b1610db790a71b70b4e"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        7
+      ],
+      "kind": "stratum row",
+      "reference_hash": "d1c48565c30b4a7e1df1cfe3e578518bf638a8890b0c3aad62cb2908b6848686"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        7,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "d1c48565c30b4a7e1df1cfe3e578518bf638a8890b0c3aad62cb2908b6848686"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        8
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0f17d63a5efc37fe8a08818e64026e3b7a602fc57826dfe9ac52f57bb9f4749b"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "path": [
+        "strata",
+        8,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0f17d63a5efc37fe8a08818e64026e3b7a602fc57826dfe9ac52f57bb9f4749b"
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 0,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 2,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 4,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 6,
+      "L": 12
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 8,
+      "L": 44
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 10,
+      "L": 128
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 12,
+      "L": 300
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 14,
+      "L": 624
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "bound",
+      "n": 16,
+      "b": 16,
+      "L": 1240
+    },
+    {
+      "source": "EXACT:profile_016.json",
+      "kind": "complete enumeration",
+      "checked_states": 32768,
+      "profile_hash": "f3837b348a2c8131cd65d2be5db478ba74079d8210794186537e4e7f30bfe1bc"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "58b781cea3bb54c923a3cab309544048573803b86fbe3ab51c87f41a1cbd4c53"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "58b781cea3bb54c923a3cab309544048573803b86fbe3ab51c87f41a1cbd4c53"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "583035bde699e791ca8f9e7833662f0ea208bdceeb648bb470f34b5c0d7b0489"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "583035bde699e791ca8f9e7833662f0ea208bdceeb648bb470f34b5c0d7b0489"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "4622d2d5eae9e47cce00126c1ea4ce088583d26e6b808ee8c0440ff58bc706c0"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "4622d2d5eae9e47cce00126c1ea4ce088583d26e6b808ee8c0440ff58bc706c0"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "84d00f7b6a7035977bd935d7705de6083bcba5850c8251a78b0461a29af4bdf4"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "84d00f7b6a7035977bd935d7705de6083bcba5850c8251a78b0461a29af4bdf4"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "bef7c394dfecb6865599baa9abd8ee666854d0a2a87b6c2a07e03ab12daaee10"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "bef7c394dfecb6865599baa9abd8ee666854d0a2a87b6c2a07e03ab12daaee10"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0291618f7cfc6bdf7a7b09196aa38bbfe5de8dab2aa0bb56b1378328f66a6877"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0291618f7cfc6bdf7a7b09196aa38bbfe5de8dab2aa0bb56b1378328f66a6877"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "681200953bd094b57e7c88ea1ee2c9456ba8c36acb24c3f0dfcee3998aab5790"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "681200953bd094b57e7c88ea1ee2c9456ba8c36acb24c3f0dfcee3998aab5790"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        7
+      ],
+      "kind": "stratum row",
+      "reference_hash": "c8dfa2877ab84ab08b23692a7e2a0f4c52aa073da4fba59e5a32a00b056638f8"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        7,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "c8dfa2877ab84ab08b23692a7e2a0f4c52aa073da4fba59e5a32a00b056638f8"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        8
+      ],
+      "kind": "stratum row",
+      "reference_hash": "cf9c1c1ae4482c630501b2a498ff324e3f678f98088dbf3667ae6b4097fc6474"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "path": [
+        "strata",
+        8,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "cf9c1c1ae4482c630501b2a498ff324e3f678f98088dbf3667ae6b4097fc6474"
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 1,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 3,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 5,
+      "L": 8
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 7,
+      "L": 24
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 9,
+      "L": 72
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 11,
+      "L": 180
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 13,
+      "L": 396
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 15,
+      "L": 784
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "bound",
+      "n": 17,
+      "b": 17,
+      "L": 1496
+    },
+    {
+      "source": "EXACT:profile_017.json",
+      "kind": "complete enumeration",
+      "checked_states": 65536,
+      "profile_hash": "8ff8b2fdcf88c1c4966c52c495ae6e441e920868216c68ce5a53e8211d765ce3"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        0
+      ],
+      "kind": "stratum row",
+      "reference_hash": "a733dd8c08a906713a4db54556230a955608bb9b713d12b0921c2d2daf76ae83"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        0,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "a733dd8c08a906713a4db54556230a955608bb9b713d12b0921c2d2daf76ae83"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        1
+      ],
+      "kind": "stratum row",
+      "reference_hash": "71282a37d57d246db43e490e8d048322877c9c0d9ae1391256698d9b8674ed7e"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        1,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "71282a37d57d246db43e490e8d048322877c9c0d9ae1391256698d9b8674ed7e"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        2
+      ],
+      "kind": "stratum row",
+      "reference_hash": "811a072d7f5da45eec9ec839680b7934930e2fe89c5666d9be051186a05ab1a2"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        2,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "811a072d7f5da45eec9ec839680b7934930e2fe89c5666d9be051186a05ab1a2"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        3
+      ],
+      "kind": "stratum row",
+      "reference_hash": "2620bfd7464018cb021794a5233c92feddce21f76a32a9f7b7699f92ef2ead44"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        3,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "2620bfd7464018cb021794a5233c92feddce21f76a32a9f7b7699f92ef2ead44"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        4
+      ],
+      "kind": "stratum row",
+      "reference_hash": "f8fcb2ef6b3e2369cd621a77ef0168ccd41f75cb4094b1327a8e26aaa0153e96"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        4,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "f8fcb2ef6b3e2369cd621a77ef0168ccd41f75cb4094b1327a8e26aaa0153e96"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        5
+      ],
+      "kind": "stratum row",
+      "reference_hash": "ee7f33e81942a717fd4e1c089ff8701eedd8c4dd2e9108862bcc8352a90da246"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        5,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "ee7f33e81942a717fd4e1c089ff8701eedd8c4dd2e9108862bcc8352a90da246"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        6
+      ],
+      "kind": "stratum row",
+      "reference_hash": "9802b799829b0a8c40cfb2cf814df803acda9c5574b789e279b4dbed1b908e12"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        6,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "9802b799829b0a8c40cfb2cf814df803acda9c5574b789e279b4dbed1b908e12"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        7
+      ],
+      "kind": "stratum row",
+      "reference_hash": "0b9a5a79e8fc29cf695787c2d6d9974e66f913cb3130a146187d5dba8bac4686"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        7,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "0b9a5a79e8fc29cf695787c2d6d9974e66f913cb3130a146187d5dba8bac4686"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        8
+      ],
+      "kind": "stratum row",
+      "reference_hash": "9547991e5de45ea89899ebbceaef79dd228a9d34f05a071eda92510b91ad0963"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        8,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "9547991e5de45ea89899ebbceaef79dd228a9d34f05a071eda92510b91ad0963"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        9
+      ],
+      "kind": "stratum row",
+      "reference_hash": "2919a9e34399cfdd9eecac7a626f6e402d2a1f0bd56e7897e60a123db8b59d3d"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "path": [
+        "strata",
+        9,
+        "witness"
+      ],
+      "kind": "witness",
+      "hash": "2919a9e34399cfdd9eecac7a626f6e402d2a1f0bd56e7897e60a123db8b59d3d"
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 0,
+      "L": 9
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 2,
+      "L": 9
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 4,
+      "L": 9
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 6,
+      "L": 9
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 8,
+      "L": 37
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 10,
+      "L": 105
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 12,
+      "L": 253
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 14,
+      "L": 517
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 16,
+      "L": 973
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "bound",
+      "n": 18,
+      "b": 18,
+      "L": 1785
+    },
+    {
+      "source": "EXACT:profile_018.json",
+      "kind": "complete enumeration",
+      "checked_states": 131072,
+      "profile_hash": "21e7add8712e12f3e930fc899f2b35dca4f8de5a89c7be6b33d109df0e0d990f"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "ac1a01871c1c0508e11a0f77698d76efa46eebffa974edffae005633fac953c8"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "1ceb077f7d6833739dd3ceac0107d37766828102b00b7f7aaecad823410fd251"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ac1a01871c1c0508e11a0f77698d76efa46eebffa974edffae005633fac953c8"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ac1a01871c1c0508e11a0f77698d76efa46eebffa974edffae005633fac953c8"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "2bb8e177fc585625346ff657950bd9682add4c194b2c90dab35151e607cbb7a2"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "aea68d723c97e4961b706b1f9fad17e1b5ac519d29ad5a7377ac2593fe3d9bce"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "00c7d0a504f5ba347c866dd9db0fd8fd7f9ecb54efaa3cd4a66e2c43aab52680"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2bb8e177fc585625346ff657950bd9682add4c194b2c90dab35151e607cbb7a2"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "e1700dbaca734c1c3e66ad4ac89cfaf33c19268b05f1df8a934d38996884ba84"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bee48e80ad5d8457fe81b2fe25822b7adc05f526193daefe810f985ca96dda71"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3ded32e1454e7be4d9d92726b57155a5ff17f36681213fbf5f5c126f205fddce"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e1700dbaca734c1c3e66ad4ac89cfaf33c19268b05f1df8a934d38996884ba84"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ae478b9962ead9b37a5f8a61d35b220d09b910cf8bc10e58df1a67a6b45c1f74"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "1151d90907589106f2712a9920c8df949cb92c29300cbb85ed5c380c00103728"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e1700dbaca734c1c3e66ad4ac89cfaf33c19268b05f1df8a934d38996884ba84"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ae478b9962ead9b37a5f8a61d35b220d09b910cf8bc10e58df1a67a6b45c1f74"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ae478b9962ead9b37a5f8a61d35b220d09b910cf8bc10e58df1a67a6b45c1f74"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e1700dbaca734c1c3e66ad4ac89cfaf33c19268b05f1df8a934d38996884ba84"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "b3019cc5d90dbeb8362832446e9004526a47f018989df957cffd3d31abbf9ccb"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c13e2f74818f24e44c971eb382382af2debf2a0ca03e53a90d0b37519ef4cf79"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c13e2f74818f24e44c971eb382382af2debf2a0ca03e53a90d0b37519ef4cf79"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b3019cc5d90dbeb8362832446e9004526a47f018989df957cffd3d31abbf9ccb"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6713eea4391a4fc2b91ed15e39fa6ca2733325932b47f7e807c5f06925304172"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "86d2992b419f8d77a5b23b51feaa4766e0212c5444208f67bc0d8acac5f3933b"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b3019cc5d90dbeb8362832446e9004526a47f018989df957cffd3d31abbf9ccb"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6713eea4391a4fc2b91ed15e39fa6ca2733325932b47f7e807c5f06925304172"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6713eea4391a4fc2b91ed15e39fa6ca2733325932b47f7e807c5f06925304172"
+    },
+    {
+      "source": "EVAL:(89, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b3019cc5d90dbeb8362832446e9004526a47f018989df957cffd3d31abbf9ccb"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "94acfc9cbb141b6ee66533bc479d7ba17b1c56e8ac28c931f36d98e4448274c9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bece9c122800a024021cc9437b1c161969f314f52474ddbc7226a3262b63fe9b"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "94acfc9cbb141b6ee66533bc479d7ba17b1c56e8ac28c931f36d98e4448274c9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "94acfc9cbb141b6ee66533bc479d7ba17b1c56e8ac28c931f36d98e4448274c9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "528d0e82f0a2b1f667e8b0e341ea938b0603344f68458f559b80f20ed379aeae"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "994d5ab0cd674e1024a35f7d3e75b143793ef4870f31d867ed69c088dcfcd044"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f9ae4dd073543337c8442cda4d4f6c83dbc0a2182c14053ef7cdd3f4a07f0d82"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "528d0e82f0a2b1f667e8b0e341ea938b0603344f68458f559b80f20ed379aeae"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "79b4f547e783572078c91f41f1968ca54559a3447043c79dc84726d0b6aeacf9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "76a8120dd89f12bafa5c5b763f0c6f0762d33cb4cbde0cd34a2ef49e7fc24b0c"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "83fc0fc08e7d6e08cea9548232ba44e8cf75d03c1ab8b629dcd0954084d2dec4"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "79b4f547e783572078c91f41f1968ca54559a3447043c79dc84726d0b6aeacf9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fbee2401349126bdf71a39855d9b137d98d08397ea6eb9171dce1bbfe5585e87"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "8d0abb69c118e8a4cb34d1a64e35106b6f2dd7dda7b4144488ed8947ab6637ce"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "79b4f547e783572078c91f41f1968ca54559a3447043c79dc84726d0b6aeacf9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fbee2401349126bdf71a39855d9b137d98d08397ea6eb9171dce1bbfe5585e87"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fbee2401349126bdf71a39855d9b137d98d08397ea6eb9171dce1bbfe5585e87"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "79b4f547e783572078c91f41f1968ca54559a3447043c79dc84726d0b6aeacf9"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "fac63da6a8bf67d3d674a9600f9db4d9b4b687a5d79c6f24a71fe817c73a33c4"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3e30a0340236cdc99167e49b3e1a39abcca9dd20c01d8a8342440c75ed1af85b"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "06932696ae6ba89e1a3064cc23015aa27b5ed0c3a1708d9be931c4ee60f247fb"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fac63da6a8bf67d3d674a9600f9db4d9b4b687a5d79c6f24a71fe817c73a33c4"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "71492b6d065fc2c36b5c4179e751bfc6a89320f75a75b183314e2581b8aed4a8"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c3bcfa89133df214923fade5ac350f38130fc07ed0d16fa1f93a69b26ebdc989"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fac63da6a8bf67d3d674a9600f9db4d9b4b687a5d79c6f24a71fe817c73a33c4"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "71492b6d065fc2c36b5c4179e751bfc6a89320f75a75b183314e2581b8aed4a8"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "71492b6d065fc2c36b5c4179e751bfc6a89320f75a75b183314e2581b8aed4a8"
+    },
+    {
+      "source": "EVAL:(89, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fac63da6a8bf67d3d674a9600f9db4d9b4b687a5d79c6f24a71fe817c73a33c4"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "100a51ae20c49d48081dd523d4c278b48364ceeb012d4abebb05c936161fd3eb"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3dbb922e2b774ad27bf47bba7d364ec7137c9092881573bb4a4d2b0d0f45b2dd"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "100a51ae20c49d48081dd523d4c278b48364ceeb012d4abebb05c936161fd3eb"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "100a51ae20c49d48081dd523d4c278b48364ceeb012d4abebb05c936161fd3eb"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "1a0cad45c6137d0e0306af7095ce6b7dd6378c9c8d77c1023d22d5f3ac22f091"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cd77752895dc49781460882a3366f82ebae8e51846a27fd4f5e795bbf02a38c4"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "775d282d3eba045f0f2bbfbefe638756f9a8b1825a9d6f2a6a2deba8199bd7ff"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "1a0cad45c6137d0e0306af7095ce6b7dd6378c9c8d77c1023d22d5f3ac22f091"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "415156e6272896e8914a443978a87c42025814500cd2b5d8ec3f55e3cad19f3d"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9e50a0a62657a6f8152535200120bb7ee3f11499e183d04e5a10fecc1a4b97f8"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a898fee3d3549f755df8b14275f87f533aedab678b862a2c6af6fed6633e1e48"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "68a67830733a4132cf81aeb5ecc94c03095c7a0c42516f2483b59fb655a2eb10"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a898fee3d3549f755df8b14275f87f533aedab678b862a2c6af6fed6633e1e48"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a898fee3d3549f755df8b14275f87f533aedab678b862a2c6af6fed6633e1e48"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0cb0f73c0115a356684f955fe31547507aaff389c6f1b3fe06a6f9d988ef4cb5"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0cb0f73c0115a356684f955fe31547507aaff389c6f1b3fe06a6f9d988ef4cb5"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c10923945eec643d414ac990c8e8b72385cb736159776c38e823cb43f29e3b76"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e7ee55810aa61f0b5f13558c07d8e70cf3674057ae7e3eadaea5d29743a30ed8"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c10923945eec643d414ac990c8e8b72385cb736159776c38e823cb43f29e3b76"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c10923945eec643d414ac990c8e8b72385cb736159776c38e823cb43f29e3b76"
+    },
+    {
+      "source": "EVAL:(89, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "37f85b19ad9749df742671d570cf6ad7a91e9e9f2a623139f90440338334c169"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "6f698e6f71576157a053084ea3078462c73fdea102b2b32f841f54d65649c6a3"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b20d53b05bfd908c8e431c5e8db3328e5725c17a0b879b8dc74b6a4f6cc69a9c"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6f698e6f71576157a053084ea3078462c73fdea102b2b32f841f54d65649c6a3"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6f698e6f71576157a053084ea3078462c73fdea102b2b32f841f54d65649c6a3"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "2e05bcbbbb62a99e1d110294efc02f656c97f939093ac22808935fc5b2485947"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c24dfabb68733b750beefbbf5eefd375a36cf18aadd8196731c8ee7e70348d9e"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c24dfabb68733b750beefbbf5eefd375a36cf18aadd8196731c8ee7e70348d9e"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2e05bcbbbb62a99e1d110294efc02f656c97f939093ac22808935fc5b2485947"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "70d8fac3058903c6e6635d4dc4bece3532eab94b0ac719be322b7f2e02a9227d"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7216c19abe851e64047728603873948bdc960dd73a67e16fa12f361b70a5345a"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70d8fac3058903c6e6635d4dc4bece3532eab94b0ac719be322b7f2e02a9227d"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70d8fac3058903c6e6635d4dc4bece3532eab94b0ac719be322b7f2e02a9227d"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c674185848d025183aa88a4af926bd09bdb43413f9ea78c7d04dc116ec7fc2be"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f89bc93ee9bd63adef6c2f18ff45bc9d531f985568b424d0ecedf83f0fff506e"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "51a09154a26eab09af872cadfd60d0474e0d8f77bd564799c8a86e8a8d438646"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c674185848d025183aa88a4af926bd09bdb43413f9ea78c7d04dc116ec7fc2be"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c674185848d025183aa88a4af926bd09bdb43413f9ea78c7d04dc116ec7fc2be"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "51a09154a26eab09af872cadfd60d0474e0d8f77bd564799c8a86e8a8d438646"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "5d29cd57fe043bf0af29469747c4d3e2612b42301cf0c5a6e877558c5cbebbb1"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "26a3683c08881c5b7f89a3d8baab3f7c2ceaac1c1183cd59c634719ecc79b338"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ce98292a2f27a81e11652bb6abd078bfb75dc0f8e1790065bd1fb2329866959b"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5d29cd57fe043bf0af29469747c4d3e2612b42301cf0c5a6e877558c5cbebbb1"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f9f20244f9a18836a5dfe95d46b8d0c993cf420fbfa58c467d48f193e545b1f0"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5d29cd57fe043bf0af29469747c4d3e2612b42301cf0c5a6e877558c5cbebbb1"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5d29cd57fe043bf0af29469747c4d3e2612b42301cf0c5a6e877558c5cbebbb1"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f9f20244f9a18836a5dfe95d46b8d0c993cf420fbfa58c467d48f193e545b1f0"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f9f20244f9a18836a5dfe95d46b8d0c993cf420fbfa58c467d48f193e545b1f0"
+    },
+    {
+      "source": "EVAL:(89, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5d29cd57fe043bf0af29469747c4d3e2612b42301cf0c5a6e877558c5cbebbb1"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "ccf900f2a2151d549fcd6c0b1f2c93d5ae606f6ee6cf3ef6f886ce412a2de6ed"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9ab12a13b940c446be0f3cd9a5a2cd4d1db945b97c184d01121b66773eac378e"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ccf900f2a2151d549fcd6c0b1f2c93d5ae606f6ee6cf3ef6f886ce412a2de6ed"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ccf900f2a2151d549fcd6c0b1f2c93d5ae606f6ee6cf3ef6f886ce412a2de6ed"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "9d575369a0fc909d14bbdc8cfd9155c6d453c4ebf1adb0f04cf0b19dde2224bc"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7ec06ff52ed2b58ed0185bcd5e8cdbc787df109fb64cf3412420b30d6ff264d1"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7ec06ff52ed2b58ed0185bcd5e8cdbc787df109fb64cf3412420b30d6ff264d1"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9d575369a0fc909d14bbdc8cfd9155c6d453c4ebf1adb0f04cf0b19dde2224bc"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "88a95e9149fd14da68356f3f305cdb8b35fe7c9f64c1fa4db4159e9b3e54307f"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2c6d7adfd58680cf304705415b201b78ba03ffe7b9ae90a87072133a3d6229e1"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b187e37578c8d5cd159d8fc29bab55c6b18536217dd9d0334dba2d3da7027c19"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "88a95e9149fd14da68356f3f305cdb8b35fe7c9f64c1fa4db4159e9b3e54307f"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f76d6ec5af7d4c2da3efa57e687c02ef60a8d531a94e4c24df92de7918035758"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "8bd4ce77806b0c9f32736e0ec945cc80ba1c0bb884f491adade416bff0636ab4"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e8c4998d9daf23e2024dc45cc8be894ece43b562b37a367c3ac4c6bbca0c4c44"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f76d6ec5af7d4c2da3efa57e687c02ef60a8d531a94e4c24df92de7918035758"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f76d6ec5af7d4c2da3efa57e687c02ef60a8d531a94e4c24df92de7918035758"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e8c4998d9daf23e2024dc45cc8be894ece43b562b37a367c3ac4c6bbca0c4c44"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "407d97d6755c57ac6a1d67106b009a1789b39ad41bdfda83efac4414108056d5"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5d2e07e05683d1588377666f9f99018a044cbb871e42937e639f726ee61189dc"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3d338231f30e987127b76c7b74edf5badff8ffc66dfb3dd17077f235e1a33338"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "407d97d6755c57ac6a1d67106b009a1789b39ad41bdfda83efac4414108056d5"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2972adc17e2894a87d32fa2edbeae7c6cb03915a47de373cf296d7d528c1745e"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5fc193ae161b316e4e1b9312a7380c1c7a1b0d14dc934082f7eb02920ec0f18e"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e8c4998d9daf23e2024dc45cc8be894ece43b562b37a367c3ac4c6bbca0c4c44"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2972adc17e2894a87d32fa2edbeae7c6cb03915a47de373cf296d7d528c1745e"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2972adc17e2894a87d32fa2edbeae7c6cb03915a47de373cf296d7d528c1745e"
+    },
+    {
+      "source": "EVAL:(89, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e8c4998d9daf23e2024dc45cc8be894ece43b562b37a367c3ac4c6bbca0c4c44"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "6253049b5afba63986bd648530dcf56c8a9ab5a47304d0bc8383009f03f3c142"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ce008a1d4da2462e70399c02ca284bc472325c7cb538f9dfd13fc42144b74cda"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6253049b5afba63986bd648530dcf56c8a9ab5a47304d0bc8383009f03f3c142"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6253049b5afba63986bd648530dcf56c8a9ab5a47304d0bc8383009f03f3c142"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "fed51dcf123309cab8037a1f0b04adcbdde94118e20eb3fcd0baece321ad9f0f"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "705faf4261cb9ccf7e975b11f1de31a00c19f09818aad36bcfead6215f2feeaf"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3b4ef03849df6f62eca0e7d40e102ff0e6793cbf02ceca23abdeb04ffc99fe7c"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fed51dcf123309cab8037a1f0b04adcbdde94118e20eb3fcd0baece321ad9f0f"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "496443c72a2a60d0cddd656a17c779025aa9aff9bea83ebd257384f46301df64"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "20ae794eaafa64ce0c1522dccf683c258476efa544838a407f7694d6a2b77d43"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f685c4f5d40471b8a06de75d033bf352208ff2e0a277cfd8de3210adcb8e10cd"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "77fca39abba6f9e967254f22252988c37e83e13043c7b0594237c6f8c5bcc80e"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f685c4f5d40471b8a06de75d033bf352208ff2e0a277cfd8de3210adcb8e10cd"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f685c4f5d40471b8a06de75d033bf352208ff2e0a277cfd8de3210adcb8e10cd"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a101747372f66e5cb42007f5dc5e949625fa718ded8576197678c37bf3c37031"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dd2c701534d08b8c58930c2c7d7854d4d2fe5d6b3a516a989f15702feba79517"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2d1fdd700f302e6d577a2d3fa2fe1998641b1ef0185f307f2ce4cf1bab53303a"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "1f8bac90aca6fbbc31b502940f007fdbada84e70d61d214316225bf9bd7b96ad"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2d1fdd700f302e6d577a2d3fa2fe1998641b1ef0185f307f2ce4cf1bab53303a"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2d1fdd700f302e6d577a2d3fa2fe1998641b1ef0185f307f2ce4cf1bab53303a"
+    },
+    {
+      "source": "EVAL:(107, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b7907a88d669aaae55929f62ad83076460f0af2de809b05e19fe0c68a30025d0"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "4bd4787c0ab7f2104f415d1a0e1cb4ca8a79d511f2ef22b69c4184b00b4fc429"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dfc07ea35124d18c700a8d6360b8183f89e93294b9cc3d675d46ea3eb0b665eb"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4bd4787c0ab7f2104f415d1a0e1cb4ca8a79d511f2ef22b69c4184b00b4fc429"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4bd4787c0ab7f2104f415d1a0e1cb4ca8a79d511f2ef22b69c4184b00b4fc429"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "ff0c0d60bd59ff5c3c3213ba2e94ba5e1ba5c50db22abf387954465c963adbfd"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "30daccf664b3da41d3132afb1c797fd521b971dc5b0f6530e7e1fef87152cebc"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "30f76402fbc2c78c4b8fc3f19d86865d417d2876d63da765058c241b188ba2c0"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ff0c0d60bd59ff5c3c3213ba2e94ba5e1ba5c50db22abf387954465c963adbfd"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d6ceb4f09d5c9f18afc4aa8e94096c48964886795c5c9e9f23b435e5ee0fce13"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d6ceb4f09d5c9f18afc4aa8e94096c48964886795c5c9e9f23b435e5ee0fce13"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c32416485dbe6c0c5808f130413e37a3ded6ca5803b087244a3487e5962f3c82"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "57018ef486213d82b0fb91bb471835059f34a3c97302424d9df813d0f7724a7f"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c32416485dbe6c0c5808f130413e37a3ded6ca5803b087244a3487e5962f3c82"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c32416485dbe6c0c5808f130413e37a3ded6ca5803b087244a3487e5962f3c82"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cf7b440fc1161fbc8b98fb70c86a76e004e5e71b113a631533d80748c8ffcb81"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cf7b440fc1161fbc8b98fb70c86a76e004e5e71b113a631533d80748c8ffcb81"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dd7fe4a3515576ccb09f7a7c9e67b33ae0b7a41f24da16f6097a54b8cce41085"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5ffe91d6c164e468ec72e63502e82cd247d84582704d2bd56ec4619c2393816a"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dd7fe4a3515576ccb09f7a7c9e67b33ae0b7a41f24da16f6097a54b8cce41085"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "dd7fe4a3515576ccb09f7a7c9e67b33ae0b7a41f24da16f6097a54b8cce41085"
+    },
+    {
+      "source": "EVAL:(107, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "70a7a9f40fad4dea332674dde8797d8aa186b3a21bd3b0e74ac8c8029ac5d1c2"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "ebb6949b700ed54dc2d57a35ff8565a5ecf77e080daacb3283313079b849db0e"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2983966c80d62e2622ae504749d4e5f89e93ce4815c5cc95536d81acfe3d2dd1"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ebb6949b700ed54dc2d57a35ff8565a5ecf77e080daacb3283313079b849db0e"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ebb6949b700ed54dc2d57a35ff8565a5ecf77e080daacb3283313079b849db0e"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "ba662e235d9fafd7051d35fe623b638974980d255de452c9c29084086b1c709f"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a070ea22b0c4ca10f527c66704fd6d4b281824caa7f2288afc91d6ae183828ad"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ba662e235d9fafd7051d35fe623b638974980d255de452c9c29084086b1c709f"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ba662e235d9fafd7051d35fe623b638974980d255de452c9c29084086b1c709f"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "5892055c7da299ade7fdad4868912ddba8ea93311e2174aa2bcb83e679ddf706"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b771d9548d12f6590177b4564fe3a195735221489d6328f1a8afd9de0a6ac0d8"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b771d9548d12f6590177b4564fe3a195735221489d6328f1a8afd9de0a6ac0d8"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5892055c7da299ade7fdad4868912ddba8ea93311e2174aa2bcb83e679ddf706"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c43e66dfedac6b79ed41d763aa9d5490f4066c43f65efcba17fec3c368412709"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6b8f8a3489d20d3c476cab2c715d91f6fb1d13079319184c10e211989c684b40"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5892055c7da299ade7fdad4868912ddba8ea93311e2174aa2bcb83e679ddf706"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c43e66dfedac6b79ed41d763aa9d5490f4066c43f65efcba17fec3c368412709"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c43e66dfedac6b79ed41d763aa9d5490f4066c43f65efcba17fec3c368412709"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5892055c7da299ade7fdad4868912ddba8ea93311e2174aa2bcb83e679ddf706"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "a037ffcebc5e7dcff9cec576adff7edc4b0145b916941d335d1cf7ea18aa7f2d"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "546761d0663d70133cae40d372d79a913a5a437be45bf18c4e7a49ad34fb2a8f"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b997a7b661f9b1876ce5b9a11129eeb202b2c97ecce57259e61de49fa6481ed0"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a037ffcebc5e7dcff9cec576adff7edc4b0145b916941d335d1cf7ea18aa7f2d"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bca41404ab0636fa3b1c7c00d8b7121a202dad9cbe44738fa8cad88814454840"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a037ffcebc5e7dcff9cec576adff7edc4b0145b916941d335d1cf7ea18aa7f2d"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a037ffcebc5e7dcff9cec576adff7edc4b0145b916941d335d1cf7ea18aa7f2d"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bca41404ab0636fa3b1c7c00d8b7121a202dad9cbe44738fa8cad88814454840"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bca41404ab0636fa3b1c7c00d8b7121a202dad9cbe44738fa8cad88814454840"
+    },
+    {
+      "source": "EVAL:(107, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a037ffcebc5e7dcff9cec576adff7edc4b0145b916941d335d1cf7ea18aa7f2d"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "9494bf4ad1bb8f057d405529d45b741ba7acf0195785780eae387717cd24c2a0"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a03eb29d15655110d4a1fbb264628c9ba09a49887caea5a92aaf634be416e901"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9494bf4ad1bb8f057d405529d45b741ba7acf0195785780eae387717cd24c2a0"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9494bf4ad1bb8f057d405529d45b741ba7acf0195785780eae387717cd24c2a0"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "90aea85b81926a63887d86ac039308c9731f7aa8c73346299d7670c29d47d469"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e546c7086fa874ae381e1fbb5bdc980c80b9d07c2b913d1d6fb6d00d9a1c9f7b"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "90aea85b81926a63887d86ac039308c9731f7aa8c73346299d7670c29d47d469"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "90aea85b81926a63887d86ac039308c9731f7aa8c73346299d7670c29d47d469"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "364dff1f66399c14b4d3d2aff3f09a48f1f33def920f0a584229ea93bc41ed98"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "80e1c387b2681b24c95c3b9a659186f1b4def4cd5e9d1f9f75bbef4a2f7abc21"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "370f59e17692a7f7560be29be4ad7e2c91f474f633dc2995c97c1644f007db1b"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b3c3f1d38067a53164dfba0cdbc6a9d804037acf2bf57b37a6f375b33b23863c"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "370f59e17692a7f7560be29be4ad7e2c91f474f633dc2995c97c1644f007db1b"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "370f59e17692a7f7560be29be4ad7e2c91f474f633dc2995c97c1644f007db1b"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fb5f6192af26a5944cc145292a9e9c61d134ce931ded3a460a4fea2dadabd9cd"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cbe4d4be6638bde4434fadf33fcfd391967786daaa364074ca77e6359828a0dd"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2c39f6d0cbf8cb04cddf2aea366c5c28e16b75cb1e249d6d0ed9d9ff258ab514"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a459609717155edcd75ea55a6f76111e0103b2499442b13c8c39c985954880cf"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2c39f6d0cbf8cb04cddf2aea366c5c28e16b75cb1e249d6d0ed9d9ff258ab514"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2c39f6d0cbf8cb04cddf2aea366c5c28e16b75cb1e249d6d0ed9d9ff258ab514"
+    },
+    {
+      "source": "EVAL:(107, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0d9f44bc1e5d19679f79cc86a26c8ff2616bc1160e90e34968f32ac0382e910"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "3f4a9488876e01e5226d2b1c21100c5d6a20753be9c6e005e0b13b0c28ec2b3f"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ede4f0b91548a8d2e9cf9ffda5016e410762d59b555b0e837a321d6d97f67935"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3f4a9488876e01e5226d2b1c21100c5d6a20753be9c6e005e0b13b0c28ec2b3f"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3f4a9488876e01e5226d2b1c21100c5d6a20753be9c6e005e0b13b0c28ec2b3f"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "6c1704aaa061d8e0cefb70b542a3d999343350b273a4d825c53d5b4d8c6b4a7b"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b584e02272574ac8c72ac719f86ed238a386f521a81ed54126688f253f1cd220"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0da0f5bb9730d6a26c14ba2e7268f1de629aece7b4efab6889fbcb58e7ae77c2"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6c1704aaa061d8e0cefb70b542a3d999343350b273a4d825c53d5b4d8c6b4a7b"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "fa7f683bfdfce04a6d8e4eb879442a518721d56929fdb2b7b794c31c446607cb"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "26209c6a23f6428d6e0b01c0b756df1b92956dc450df61f65b21a2c82d187665"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "26209c6a23f6428d6e0b01c0b756df1b92956dc450df61f65b21a2c82d187665"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "fa7f683bfdfce04a6d8e4eb879442a518721d56929fdb2b7b794c31c446607cb"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c075fb8245ef9b369458a1dd0c220eda0f898d4b18a7884fb5131260ea43f839"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ad73ef28739d6057215e8f91b8630e982674bdacc1cd1cbb41558163aa649da9"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "49b14cad7d164f471a8c5d8bab1ef2374de0ad3f19d9f888fffcb28d4a12401b"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c075fb8245ef9b369458a1dd0c220eda0f898d4b18a7884fb5131260ea43f839"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c075fb8245ef9b369458a1dd0c220eda0f898d4b18a7884fb5131260ea43f839"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "49b14cad7d164f471a8c5d8bab1ef2374de0ad3f19d9f888fffcb28d4a12401b"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "b6e6c4a6551c1297aef9638dc2e59710b26d700859a1112ad379b743031f57da"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4ca5fb891fe2946b3026d86917d8b0b10b260802d8b27911ffd824335b2ee245"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3692e71293d72fa0092ba2d0484faa3e8e15fa8c7ee6ccd8801e9720d8016cd5"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "b6e6c4a6551c1297aef9638dc2e59710b26d700859a1112ad379b743031f57da"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e3e0b40fbddb2d7119333cdb0ef9f4127a93878f35dc1b36f2e64b1cfa8e0f34"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e3e0b40fbddb2d7119333cdb0ef9f4127a93878f35dc1b36f2e64b1cfa8e0f34"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "49b14cad7d164f471a8c5d8bab1ef2374de0ad3f19d9f888fffcb28d4a12401b"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e3e0b40fbddb2d7119333cdb0ef9f4127a93878f35dc1b36f2e64b1cfa8e0f34"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e3e0b40fbddb2d7119333cdb0ef9f4127a93878f35dc1b36f2e64b1cfa8e0f34"
+    },
+    {
+      "source": "EVAL:(107, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "49b14cad7d164f471a8c5d8bab1ef2374de0ad3f19d9f888fffcb28d4a12401b"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "c0a35066c52969e69455adc996d5150c6ba9e2a238deb4fbd4b71d679cd0e1c4"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d4beaf0593f0c6feb90e0ecc7e6914c76b3bc12952be802e7330d13875573e8e"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c0a35066c52969e69455adc996d5150c6ba9e2a238deb4fbd4b71d679cd0e1c4"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c0a35066c52969e69455adc996d5150c6ba9e2a238deb4fbd4b71d679cd0e1c4"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "d7614845f9f4c96fb3591223b2ea31f1680ddc366a4153e4b15daa894733929b"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "aaade0a2633df9541fb02e90aafdd0fa112067c12d2b432df9f85765c955daa8"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "af66bfccc78e798db478ed27137a6a74d4bb6a75b5a760497834e16cc9d015b5"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d7614845f9f4c96fb3591223b2ea31f1680ddc366a4153e4b15daa894733929b"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "feae5cec6fd66f86bf09360a3b2c62f9d3799a895388a4df64c43ca714d916e6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "ed0c2c46ced9be0d15bb4513b2918ed4cfa3d0bb645b966712b0dae7238dcefa"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5a287603885126228f6a166a34586625b2557d027181c2d8496c44e44733a2fd"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "514d39e4def6c745f81439baddf0e8a12f92a1951cf85cf477ac4b260438f7ec"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5a287603885126228f6a166a34586625b2557d027181c2d8496c44e44733a2fd"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5a287603885126228f6a166a34586625b2557d027181c2d8496c44e44733a2fd"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3d48057589913f0173e57e8c4c72ddf537079e856194040aedad773725d75ab6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "3d48057589913f0173e57e8c4c72ddf537079e856194040aedad773725d75ab6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "88102c5ab7dee40b592ac945f62cee0b683a8270a9db80fc0273c699a5839873"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "88102c5ab7dee40b592ac945f62cee0b683a8270a9db80fc0273c699a5839873"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "88102c5ab7dee40b592ac945f62cee0b683a8270a9db80fc0273c699a5839873"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "88102c5ab7dee40b592ac945f62cee0b683a8270a9db80fc0273c699a5839873"
+    },
+    {
+      "source": "EVAL:(127, 1001, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "baeab4c4ed87d2683f1f6ed92263108f5f7f51ada5512651a032ff6c745887a6"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "91d34125febabd1e0f502d370bb2dd0f1c7f21614f6ab8428489d83bb071674b"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "273eb00262471424b0c703b4d13a0797696aebb948dd565c78fb2db27f69bf43"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "91d34125febabd1e0f502d370bb2dd0f1c7f21614f6ab8428489d83bb071674b"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "91d34125febabd1e0f502d370bb2dd0f1c7f21614f6ab8428489d83bb071674b"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "116e4a3d836bb229ab9f9cdb455333acf2d7e74659f89dabcdd9b512f24422ce"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "91ca2c4d7eec50367ca254a3b7940bf936cbc6d997fbc53829a01dcbcaa2696c"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "116e4a3d836bb229ab9f9cdb455333acf2d7e74659f89dabcdd9b512f24422ce"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "116e4a3d836bb229ab9f9cdb455333acf2d7e74659f89dabcdd9b512f24422ce"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cbed2f3b3f03b1d90e922421d3890a3334bdc3bf16883ba0821cbdc5c90e1af7"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c560656c49b8d5c6c718c3366d3b10b553fd090cda9546adc67039c527d9f322"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "08c2bb2943c98231d7624c1ed3e5874ee49b44dc54b9d77e69e0015c6ad9d3cc"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0dc888c459981c9e49b9fa6183ced78b2ba725d55d1270ab629c41b824edc8e2"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "08c2bb2943c98231d7624c1ed3e5874ee49b44dc54b9d77e69e0015c6ad9d3cc"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "08c2bb2943c98231d7624c1ed3e5874ee49b44dc54b9d77e69e0015c6ad9d3cc"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c0a24135b04a6ecd7ba33712d166d0832e1916c9384c96a4503180d2e7678b14"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "99f22b53e5dc387d00e22ce377089cb4f389ec0bea80499d51487d69a1c6ccfc"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "90886b43dc4f482eae46149cb6c4c990ed3cb38820415d0e2475fca5c2712ba2"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4c443a6a99eeb259a8c7a03683672c33a561f1a1794e5d589294055b3ed4e3fd"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "90886b43dc4f482eae46149cb6c4c990ed3cb38820415d0e2475fca5c2712ba2"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "90886b43dc4f482eae46149cb6c4c990ed3cb38820415d0e2475fca5c2712ba2"
+    },
+    {
+      "source": "EVAL:(127, 1002, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "12a96b4f3a4232831f5abd610048e9c2d1efc06fc94aa36e0b5affb3fcecbdd5"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "665f7bb6f5dc9afe48440c9d527afb6fecb06ad32378db39867ec5f8483201d1"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "54887ab3131c912436aae8838531f699979f5ba628cfdd162c6a2749a17406c5"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "665f7bb6f5dc9afe48440c9d527afb6fecb06ad32378db39867ec5f8483201d1"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "665f7bb6f5dc9afe48440c9d527afb6fecb06ad32378db39867ec5f8483201d1"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "f1c7aba185c9fc7cea4b380b143b9b755d1bb5da8cbf9e94876f97a274142361"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "554e814685cf2de0432083b42804bb23fb31670dc0d7cd366751545d36ed7570"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f1c7aba185c9fc7cea4b380b143b9b755d1bb5da8cbf9e94876f97a274142361"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f1c7aba185c9fc7cea4b380b143b9b755d1bb5da8cbf9e94876f97a274142361"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "bbb5e4d55ca5442d48aa393e52012738b323e84045da55b19c9d7b8c71e5c8d1"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a55d2f348c6eca828f8b146eb2667b6228d480d089798b664e08076985ae8716"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5431b810f99d8015ba47b509c1f8cb722a9cbfc573dce7a790e4374b90a7c4b8"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "bbb5e4d55ca5442d48aa393e52012738b323e84045da55b19c9d7b8c71e5c8d1"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "16c256668cdad2116298ee920858fa4c974801f19dad670a1e615f7637eaeecc"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0ff4a882c9a769023508168a49ffe14177cd18be67aba7f5e04e09754a5597b"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0ff4a882c9a769023508168a49ffe14177cd18be67aba7f5e04e09754a5597b"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "16c256668cdad2116298ee920858fa4c974801f19dad670a1e615f7637eaeecc"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "16c256668cdad2116298ee920858fa4c974801f19dad670a1e615f7637eaeecc"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f0ff4a882c9a769023508168a49ffe14177cd18be67aba7f5e04e09754a5597b"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "c60be5bcb6c5edae722d9133aff8915568695346c73731e9507b218c3b2d67df"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "7af3fd6b13c5af9bb12b17de605bc6b586bb06ee8260be962291f51a3e181bdb"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c60be5bcb6c5edae722d9133aff8915568695346c73731e9507b218c3b2d67df"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c60be5bcb6c5edae722d9133aff8915568695346c73731e9507b218c3b2d67df"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4f2d2728df2dd305c42e2ba1ee7c236f6e5d1add01a627176670f67fb4781ecf"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "072c6d17f00222ae887f165916c8b05ad7e0b82f49f7cdcf2f8d41d11fe53e87"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "072c6d17f00222ae887f165916c8b05ad7e0b82f49f7cdcf2f8d41d11fe53e87"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4f2d2728df2dd305c42e2ba1ee7c236f6e5d1add01a627176670f67fb4781ecf"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "4f2d2728df2dd305c42e2ba1ee7c236f6e5d1add01a627176670f67fb4781ecf"
+    },
+    {
+      "source": "EVAL:(127, 1003, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "072c6d17f00222ae887f165916c8b05ad7e0b82f49f7cdcf2f8d41d11fe53e87"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "662fafa37b482f04586b676d4368f39ecc01d3a7a863a8e70df4b59244a921d0"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c162d8357d18917274a63b47c71b799f2ba4e5e93fa5567ae18a1c7328e46068"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "662fafa37b482f04586b676d4368f39ecc01d3a7a863a8e70df4b59244a921d0"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "662fafa37b482f04586b676d4368f39ecc01d3a7a863a8e70df4b59244a921d0"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "807b9cac0e38b440ad8caaf7b644a1fb12be271b79f6d740d518539a83b8e02a"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f8de3a1a7af9834fb0cad69d7346b758bbd98b8c54c9dd77ffd87b60ff66395a"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "e9d4995116017c99bc605a1e9a24f86e566360e03e9f4665aecb804484708f4d"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "807b9cac0e38b440ad8caaf7b644a1fb12be271b79f6d740d518539a83b8e02a"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5b905972cdc45fd2d8eddcb21b514ba943cf112f05175cbf2f83fa5642144fb7"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a41e7cc9b394dddc3dd933df669bd73c7b231df570612a4a7a7188ba187c756c"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9194f0119ac2715d9ab343c72df0a8c557f39e3611b6033e7eb797f745bf9d9d"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "193540ec1b2c4095de5be34a6d67873a162235c17f979f24ee0e8777358b4649"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9194f0119ac2715d9ab343c72df0a8c557f39e3611b6033e7eb797f745bf9d9d"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "9194f0119ac2715d9ab343c72df0a8c557f39e3611b6033e7eb797f745bf9d9d"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "45e5438449c13ae7b20e39e5ad28cd4aa29c5a0c0d61a75f18f2a57bc483459f"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f860b57eeae5a1d70ceb656b8ef37b865540ea3af5ab13187fe52b3798aaa2a2"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2459d483370e0a3c3e8632024858e428a00c91329280d764d93c000d22f90889"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cf0f47bee5aa4895e10f7238ffd309356f7ad3f5eff75a799c622423a95938b9"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2459d483370e0a3c3e8632024858e428a00c91329280d764d93c000d22f90889"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "2459d483370e0a3c3e8632024858e428a00c91329280d764d93c000d22f90889"
+    },
+    {
+      "source": "EVAL:(127, 1004, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d11e7c806ec60c5eee272a3dcf10fa6e476ef98e6e9179dddd82d6d47e77b53b"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'random')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "043f3629700890f90a36bd2d30474288bc5f849c72aad60f30e9490e67568bd3"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "05df1b3f02af092efa10b7db4d46e8fa50cf8da0ba504abb6161862a31a2ca82"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "043f3629700890f90a36bd2d30474288bc5f849c72aad60f30e9490e67568bd3"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'random')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "043f3629700890f90a36bd2d30474288bc5f849c72aad60f30e9490e67568bd3"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'fixed_tabu')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "1316bddd4df6f09f03721ce074a03a3644053e25e6ede7ce4083755578a15b01"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "cfe3b0768b8146d7b96720fc4ac56ee1bff74310fc48738caa98abfbfd3deaf6"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "f316c4c82015013560ed86659f36ba31c3bf6a7b09ac4e497e6d106fce8bafe4"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'fixed_tabu')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "1316bddd4df6f09f03721ce074a03a3644053e25e6ede7ce4083755578a15b01"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "d01ca82c8291e8999da36a9aa7a85c0b991e397e62b0bde77c5d12a3c6918e9e"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a248ae3719d7779e4e59d5ceac8be8880cfe65b03144d600e1a4d0742c5ad6a0"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "a248ae3719d7779e4e59d5ceac8be8880cfe65b03144d600e1a4d0742c5ad6a0"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d01ca82c8291e8999da36a9aa7a85c0b991e397e62b0bde77c5d12a3c6918e9e"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c66f2d4bfc279c1f5d0458046b5390cf8b0d1e6d3ad2443187a0e80dde4f3e79"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "0281a64d6b20122c230dfc5ba6da118ed8b8a1cd50f8bdaff0ddd11b99cb809b"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d01ca82c8291e8999da36a9aa7a85c0b991e397e62b0bde77c5d12a3c6918e9e"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c66f2d4bfc279c1f5d0458046b5390cf8b0d1e6d3ad2443187a0e80dde4f3e79"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "c66f2d4bfc279c1f5d0458046b5390cf8b0d1e6d3ad2443187a0e80dde4f3e79"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'static_mix')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "d01ca82c8291e8999da36a9aa7a85c0b991e397e62b0bde77c5d12a3c6918e9e"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "best"
+      ],
+      "kind": "witness",
+      "hash": "77f62b8bd6ff1feb292c52dbf5e519b45b1e29e698efc5c0c29ce2d4a8a96311"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "5059faf4a88fd5a9f8f3aa54a05a596964c089c3a878b002c8f5689a00bca7ad"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "6bf76d6204927d11a8be080dcab836ee8320b026b0ace5fb2360a710f54085fe"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "state",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "77f62b8bd6ff1feb292c52dbf5e519b45b1e29e698efc5c0c29ce2d4a8a96311"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "af3e853e7ff97407ac98388f79c3db2bbfc3d91903240591e84d11aafffdb7c8"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "674072167fc3652fd27e78676fe11e422d386234592a6a3284014d6bdc3cb941"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "before",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "77f62b8bd6ff1feb292c52dbf5e519b45b1e29e698efc5c0c29ce2d4a8a96311"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "current"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "af3e853e7ff97407ac98388f79c3db2bbfc3d91903240591e84d11aafffdb7c8"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "local_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "af3e853e7ff97407ac98388f79c3db2bbfc3d91903240591e84d11aafffdb7c8"
+    },
+    {
+      "source": "EVAL:(127, 1005, 'agent_policy')",
+      "path": [
+        "checkpoint",
+        "release_checkpoints",
+        0,
+        "after",
+        "run_best"
+      ],
+      "kind": "checkpoint",
+      "reference_hash": "77f62b8bd6ff1feb292c52dbf5e519b45b1e29e698efc5c0c29ce2d4a8a96311"
+    }
+  ],
+  "rounds": 12,
+  "evaluation_rows": 60,
+  "font_path": "C:\\Windows\\Fonts\\simhei.ttf",
+  "page_count": 10,
+  "reporter_code_sha256": "7c5c51d2c7f45d9a43c273328f7a4026caf552d139519184b180025553113511",
+  "pdf_sha256": "62bc4c9079fc31dd82439c4a4c45808180256d06a5e0ec625e8b656e06c060bc",
+  "csv_sha256": "85ad0a33b0a2c4328d336be1794917a71288ca1bc291ee90aa446e15b1003a29",
+  "limitations": [
+    "No asymptotic problem solution",
+    "No world-record claim",
+    "Visual QA must inspect rendered pages"
+  ],
+  "visual_qa": {
+    "status": "passed",
+    "renderer": "Poppler pdftoppm",
+    "render_dpi": 90,
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "client_date": "2026-10-09",
+    "checks": [
+      "Chinese glyphs and formula notation rendered",
+      "No clipping or overlapping elements",
+      "Charts, legends and tables readable",
+      "Long CLI paths wrap within page 10",
+      "Counterexample and certificate witnesses are distinct",
+      "All seed rows and negative result retained"
+    ],
+    "text_characters_by_page": [
+      545,
+      818,
+      815,
+      1628,
+      2363,
+      1063,
+      1315,
+      1610,
+      1533,
+      1918
+    ]
+  }
+}

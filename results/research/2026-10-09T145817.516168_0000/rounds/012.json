@@ -1,0 +1,107 @@
+{
+  "round_index": 12,
+  "parent_state_hash": "2433d60907a329ef4a812c61f48b748c7bb356f119e1227987eadf5623f54dad",
+  "action": {
+    "action_type": "finish",
+    "claim_id": null,
+    "hypothesis": null,
+    "evidence_ids": [
+      "EV002",
+      "EV004",
+      "EV005",
+      "EV006",
+      "EV007",
+      "EV008",
+      "EV009",
+      "EV010"
+    ],
+    "tool_arguments": {
+      "n": null,
+      "b": null,
+      "seed": null,
+      "method": null,
+      "sequence": null,
+      "checkpoint_evidence_id": null,
+      "perturb_bits": null
+    },
+    "decision_summary": "Accept the audit correction: fixed_tabu runs were entirely unrestricted (actual skew fraction 0), and skew runs entirely skew-restricted (fraction 1). Their energies and comparisons remain valid. Retain the proposed 0.65 allocation: skew won at n=47 and 67, unrestricted at n=31. This mixture remains untested; no holdout result exists. Freeze defaults with no balance restriction.",
+    "expected_information": "None; final policy frozen without further experiments or proofs.",
+    "requested_evaluations": 0,
+    "policy": {
+      "skew_fraction": 0.65,
+      "tabu_scale": 0.11,
+      "restart_scale": 1.0,
+      "perturb_bits": 0,
+      "decision_summary": "Freeze the untested allocation of 65% skew-restricted and 35% unrestricted search, motivated only by corrected development comparisons. Retain tested tabu, restart and perturbation defaults. Impose no balance restriction: at n=18 balanced optima exist, but not all optima are balanced. The audited skew runs were entirely skew-restricted; the diagnostic default did not describe actual allocation. No holdout validation exists."
+    }
+  },
+  "evidence_id": "EV012",
+  "skeptic": {
+    "summary": "Accept the metadata correction: fixed_tabu was fully unrestricted and skew fully restricted; energies remain valid. At 100,000 evaluations each, unrestricted achieved E=75 versus 79 at n=31; skew achieved 135 versus 215 at n=47 and 241 versus 457 at n=67. Freeze 65% skew allocation only as an untested proposal, retaining tabu_scale=0.11, restart_scale=1.0, perturb_bits=0 and no balance restriction.",
+    "evidence_strength": "empirical",
+    "limitation": "Only three development pairs, with one seed per length; no mixture or holdout validation. Skew runs took roughly twice the elapsed time, so comparisons are evaluation-budget matched, not time matched. Defaults were used, not shown optimal. The n=18 balance claim is reported in EV012 without its underlying evidence here. No general superiority or theorem follows.",
+    "next_question": "Does the frozen 65% mixture perform reliably on held-out lengths and multiple seeds under a prespecified budget, including equal-time comparisons?"
+  },
+  "proposer_metadata": {
+    "backend": "codex_cli",
+    "mode": "live",
+    "requested_model": "gpt-6.1-sol",
+    "effective_model": null,
+    "provider_request_count": "unknown",
+    "actual_cost": "unknown",
+    "proxy_source": "Windows user system proxy",
+    "exit_code": 0,
+    "usage": {
+      "input_tokens": 26856,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 318,
+      "reasoning_output_tokens": 0
+    },
+    "accepted": true,
+    "elapsed": 18.17200000002049
+  },
+  "skeptic_metadata": {
+    "backend": "codex_cli",
+    "mode": "live",
+    "requested_model": "gpt-6.1-sol",
+    "effective_model": null,
+    "provider_request_count": "unknown",
+    "actual_cost": "unknown",
+    "proxy_source": "Windows user system proxy",
+    "exit_code": 0,
+    "usage": {
+      "input_tokens": 23309,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 225,
+      "reasoning_output_tokens": 0
+    },
+    "accepted": true,
+    "elapsed": 18.311999999918044
+  },
+  "budget_before": {
+    "evaluations": 600000,
+    "search_seconds": 5.5837128004059196,
+    "exact_seconds": 0,
+    "enumeration_states": 0,
+    "imported_exact_seconds": 0.6550000002607703,
+    "imported_enumeration_states": 262142,
+    "backend_call_attempts": 25,
+    "verification_seconds": 1.008287200005725,
+    "session_seconds": 412.6720000000205
+  },
+  "budget_after": {
+    "evaluations": 600000,
+    "search_seconds": 5.5837128004059196,
+    "exact_seconds": 0,
+    "enumeration_states": 0,
+    "imported_exact_seconds": 0.6550000002607703,
+    "imported_enumeration_states": 262142,
+    "backend_call_attempts": 27,
+    "verification_seconds": 1.008287200005725,
+    "session_seconds": 449.4220000000205
+  },
+  "feedback": "Accept the metadata correction: fixed_tabu was fully unrestricted and skew fully restricted; energies remain valid. At 100,000 evaluations each, unrestricted achieved E=75 versus 79 at n=31; skew achieved 135 versus 215 at n=47 and 241 versus 457 at n=67. Freeze 65% skew allocation only as an untested proposal, retaining tabu_scale=0.11, restart_scale=1.0, perturb_bits=0 and no balance restriction. Limitation: Only three development pairs, with one seed per length; no mixture or holdout validation. Skew runs took roughly twice the elapsed time, so comparisons are evaluation-budget matched, not time matched. Defaults were used, not shown optimal. The n=18 balance claim is reported in EV012 without its underlying evidence here. No general superiority or theorem follows. Next: Does the frozen 65% mixture perform reliably on held-out lengths and multiple seeds under a prespecified budget, including equal-time comparisons?",
+  "phase": "pre_holdout_diagnostic_audit"
+}

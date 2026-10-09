@@ -1,0 +1,63 @@
+{
+  "round_index": 5,
+  "parent_state_hash": "506167a3b7a3a051a18a372e7b87f44dcea1c5dd1ac83e09a7d16e16b8768cff",
+  "action": {
+    "action_type": "lower_bound",
+    "claim_id": null,
+    "hypothesis": null,
+    "evidence_ids": [],
+    "tool_arguments": {
+      "n": 6,
+      "b": 4,
+      "seed": null,
+      "method": null,
+      "sequence": null,
+      "checkpoint_evidence_id": null,
+      "perturb_bits": null
+    },
+    "decision_summary": "Dry-run certificate wiring check.",
+    "expected_information": "Validate deterministic tool and verifier wiring.",
+    "requested_evaluations": 0,
+    "policy": null
+  },
+  "evidence_id": "EV005",
+  "skeptic": {
+    "summary": "Dry-run wiring check only.",
+    "evidence_strength": "insufficient",
+    "limitation": "No live model decision was made.",
+    "next_question": "Configure a live backend to research."
+  },
+  "proposer_metadata": {
+    "mode": "dry_run",
+    "backend": "dry_run",
+    "accepted": true
+  },
+  "skeptic_metadata": {
+    "mode": "dry_run",
+    "backend": "dry_run",
+    "accepted": true
+  },
+  "budget_before": {
+    "evaluations": 0,
+    "search_seconds": 0,
+    "exact_seconds": 0,
+    "enumeration_states": 0,
+    "imported_exact_seconds": 0.6550000002607703,
+    "imported_enumeration_states": 262142,
+    "backend_call_attempts": 8,
+    "verification_seconds": 0,
+    "session_seconds": 0.7339999999385327
+  },
+  "budget_after": {
+    "evaluations": 0,
+    "search_seconds": 0,
+    "exact_seconds": 0,
+    "enumeration_states": 0,
+    "imported_exact_seconds": 0.6550000002607703,
+    "imported_enumeration_states": 262142,
+    "backend_call_attempts": 10,
+    "verification_seconds": 0,
+    "session_seconds": 0.7649999998975545
+  },
+  "feedback": "Dry-run wiring check only. Limitation: No live model decision was made. Next: Configure a live backend to research."
+}

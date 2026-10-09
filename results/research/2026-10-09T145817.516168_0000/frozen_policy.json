@@ -1,0 +1,7 @@
+{
+  "skew_fraction": 0.65,
+  "tabu_scale": 0.11,
+  "restart_scale": 1.0,
+  "perturb_bits": 0,
+  "decision_summary": "Freeze the untested allocation of 65% skew-restricted and 35% unrestricted search, motivated only by corrected development comparisons. Retain tested tabu, restart and perturbation defaults. Impose no balance restriction: at n=18 balanced optima exist, but not all optima are balanced. The audited skew runs were entirely skew-restricted; the diagnostic default did not describe actual allocation. No holdout validation exists."
+}

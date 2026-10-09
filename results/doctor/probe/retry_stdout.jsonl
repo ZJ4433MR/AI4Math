@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a12128-5066-7381-a797-79b9929a0f00"}
+{"type":"turn.started"}
+{"type":"error","message":"Reconnecting... 2/5 (request timed out)"}
+{"type":"error","message":"Reconnecting... 3/5 (request timed out)"}
+{"type":"error","message":"Reconnecting... 4/5 (request timed out)"}
+{"type":"error","message":"Reconnecting... 5/5 (request timed out)"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Falling back from WebSockets to HTTPS transport. request timed out"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"summary\":\"Connectivity probe acknowledged.\",\"evidence_strength\":\"insufficient\",\"limitation\":\"No tools used.\",\"next_question\": \"None.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":17058,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":38,"reasoning_output_tokens":0}}

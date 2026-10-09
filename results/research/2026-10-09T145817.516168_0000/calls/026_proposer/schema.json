@@ -1,0 +1,376 @@
+{
+  "$defs": {
+    "Domain": {
+      "additionalProperties": false,
+      "properties": {
+        "n_min": {
+          "maximum": 22,
+          "minimum": 2,
+          "title": "N Min",
+          "type": "integer"
+        },
+        "n_max": {
+          "maximum": 22,
+          "minimum": 2,
+          "title": "N Max",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "n_min",
+        "n_max"
+      ],
+      "title": "Domain",
+      "type": "object"
+    },
+    "FrozenPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "skew_fraction": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Skew Fraction",
+          "type": "number"
+        },
+        "tabu_scale": {
+          "maximum": 0.3,
+          "minimum": 0.05,
+          "title": "Tabu Scale",
+          "type": "number"
+        },
+        "restart_scale": {
+          "maximum": 2,
+          "minimum": 0.5,
+          "title": "Restart Scale",
+          "type": "number"
+        },
+        "perturb_bits": {
+          "maximum": 8,
+          "minimum": 0,
+          "title": "Perturb Bits",
+          "type": "integer"
+        },
+        "decision_summary": {
+          "maxLength": 1600,
+          "minLength": 5,
+          "title": "Decision Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "skew_fraction",
+        "tabu_scale",
+        "restart_scale",
+        "perturb_bits",
+        "decision_summary"
+      ],
+      "title": "FrozenPolicy",
+      "type": "object"
+    },
+    "Hypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 1800,
+          "minLength": 5,
+          "title": "Text",
+          "type": "string"
+        },
+        "domain": {
+          "$ref": "#/$defs/Domain"
+        },
+        "quantifier": {
+          "enum": [
+            "for_all_n",
+            "exists_n"
+          ],
+          "title": "Quantifier",
+          "type": "string"
+        },
+        "predicate": {
+          "$ref": "#/$defs/Predicate"
+        },
+        "falsification_condition": {
+          "maxLength": 1200,
+          "minLength": 5,
+          "title": "Falsification Condition",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "domain",
+        "quantifier",
+        "predicate",
+        "falsification_condition"
+      ],
+      "title": "Hypothesis",
+      "type": "object"
+    },
+    "Predicate": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "balanced_optimum_exists",
+            "all_optima_balanced",
+            "profile_monotone",
+            "bound_attainable",
+            "profile_threshold"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "b": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "B"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Threshold"
+        },
+        "comparison": {
+          "anyOf": [
+            {
+              "enum": [
+                "le",
+                "ge"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Comparison"
+        }
+      },
+      "required": [
+        "kind",
+        "b",
+        "threshold",
+        "comparison"
+      ],
+      "title": "Predicate",
+      "type": "object"
+    },
+    "ToolArguments": {
+      "additionalProperties": false,
+      "properties": {
+        "n": {
+          "anyOf": [
+            {
+              "maximum": 255,
+              "minimum": 2,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "N"
+        },
+        "b": {
+          "anyOf": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "B"
+        },
+        "seed": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Seed"
+        },
+        "method": {
+          "anyOf": [
+            {
+              "enum": [
+                "random",
+                "fixed_tabu",
+                "skew",
+                "fixed_b",
+                "static_mix",
+                "agent_policy"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Method"
+        },
+        "sequence": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sequence"
+        },
+        "checkpoint_evidence_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Checkpoint Evidence Id"
+        },
+        "perturb_bits": {
+          "anyOf": [
+            {
+              "maximum": 8,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Perturb Bits"
+        }
+      },
+      "title": "ToolArguments",
+      "type": "object",
+      "required": [
+        "n",
+        "b",
+        "seed",
+        "method",
+        "sequence",
+        "checkpoint_evidence_id",
+        "perturb_bits"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "action_type": {
+      "enum": [
+        "propose",
+        "revise",
+        "exact_profile",
+        "lower_bound",
+        "run_search",
+        "check_small_claim",
+        "evaluate_sequence",
+        "analyze_structure",
+        "release_restriction",
+        "restart",
+        "finish"
+      ],
+      "title": "Action Type",
+      "type": "string"
+    },
+    "claim_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Claim Id"
+    },
+    "hypothesis": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "tool_arguments": {
+      "$ref": "#/$defs/ToolArguments"
+    },
+    "decision_summary": {
+      "maxLength": 2000,
+      "minLength": 5,
+      "title": "Decision Summary",
+      "type": "string"
+    },
+    "expected_information": {
+      "maxLength": 1200,
+      "minLength": 5,
+      "title": "Expected Information",
+      "type": "string"
+    },
+    "requested_evaluations": {
+      "maximum": 100000,
+      "minimum": 0,
+      "title": "Requested Evaluations",
+      "type": "integer"
+    },
+    "policy": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FrozenPolicy"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "action_type",
+    "claim_id",
+    "hypothesis",
+    "evidence_ids",
+    "tool_arguments",
+    "decision_summary",
+    "expected_information",
+    "requested_evaluations",
+    "policy"
+  ],
+  "title": "Action",
+  "type": "object"
+}

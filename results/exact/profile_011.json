@@ -1,0 +1,593 @@
+{
+  "n": 11,
+  "complete": true,
+  "exact": true,
+  "visited": 1024,
+  "total_states": 1024,
+  "strata": [
+    {
+      "b": 1,
+      "E": 5,
+      "sequence": [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "n": 11,
+        "C": [
+          0,
+          -1,
+          0,
+          -1,
+          0,
+          -1,
+          0,
+          -1,
+          0,
+          -1
+        ],
+        "E": 5,
+        "F_numerator": 121,
+        "F_denominator": 10,
+        "F": 12.1,
+        "b": 1,
+        "encoding": 1464,
+        "hash": "3c40d25c2f8a597c87015d16fc5b8321d857c0db97fd9c5f126e5e1feac707fb"
+      },
+      "exact": true,
+      "representative_optimum_count": 2,
+      "optimum_count": 4
+    },
+    {
+      "b": 3,
+      "E": 13,
+      "sequence": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "n": 11,
+        "C": [
+          0,
+          -1,
+          2,
+          -1,
+          -2,
+          1,
+          0,
+          1,
+          0,
+          -1
+        ],
+        "E": 13,
+        "F_numerator": 121,
+        "F_denominator": 26,
+        "F": 4.653846153846154,
+        "b": 3,
+        "encoding": 1232,
+        "hash": "4899b292d0e88a807066be150114ea7c588c65356ccf587163d7579a51eee9f4"
+      },
+      "exact": true,
+      "representative_optimum_count": 12,
+      "optimum_count": 24
+    },
+    {
+      "b": 5,
+      "E": 21,
+      "sequence": [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 11,
+        "C": [
+          2,
+          3,
+          2,
+          -1,
+          0,
+          -1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "E": 21,
+        "F_numerator": 121,
+        "F_denominator": 42,
+        "F": 2.880952380952381,
+        "b": 5,
+        "encoding": 26,
+        "hash": "275c69fc145e74aec49002858719371a09b56bbe1c599236ab109e0334db8962"
+      },
+      "exact": true,
+      "representative_optimum_count": 18,
+      "optimum_count": 36
+    },
+    {
+      "b": 7,
+      "E": 45,
+      "sequence": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 11,
+        "C": [
+          2,
+          1,
+          4,
+          1,
+          2,
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "E": 45,
+        "F_numerator": 121,
+        "F_denominator": 90,
+        "F": 1.3444444444444446,
+        "b": 7,
+        "encoding": 72,
+        "hash": "010d22872bcb4baa2c0dbcad49b214f6ca5d256dd77079627098f6d05357125f"
+      },
+      "exact": true,
+      "representative_optimum_count": 2,
+      "optimum_count": 4
+    },
+    {
+      "b": 9,
+      "E": 141,
+      "sequence": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 11,
+        "C": [
+          6,
+          5,
+          4,
+          3,
+          4,
+          3,
+          4,
+          3,
+          2,
+          1
+        ],
+        "E": 141,
+        "F_numerator": 121,
+        "F_denominator": 282,
+        "F": 0.42907801418439717,
+        "b": 9,
+        "encoding": 16,
+        "hash": "8bc0550c1a4e5aa54e84ecad64db957acf7905b3c8ab495a84efd135c489b1cf"
+      },
+      "exact": true,
+      "representative_optimum_count": 2,
+      "optimum_count": 4
+    },
+    {
+      "b": 11,
+      "E": 385,
+      "sequence": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 11,
+        "C": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "E": 385,
+        "F_numerator": 121,
+        "F_denominator": 770,
+        "F": 0.15714285714285714,
+        "b": 11,
+        "encoding": 0,
+        "hash": "d124fa2628a818b2bbe8c0418f663933c21044061f62178eca3121a8251280e5"
+      },
+      "exact": true,
+      "representative_optimum_count": 1,
+      "optimum_count": 2
+    }
+  ],
+  "optimal_b": [
+    1
+  ],
+  "optimum_E": 5,
+  "best_seen_E": 5,
+  "optimal_counts_by_b": {
+    "1": 4
+  },
+  "optimal_sequence_count": 4,
+  "symmetry": "global inversion only; s[0]=+1; full orbit counts multiply representatives by 2",
+  "encoding_convention": "bit i=1 iff s[i]=-1; bit 0 is s[0]",
+  "alternating_sign_reduction": false,
+  "termination_reason": "completed",
+  "wall_seconds": 0.0,
+  "source_code_sha256": "bb73a43c352f59fd4dac5779db92fc7f995131edea5ff51ad21a7bd9a212003b",
+  "bounds": [
+    {
+      "n": 11,
+      "b": 1,
+      "A": -5,
+      "c": [
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "L": 5,
+      "increments": 25,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 100,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 3,
+        "combined": 5,
+        "energy_congruence_adjusted": 5
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 5,
+        "exchange_condition": true,
+        "max_selected_marginal": -4,
+        "min_unselected_marginal": 0,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 11,
+      "b": 3,
+      "A": -1,
+      "c": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "L": 5,
+      "increments": 27,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 4,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 1,
+        "combined": 5,
+        "energy_congruence_adjusted": 5
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 5,
+        "exchange_condition": true,
+        "max_selected_marginal": 0,
+        "min_unselected_marginal": 0,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 11,
+      "b": 5,
+      "A": 7,
+      "c": [
+        2,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "L": 9,
+      "increments": 31,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 196,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 5,
+        "combined": 5,
+        "energy_congruence_adjusted": 5
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 9,
+        "exchange_condition": true,
+        "max_selected_marginal": 4,
+        "min_unselected_marginal": 4,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 11,
+      "b": 7,
+      "A": 19,
+      "c": [
+        2,
+        3,
+        2,
+        3,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "L": 41,
+      "increments": 37,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 1444,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 37,
+        "combined": 37,
+        "energy_congruence_adjusted": 37
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 41,
+        "exchange_condition": true,
+        "max_selected_marginal": 8,
+        "min_unselected_marginal": 8,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 11,
+      "b": 9,
+      "A": 35,
+      "c": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        3,
+        4,
+        3,
+        2,
+        1
+      ],
+      "L": 137,
+      "increments": 45,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 4900,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 123,
+        "combined": 123,
+        "energy_congruence_adjusted": 125
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 137,
+        "exchange_condition": true,
+        "max_selected_marginal": 16,
+        "min_unselected_marginal": 16,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 11,
+      "b": 11,
+      "A": 55,
+      "c": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "L": 385,
+      "increments": 55,
+      "simple": {
+        "parity": 5,
+        "cauchy_numerator": 12100,
+        "cauchy_denominator": 40,
+        "cauchy_ceiling": 303,
+        "combined": 303,
+        "energy_congruence_adjusted": 305
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 385,
+        "exchange_condition": true,
+        "max_selected_marginal": 36,
+        "min_unselected_marginal": null,
+        "certification": "integer relaxation optimum"
+      }
+    }
+  ],
+  "verification": {
+    "valid": true,
+    "errors": [],
+    "recomputed_complete": true,
+    "checked_states": 1024,
+    "wall_seconds": 0.0,
+    "profile_hash": "e2951203d9a77e73ee706272cc14bd420357caa4fc6068bd4ab9edc3ffd74198",
+    "implementation": "independent Python integer Gray-code enumeration"
+  }
+}

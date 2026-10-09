@@ -1,0 +1,194 @@
+[
+  {
+    "n": 89,
+    "method": "random",
+    "best_E": 1612,
+    "median_E": 1672,
+    "paired_difference_vs_tabu": [
+      836,
+      972,
+      924,
+      928,
+      820
+    ],
+    "wins": 0,
+    "ties": 0,
+    "losses": 5
+  },
+  {
+    "n": 89,
+    "method": "fixed_tabu",
+    "best_E": 744,
+    "median_E": 776,
+    "paired_difference_vs_tabu": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "wins": 0,
+    "ties": 5,
+    "losses": 0
+  },
+  {
+    "n": 89,
+    "method": "static_mix",
+    "best_E": 652,
+    "median_E": 740,
+    "paired_difference_vs_tabu": [
+      -124,
+      -24,
+      -96,
+      40,
+      -64
+    ],
+    "wins": 4,
+    "ties": 0,
+    "losses": 1
+  },
+  {
+    "n": 89,
+    "method": "agent_policy",
+    "best_E": 644,
+    "median_E": 724,
+    "paired_difference_vs_tabu": [
+      -132,
+      -32,
+      -96,
+      76,
+      -96
+    ],
+    "wins": 4,
+    "ties": 0,
+    "losses": 1
+  },
+  {
+    "n": 107,
+    "method": "random",
+    "best_E": 2377,
+    "median_E": 2493,
+    "paired_difference_vs_tabu": [
+      1400,
+      1432,
+      1288,
+      1236,
+      1224
+    ],
+    "wins": 0,
+    "ties": 0,
+    "losses": 5
+  },
+  {
+    "n": 107,
+    "method": "fixed_tabu",
+    "best_E": 1137,
+    "median_E": 1205,
+    "paired_difference_vs_tabu": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "wins": 0,
+    "ties": 5,
+    "losses": 0
+  },
+  {
+    "n": 107,
+    "method": "static_mix",
+    "best_E": 973,
+    "median_E": 1117,
+    "paired_difference_vs_tabu": [
+      -268,
+      -20,
+      -56,
+      -64,
+      -68
+    ],
+    "wins": 5,
+    "ties": 0,
+    "losses": 0
+  },
+  {
+    "n": 107,
+    "method": "agent_policy",
+    "best_E": 909,
+    "median_E": 1097,
+    "paired_difference_vs_tabu": [
+      -268,
+      -20,
+      -296,
+      -64,
+      -56
+    ],
+    "wins": 5,
+    "ties": 0,
+    "losses": 0
+  },
+  {
+    "n": 127,
+    "method": "random",
+    "best_E": 3815,
+    "median_E": 3931,
+    "paired_difference_vs_tabu": [
+      2456,
+      2096,
+      2304,
+      2104,
+      2308
+    ],
+    "wins": 0,
+    "ties": 0,
+    "losses": 5
+  },
+  {
+    "n": 127,
+    "method": "fixed_tabu",
+    "best_E": 1627,
+    "median_E": 1711,
+    "paired_difference_vs_tabu": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "wins": 0,
+    "ties": 5,
+    "losses": 0
+  },
+  {
+    "n": 127,
+    "method": "static_mix",
+    "best_E": 1527,
+    "median_E": 1639,
+    "paired_difference_vs_tabu": [
+      -212,
+      -136,
+      96,
+      -176,
+      -52
+    ],
+    "wins": 4,
+    "ties": 0,
+    "losses": 1
+  },
+  {
+    "n": 127,
+    "method": "agent_policy",
+    "best_E": 1527,
+    "median_E": 1559,
+    "paired_difference_vs_tabu": [
+      -212,
+      -136,
+      -68,
+      -176,
+      -60
+    ],
+    "wins": 5,
+    "ties": 0,
+    "losses": 0
+  }
+]

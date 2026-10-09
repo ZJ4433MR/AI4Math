@@ -47,10 +47,13 @@ CLI planner 只接收宿主提供的数学上下文，输出严格 JSON 行动�
 
 ```powershell
 .\.venv\Scripts\python.exe -m ai4math_agent verify --run-dir results/research/2026-10-09T145817.516168_0000
+.\.venv\Scripts\python.exe scripts/show_process.py --interactive
 .\.venv\Scripts\python.exe scripts/reproduce.py
 ```
 
 `scripts/reproduce.py` 自动找到已完成的真实研究和与其策略对应的正式对照，重新核验并重建中文 PDF。它默认不调用模型。加 `--live` 才会开启新的真实研究；所有预算沿配置执行。
+
+课堂展示可运行 `scripts/show_process.py --interactive`，逐轮显示公开决策、工具结果、独立核验、模型审查与预算。`--round 10` 可直接展示被反驳命题和真实见证。展示已保存的 live 日志，不伪装成新的在线研究。
 
 支持 `research --resume 实际目录` 与 `evaluate --resume 实际目录`。恢复要求配置、模式和源码版本匹配；已消费预算不会清零。搜索前先保存并封存预算预留，进程意外退出时保留已预留成本。
 
@@ -69,5 +72,17 @@ CLI planner 只接收宿主提供的数学上下文，输出严格 JSON 行动�
 ## 交付范围
 
 已有独立整数核验、增量搜索、精确谱、heap 下界证书、受控命题 DSL、真实/模拟/重放后端、硬预算与可审核报告。课程资料原件保留在本机，但不纳入 Git。Moonshine 适配、GPU 搜索和模型训练属于后续扩展。
+
+本次实际完成：
+
+- `n=2..18` 完整条件谱，共 262,142 个取反轨道代表，并另做同规模独立枚举核验。
+- 12 轮真实研究，27 次后端启动尝试（3 次探测、24 次研究 proposer/skeptic）；搜索合计 600,000 候选。
+- 在 `n=18` 验证“存在平衡最优序列”，反驳“所有最优序列都平衡”：最优能量 25、最优不平衡程度集合 `{0,2,6}`。这属于有限域复现与结构检验。
+- `n=6,b=4` 的见证能量与有效下界均为 7，认证该条件类最优。
+- 留出对照 60 次、每次 50,000 候选，总计 3,000,000 候选；冻结策略相对 fixed_tabu 配对 14 胜、1 负。相对 static_mix 为 6 胜、7 平、2 负，少量种子不足以声称一般优势。
+
+正式数据目录为 `results/evaluation/2026-10-09T150913.293456_0000`，中文报告为 `reports/AI4Math_LABS_Report.pdf`。对应原始日志与报告可离线重建。
+
+开发版本的 `diagnostics.effective_skew_fraction` 曾把默认参数误作实际比例。原始数据保留；第 12 轮模型读到澄清后重新冻结策略：fixed_tabu 实际全程 unrestricted，skew 实际全程受限。数值见证和计费均正确。对照开始前仅修正此诊断元数据，没有改变搜索逻辑；报告器的完整 witness/checkpoint 区分也单独修正。初次 65% 混合配置在开发阶段未测试，其结果来自后续留出评价。
 
 数学定义、基础证明与文献来源见 `docs/problem.md`、`docs/methodology.md` 和 `docs/references.bib`。本项目没有解决整个 LABS 渐近开放问题，也不声称世界纪录或算法原创。

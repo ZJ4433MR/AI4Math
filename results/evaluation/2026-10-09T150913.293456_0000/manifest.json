@@ -1,0 +1,60 @@
+{
+  "run_id": "2026-10-09T150913.293456_0000",
+  "mode": "evaluation",
+  "start": "2026-10-09T15:09:13.293456+00:00",
+  "config": {
+    "lengths": [
+      89,
+      107,
+      127
+    ],
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "methods": [
+      "random",
+      "fixed_tabu",
+      "static_mix",
+      "agent_policy"
+    ],
+    "evaluations_per_run": 50000,
+    "run_wall_seconds": 180,
+    "output_root": "results/evaluation",
+    "policy_path": "results/research/2026-10-09T145817.516168_0000/frozen_policy.json"
+  },
+  "config_hash": "1e8de7a12a86cbaa2d1af85601fb07668d9d58a34273dac97673fa41249928d1",
+  "policy_hash": "a5c7aeea2ce4e7a802387051b3ff722cdeedd5532631b9fa389fc5e8343a6a46",
+  "policy_file_hash": "5448d0d43c405e10e671a0fadc6b3fdbe26e4405654b6091a42771c86ce77572",
+  "frozen_before_results": true,
+  "policy_origin": "results\\research\\2026-10-09T145817.516168_0000\\frozen_policy.json",
+  "policy": {
+    "skew_fraction": 0.65,
+    "tabu_scale": 0.11,
+    "restart_scale": 1.0,
+    "perturb_bits": 0,
+    "decision_summary": "Freeze the untested allocation of 65% skew-restricted and 35% unrestricted search, motivated only by corrected development comparisons. Retain tested tabu, restart and perturbation defaults. Impose no balance restriction: at n=18 balanced optima exist, but not all optima are balanced. The audited skew runs were entirely skew-restricted; the diagnostic default did not describe actual allocation. No holdout validation exists."
+  },
+  "pre_registration_time": "2026-10-09T15:09:13.293456+00:00",
+  "git_commit": "304aae8623f21c0fdb40e20c510a6356a2dc0fd1",
+  "source_tree_hash": "b3e220f7df1602a7a19b3e6b4782d0d93c79226ffabd90a32c0306e82b589162",
+  "verification_code_hash": "12821b2305c3f11f906f5621c4ca1de42bea00f8f922219772f61a41c7c026b2",
+  "dependency_lock_hash": "17760c0f876f690614fbdde1ea294e9c78d150b3daf60d96c825d6582393914f",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpus": 20
+  },
+  "artifacts": {
+    "runs.json": "0829b80917686c0a54d11a7d5222b20e3633dea3a4975e102a1d12170b24d5b9",
+    "summary.json": "011741663290d5e987b22437b44bbaf052d08d7f7c32f6fd7436df59ceb12a9f"
+  },
+  "completed_runs": 60,
+  "end": "2026-10-09T15:10:31.186469+00:00",
+  "termination_reason": "complete",
+  "total_evaluations": 3000000
+}

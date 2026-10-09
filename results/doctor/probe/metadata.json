@@ -1,0 +1,12 @@
+{
+  "backend": "codex_cli",
+  "mode": "live",
+  "requested_model": null,
+  "effective_model": null,
+  "provider_request_count": "unknown",
+  "actual_cost": "unknown",
+  "exit_code": 0,
+  "accepted": false,
+  "error": "planner attempted forbidden item: error",
+  "elapsed": 118.7960000000894
+}

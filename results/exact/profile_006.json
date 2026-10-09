@@ -1,0 +1,331 @@
+{
+  "n": 6,
+  "complete": true,
+  "exact": true,
+  "visited": 32,
+  "total_states": 32,
+  "strata": [
+    {
+      "b": 0,
+      "E": 7,
+      "sequence": [
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "n": 6,
+        "C": [
+          -1,
+          -2,
+          1,
+          0,
+          -1
+        ],
+        "E": 7,
+        "F_numerator": 36,
+        "F_denominator": 14,
+        "F": 2.5714285714285716,
+        "b": 0,
+        "encoding": 44,
+        "hash": "18603e2598990898509364e41d403a230779ed2b261833b080ef759ec0eb9a8d"
+      },
+      "exact": true,
+      "representative_optimum_count": 3,
+      "optimum_count": 6
+    },
+    {
+      "b": 2,
+      "E": 7,
+      "sequence": [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        "n": 6,
+        "C": [
+          1,
+          -2,
+          -1,
+          0,
+          1
+        ],
+        "E": 7,
+        "F_numerator": 36,
+        "F_denominator": 14,
+        "F": 2.5714285714285716,
+        "b": 2,
+        "encoding": 6,
+        "hash": "99ed17364bc51b656404e70c65b8dca4ec620a7a278e1d704bf017311e480722"
+      },
+      "exact": true,
+      "representative_optimum_count": 7,
+      "optimum_count": 14
+    },
+    {
+      "b": 4,
+      "E": 7,
+      "sequence": [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 6,
+        "C": [
+          1,
+          2,
+          1,
+          0,
+          1
+        ],
+        "E": 7,
+        "F_numerator": 36,
+        "F_denominator": 14,
+        "F": 2.5714285714285716,
+        "b": 4,
+        "encoding": 2,
+        "hash": "041df1aa0ac13ec4ba5a2dca5b970b1de1d3932b1f3c7b06251219c4ab5409bf"
+      },
+      "exact": true,
+      "representative_optimum_count": 4,
+      "optimum_count": 8
+    },
+    {
+      "b": 6,
+      "E": 55,
+      "sequence": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 6,
+        "C": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "E": 55,
+        "F_numerator": 36,
+        "F_denominator": 110,
+        "F": 0.32727272727272727,
+        "b": 6,
+        "encoding": 0,
+        "hash": "5df95ea1d422bf97f61d1c604a8217a59dfeae3bf639a6c9125e8859d7412243"
+      },
+      "exact": true,
+      "representative_optimum_count": 1,
+      "optimum_count": 2
+    }
+  ],
+  "optimal_b": [
+    0,
+    2,
+    4
+  ],
+  "optimum_E": 7,
+  "best_seen_E": 7,
+  "optimal_counts_by_b": {
+    "0": 6,
+    "2": 14,
+    "4": 8
+  },
+  "optimal_sequence_count": 28,
+  "symmetry": "global inversion only; s[0]=+1; full orbit counts multiply representatives by 2",
+  "encoding_convention": "bit i=1 iff s[i]=-1; bit 0 is s[0]",
+  "alternating_sign_reduction": false,
+  "termination_reason": "completed",
+  "wall_seconds": 0.0,
+  "source_code_sha256": "bb73a43c352f59fd4dac5779db92fc7f995131edea5ff51ad21a7bd9a212003b",
+  "bounds": [
+    {
+      "n": 6,
+      "b": 0,
+      "A": -3,
+      "c": [
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "L": 3,
+      "increments": 6,
+      "simple": {
+        "parity": 3,
+        "cauchy_numerator": 36,
+        "cauchy_denominator": 20,
+        "cauchy_ceiling": 2,
+        "combined": 3,
+        "energy_congruence_adjusted": 3
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 3,
+        "exchange_condition": true,
+        "max_selected_marginal": -4,
+        "min_unselected_marginal": 0,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 6,
+      "b": 2,
+      "A": -1,
+      "c": [
+        1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "L": 3,
+      "increments": 7,
+      "simple": {
+        "parity": 3,
+        "cauchy_numerator": 4,
+        "cauchy_denominator": 20,
+        "cauchy_ceiling": 1,
+        "combined": 3,
+        "energy_congruence_adjusted": 3
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 3,
+        "exchange_condition": true,
+        "max_selected_marginal": 0,
+        "min_unselected_marginal": 0,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 6,
+      "b": 4,
+      "A": 5,
+      "c": [
+        1,
+        2,
+        1,
+        0,
+        1
+      ],
+      "L": 7,
+      "increments": 10,
+      "simple": {
+        "parity": 3,
+        "cauchy_numerator": 100,
+        "cauchy_denominator": 20,
+        "cauchy_ceiling": 5,
+        "combined": 5,
+        "energy_congruence_adjusted": 7
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 7,
+        "exchange_condition": true,
+        "max_selected_marginal": 4,
+        "min_unselected_marginal": 4,
+        "certification": "integer relaxation optimum"
+      }
+    },
+    {
+      "n": 6,
+      "b": 6,
+      "A": 15,
+      "c": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "L": 55,
+      "increments": 15,
+      "simple": {
+        "parity": 3,
+        "cauchy_numerator": 900,
+        "cauchy_denominator": 20,
+        "cauchy_ceiling": 45,
+        "combined": 45,
+        "energy_congruence_adjusted": 47
+      },
+      "method": "exact convex integer resource allocation by minimum marginal heap",
+      "wall_seconds": 0.0,
+      "verification": {
+        "valid": true,
+        "errors": [],
+        "objective": 55,
+        "exchange_condition": true,
+        "max_selected_marginal": 16,
+        "min_unselected_marginal": null,
+        "certification": "integer relaxation optimum"
+      }
+    }
+  ],
+  "verification": {
+    "valid": true,
+    "errors": [],
+    "recomputed_complete": true,
+    "checked_states": 32,
+    "wall_seconds": 0.0,
+    "profile_hash": "377c223d10f3adfc9484d2927e2c1c649773e35e17edf9073cea7a6cd74e5043",
+    "implementation": "independent Python integer Gray-code enumeration"
+  }
+}

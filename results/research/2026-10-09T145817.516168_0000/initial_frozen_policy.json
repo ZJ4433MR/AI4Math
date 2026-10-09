@@ -1,0 +1,7 @@
+{
+  "skew_fraction": 0.65,
+  "tabu_scale": 0.11,
+  "restart_scale": 1.0,
+  "perturb_bits": 0,
+  "decision_summary": "Increase skew allocation from 0.5 to 0.65 based on EV007 and EV009, retaining unrestricted allocation because EV004 beats EV005. Impose no balance restriction. Retain tested tabu, restart and perturbation defaults; the allocation itself is untested and strict skew enforcement remains unresolved."
+}

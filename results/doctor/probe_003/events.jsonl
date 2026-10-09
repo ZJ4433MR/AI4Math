@@ -1,0 +1,4 @@
+{"type": "thread.started"}
+{"type": "turn.started"}
+{"type": "item.completed", "item": {"type": "agent_message", "text": "{\"summary\":\"Acknowledged the structured-output connectivity probe.\",\"evidence_strength\":\"insufficient\",\"limitation\":\"No experiment run.\",\"next_question\":\"Validate tools.\"}"}}
+{"type": "turn.completed", "usage": {"input_tokens": 17151, "cached_input_tokens": 0, "cache_write_input_tokens": 0, "output_tokens": 42, "reasoning_output_tokens": 0}}

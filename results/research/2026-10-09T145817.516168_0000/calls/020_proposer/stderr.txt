@@ -1,0 +1,2 @@
+2026-10-09T15:03:16.768073Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-09T15:03:16.865255Z ERROR codex_core::session::session: failed to load skill C:\Users\ZhangJian\.codex\skills\nature-statistics\SKILL.md: missing YAML frontmatter delimited by ---

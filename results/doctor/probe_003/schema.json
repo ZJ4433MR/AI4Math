@@ -1,0 +1,42 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "maxLength": 2400,
+      "minLength": 5,
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidence_strength": {
+      "enum": [
+        "exact",
+        "certificate",
+        "counterexample",
+        "empirical",
+        "insufficient"
+      ],
+      "title": "Evidence Strength",
+      "type": "string"
+    },
+    "limitation": {
+      "maxLength": 1600,
+      "minLength": 5,
+      "title": "Limitation",
+      "type": "string"
+    },
+    "next_question": {
+      "maxLength": 1600,
+      "minLength": 5,
+      "title": "Next Question",
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "evidence_strength",
+    "limitation",
+    "next_question"
+  ],
+  "title": "Review",
+  "type": "object"
+}

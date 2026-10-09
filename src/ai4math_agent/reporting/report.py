@@ -354,6 +354,8 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
     complete = [x for x in data["profiles"] if x.get("exact")]
     statistics_rows = _statistics(runs)
     research_manifest = manifests["research"]
+    audit_id = research_manifest.get("diagnostic_audit_evidence_id")
+    audit_evidence = next((e for e in research["evidence"] if e["id"] == audit_id), None)
     title(1, "研究智能体与实际运行摘要")
     add("面向低自相关二值序列问题的研究智能体", "ChineseTitle")
     add("不平衡能量谱、反例检验与自适应搜索", "ChineseSub")
@@ -420,7 +422,11 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
     add(f"已保存调用元数据 {len(data['calls'])} 条；accepted {sum(c.get('accepted') is True for c in data['calls'])} 条；可观测 usage 汇总：{dict(usage) if usage else 'unknown'}。", "ChineseSmall")
     add(f"环境：{_text(research_manifest.get('platform'),180)}；硬件：{_text(research_manifest.get('hardware'),220)}。", "ChineseSmall")
     add(f"实际研究账本：{_text(research_manifest.get('budget', research.get('budget')), 1600)}", "ChineseSmall")
+    attempts = research_manifest.get("budget", research.get("budget", {})).get("backend_call_attempts")
+    if isinstance(attempts, int):
+        add(f"后端实际尝试总数 {attempts}；研究调用元数据 {len(data['calls'])} 条；差额 {attempts-len(data['calls'])} 为纳入同一账本的 doctor/前置调用。provider 内部请求数不可观测，不据尝试数估算费用。", "ChineseSmall")
     add(f"源码树 SHA-256：{research_manifest.get('source_tree_hash', 'unknown')}\n独立核验代码 SHA-256：{research_manifest.get('verification_code_hash', 'unknown')}", "ChineseSmall")
+    add(f"研究 commit：{research_manifest.get('git_commit', 'unknown')}；正式对照 commit：{manifests['evaluation'].get('git_commit', 'unknown')}。报告生成器另存源码 hash，区分报告修复与数学实验版本。", "ChineseSmall")
 
     title(5, "实际研究轨迹与反馈修订")
     add("下表只包含已保存轮次。每条完整行动、工具输入/输出、核验、审查与预算前后状态可由轮次文件恢复。预核对教学实例的重新计算属于复现。")
@@ -444,6 +450,9 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
             add(f"实际工具结果：{_text(concise or result,280)}；核验 valid={evidence['verification'].get('valid')}。", "ChineseSmall")
         add(f"下一行动预期信息：{_text(action.get('expected_information'), 220)}", "ChineseSmall")
     add("反馈驱动变化是否达到课程目标，以原始决策理由和前轮证据为准；未发生的反例、模型调用或研究修订没有补入时间线。")
+    if audit_evidence:
+        add(f"诊断更正与重新冻结（{audit_id}）", "ChineseSub")
+        add("旧 diagnostics.effective_skew_fraction 记录了配置默认值，不能表示单一方法的实际比例。独立实现审计确认 fixed_tabu 实际全部 unrestricted，skew 实际全部受限；原始数值、预算、见证和日志保留。真实 proposer 与 skeptic 读取更正后重新冻结策略。开发阶段没有测试该混合比例，其效果由随后留出对照评价。", "ChineseSmall")
 
     title(6, "小长度精确能量谱")
     add("完整结果使用全局取反约简，首符号固定 +1，遍历 2^(n-1) 个代表；绝对 b 保留。交替变号不用于条件类合并。报告复算见证，并检查绑定到 profile hash 的独立完整枚举证据。")
@@ -460,6 +469,17 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
         hypothesis = h.get("hypothesis", {})
         claim_rows.append([cid, f"{hypothesis.get('quantifier')} / {_text(hypothesis.get('domain'), 90)}\n{_text(hypothesis.get('text'), 250)}", STATUS_CN.get(h.get("status"), h.get("status", "unknown"))])
     table(claim_rows, [50,350,95])
+    for ev in research["evidence"]:
+        result = ev["result"]
+        if ev["tool"] != "check_small_claim":
+            continue
+        for check in result.get("checks", []):
+            summary = check.get("evidence", {})
+            if result.get("predicate_kind") in ("balanced_optimum_exists", "all_optima_balanced") and "optimal_b" in summary:
+                add(f"{ev['id']}：n={check['n']} 的完整最优集合最优能量 {summary['optimum_E']}，最优 b={summary['optimal_b']}，结论 {_text(result['status'])}。这是指定有限实例的复现。", "ChineseSmall")
+                witness = check.get("counterexample")
+                if witness and "sequence" in witness:
+                    add(f"严格反例（{ev['id']}）：b={witness['b']}，E={witness['E']}；s={witness['sequence']}。其全局最优性来自完整精确谱，见证再由独立整数核复算；不能据此推广任意长度。", "ChineseSmall")
     certifications = []
     for prof in complete:
         for row in prof["strata"]:
@@ -511,7 +531,11 @@ def build_report(research_dir, evaluation_dir, exact_dir, output):
     add("结构松弛可能很弱，松弛 c 不一定可实现；skew 或固定 b 的最优不等于全局最优；本次预算与少量种子限制外推；策略来源和评价数据必须保持分离。若看过留出数据再改策略，原矩阵属于开发/复评，新的泛化结论需要新长度与种子。")
     add("复现", "ChineseSub")
     add(f"已保存研究目录：{directories_text(data['directories']['research'])}\n正式对照目录：{directories_text(data['directories']['evaluation'])}\n精确结果目录：{directories_text(data['directories']['exact'])}", "ChineseSmall")
-    add("重建报告：ai4math report --research <research目录> --evaluation <evaluation目录> --exact <exact目录> --output <PDF路径>。命令无需新模型调用；重新 live 研究须配置实际后端并重新执行研究命令。具体安装及 CLI 参数以仓库 README 和 --help 为准。", "ChineseSmall")
+    command = "ai4math report " + " ".join(f'{flag} "{Path(path).resolve().as_posix()}"' for flag,path in (
+        ("--research-dir",data["directories"]["research"]), ("--evaluation-dir",data["directories"]["evaluation"]),
+        ("--exact-dir",data["directories"]["exact"]), ("--output",output)))
+    add(f"重建报告：{command}", "ChineseSmall")
+    add("命令无需新模型调用；重新 live 研究须配置实际后端并重新执行研究命令。安装及其他 CLI 参数以仓库 README 和 --help 为准。", "ChineseSmall")
     add("哈希与核验", "ChineseSub")
     add("相邻 audit.json 保存输入 manifest 的 SHA-256、全部核验条目、字体路径、PDF 页数和 PDF hash。完整产物索引为三个 manifest.artifacts；原始 JSON 给出完整见证与曲线。报告验证失败时不生成 PDF。", "ChineseSmall")
     for kind,path in data["directories"].items():

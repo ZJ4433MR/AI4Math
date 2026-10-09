@@ -1,0 +1,5 @@
+# Evidence and source hashes bind the actual bytes. Preserve line endings.
+* -text
+*.pdf binary
+*.png binary
+*.gz binary

@@ -1,0 +1,3 @@
+2026-10-09T15:04:19.484597Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-09T15:04:19.578387Z ERROR codex_core::session::session: failed to load skill C:\Users\ZhangJian\.codex\skills\nature-statistics\SKILL.md: missing YAML frontmatter delimited by ---
+2026-10-09T15:04:24.470675Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out

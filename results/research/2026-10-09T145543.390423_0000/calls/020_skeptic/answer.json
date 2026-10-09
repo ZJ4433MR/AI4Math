@@ -1,0 +1,6 @@
+{
+  "summary": "Dry-run wiring check only.",
+  "evidence_strength": "insufficient",
+  "limitation": "No live model decision was made.",
+  "next_question": "Configure a live backend to research."
+}
