@@ -34,18 +34,25 @@ h1,h2,h3,p{margin:0}h1{font-size:clamp(31px,3.3vw,52px);line-height:1.28;letter-
 @media(min-width:1600px){body{font-size:18px}.step p,.detail-note,.muted{font-size:17px}}
 @media(max-width:900px){.chart-layout{grid-template-columns:minmax(0,1.7fr) minmax(190px,1fr)}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}}
 @media(max-width:650px){.bar{min-height:53px}.identity{gap:7px;font-size:17px}.identity small{display:none}.mark{width:29px;height:29px}.hero{grid-template-columns:1fr;gap:16px}.trace canvas{height:70px}.chart-layout{grid-template-columns:1fr}.detail{display:block}.number{font-size:37px}.legend{margin-top:7px}.panel-head{gap:10px}.tab-list{gap:18px}.tab{font-size:15px}.axis-label{font-size:11px}.doc-line code{font-size:11px}.round-title{flex-wrap:wrap;gap:4px 10px}.plot-wrap{padding-left:34px}.toolbar{gap:12px}}
+.primary{border:1px solid var(--green);background:var(--green);color:white;padding:8px 15px;border-radius:7px;font-weight:650}.primary:hover:not(:disabled){background:#104f48}
+.research-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3.5vw,54px);margin-top:20px;align-items:start}
+.research-grid h3{font-size:18px;margin-bottom:6px}.field{display:grid;gap:5px;margin-bottom:14px;font-size:14px;font-weight:600}.field select,.field input,.field textarea{font:inherit;font-weight:400;color:var(--ink);background:white;border:1px solid #a1b5aa;border-radius:6px;padding:8px 10px;width:100%;min-width:0}.field textarea{resize:vertical;min-height:102px}.field textarea:focus-visible{outline:3px solid #c47827;outline-offset:2px}
+.run-settings{margin-bottom:15px;font-size:14px}.run-settings summary,.context-note summary{cursor:pointer;color:var(--green);width:fit-content}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;margin-top:10px}.settings-grid label:last-child{grid-column:1/-1}
+.context-note{font-size:14px;margin:-3px 0 14px;padding:9px 12px;background:#ecf3ed;border-left:3px solid #83af97}.context-note pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}
+.run-status{background:#edf4ed;border-radius:10px;padding:17px 20px;overflow-wrap:anywhere}.run-status ol{margin:12px 0;padding-left:23px}.run-status li{margin-bottom:8px}.run-status .soft{margin:8px 6px 0 0}.run-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.error-msg{color:#94321e;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}.error-msg:not(:empty){margin:9px 0}.tab-list{flex-wrap:wrap;column-gap:clamp(10px,2vw,24px)}.run-detail{margin-top:9px}.run-detail:empty{display:none}
+@media(max-width:750px){.research-grid{grid-template-columns:1fr}.tab-list{column-gap:12px}}
 </style>
 </head>
 <body>
 <header><div class="bar wrap"><div class="identity"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>AI4Math<small>数学研究展示</small></div><nav class="menu"><a href="/">打开智能体工作台<span class="external" aria-hidden="true">↗</span></a></nav></div></header>
 <main class="wrap content">
-  <section class="hero" aria-labelledby="project-title">
+  <section class="hero" id="labs-overview" aria-labelledby="project-title">
     <div><div class="hero-head">组合优化 · LABS</div><h1 id="project-title">低自相关二值序列</h1><p>固定 +1 与 −1 的数量差，一串符号能达到的最低自相关能量是多少？</p></div>
     <figure class="trace"><figcaption><span>所选条件下的一组最优序列</span><span id="trace-label">—</span></figcaption><canvas id="wave" aria-label="所选序列取值图"></canvas><div class="trace-base"><span>+1 / −1</span><span id="counts">—</span></div></figure>
   </section>
   <div id="status" class="alert" role="status">正在读取研究记录…</div>
   <section class="sheet">
-    <div class="tab-list" role="tablist" aria-label="展示内容"><button type="button" class="tab" id="profile-tab" role="tab" aria-selected="true" aria-controls="profile">精确能量谱</button><button type="button" class="tab" id="replay-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="replay">智能体迭代回放</button></div>
+    <div class="tab-list" role="tablist" aria-label="展示内容"><button type="button" class="tab" id="profile-tab" role="tab" aria-selected="true" aria-controls="profile">精确能量谱</button><button type="button" class="tab" id="replay-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="replay">智能体迭代回放</button><button type="button" class="tab" id="new-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="new">发起新研究</button></div>
     <section class="panel" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="panel-head"><div><h2>失衡量与最低能量</h2><p class="muted">每根柱子对应一种失衡量。选择柱子可查看最低能量和实现它的序列。</p></div><div class="toolbar"><label>序列长度 <select id="length" aria-label="序列长度" disabled></select></label><label><input type="checkbox" id="log" checked disabled>对数纵轴</label></div></div>
       <div id="no-profile" class="empty" hidden>当前工作区没有可展示的精确枚举记录。</div>
@@ -54,7 +61,7 @@ h1,h2,h3,p{margin:0}h1{font-size:clamp(31px,3.3vw,52px);line-height:1.28;letter-
       </div><details class="doc-line"><summary>公式、序列与原始记录</summary><p>将序列平移 k 位，重叠位置的符号逐对相乘再相加，得到 Cₖ。能量 E 是所有非零平移下 Cₖ 的平方和。失衡量 b 是 +1 和 −1 数量差的绝对值。</p><p id="signs"></p><p>精确枚举记录 <code id="p-source"></code></p></details></div>
     </section>
     <section class="panel" id="replay" role="tabpanel" aria-labelledby="replay-tab" hidden>
-      <div class="panel-head"><div><h2>智能体怎样推进研究</h2><p class="muted">回看已保存的研究会话，逐轮查看决策、工具结果和审查意见。</p></div><div class="round-nav"><button type="button" id="prev" class="soft" disabled aria-label="上一轮">← 上一轮</button><select id="round-pick" aria-label="选择研究轮次" disabled></select><button type="button" id="next" class="soft" disabled aria-label="下一轮">下一轮 →</button></div></div>
+      <div class="panel-head"><div><h2>智能体怎样推进研究</h2><p class="muted">回看已保存的研究会话，逐轮查看决策、工具结果和审查意见。</p></div><div class="round-nav"><button type="button" id="prev" class="soft" disabled aria-label="上一轮">← 上一轮</button><select id="round-pick" aria-label="选择研究轮次" disabled></select><button type="button" id="next" class="soft" disabled aria-label="下一轮">下一轮 →</button><button type="button" id="follow-round" class="primary" disabled>从这一轮继续研究</button></div></div>
       <div id="no-rounds" class="empty" hidden>当前工作区没有可回放的 LABS 研究轮次。</div>
       <div id="round-data" hidden>
         <article class="round-card" aria-live="polite">
@@ -73,27 +80,61 @@ h1,h2,h3,p{margin:0}h1{font-size:clamp(31px,3.3vw,52px);line-height:1.28;letter-
         <a class="sample-link" href="/?id=general%2F2026-10-09T173130.851756_0000">看智能体如何研究另一个问题<span aria-hidden="true">→</span></a>
       </div>
     </section>
+    <section class="panel" id="new" role="tabpanel" aria-labelledby="new-tab" hidden>
+      <h2>让智能体研究一个问题</h2>
+      <div class="research-grid">
+        <form id="launch-form">
+          <label class="field">研究起点<select id="origin"><option value="fresh">输入新的数学问题</option><option id="replay-origin" value="replay" disabled>跟进回放中的研究</option><option id="last-origin" value="last" hidden disabled>跟进刚结束的会话</option></select></label>
+          <details id="context" class="context-note" hidden><summary>将带入新会话的研究记录</summary><pre id="context-body"></pre></details>
+          <label class="field"><span id="prompt-label">数学问题</span><textarea id="question" required minlength="5" maxlength="12000" placeholder="例如，哪些正整数可以写成连续三个整数的平方和？"></textarea></label>
+          <details class="run-settings"><summary id="settings-label">运行设置 · 在线模型 · 最多 4 轮</summary>
+            <div class="settings-grid">
+              <label class="field">运行方式<select id="run-backend"><option value="codex_cli">在线模型（Codex CLI）</option><option value="dry_run">离线流程测试（无模型调用）</option></select></label>
+              <label class="field">最多轮数<input id="run-limit" type="number" required min="1" max="40" step="1" value="4"></label>
+              <label class="field">模型名称<input id="run-model" value="gpt-6.1-sol" maxlength="100"></label>
+            </div>
+          </details>
+          <p id="launch-error" class="error-msg" role="alert"></p>
+          <button id="launch-study" class="primary" type="submit">启动研究</button>
+        </form>
+        <aside class="run-status" aria-labelledby="progress-title">
+          <h3 id="progress-title">本次研究进度</h3>
+          <p class="muted" id="progress-state" role="status">启动后可在这里查看智能体写入的决策、证据和审查反馈。</p>
+          <p class="run-detail" id="progress-topic"></p><p class="run-detail muted" id="progress-count"></p>
+          <ol id="progress-rounds" hidden></ol><p class="error-msg" id="progress-error"></p>
+          <div class="run-actions"><button type="button" class="soft" id="stop-study" hidden>中断研究</button><button type="button" class="soft" id="follow-live" hidden>基于本次结果继续追问</button></div>
+          <a class="sample-link" id="open-session" hidden>查看完整会话 →</a>
+        </aside>
+      </div>
+    </section>
   </section>
 </main>
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
+const TOKEN=__SHOWCASE_TOKEN__;
+const tabs=["profile","replay","new"];
 let profiles = [], rounds = [], activeProfile, activePoint, roundIndex = 0;
 const put = (id,value) => { $(id).textContent = value; };
 const option = (value,label) => new Option(label,String(value));
 function setTab(key,focus=false) {
-  for(const name of ["profile","replay"]) {
+  const overview=$("labs-overview"), wasHidden=overview.hidden;
+  overview.hidden=key==="new";
+  if(wasHidden && !overview.hidden) drawWave();
+  for(const name of tabs) {
     const chosen = name===key, tab = $(name+"-tab");
     tab.setAttribute("aria-selected",String(chosen)); tab.tabIndex=chosen?0:-1; $(name).hidden=!chosen;
     if(chosen && focus) tab.focus();
   }
 }
-for(const name of ["profile","replay"]) {
+for(const name of tabs) {
   const tab=$(name+"-tab");
-  tab.onclick=()=>setTab(name);
+  tab.onclick=()=>{setTab(name);history.replaceState(null,"","#"+name);};
   tab.onkeydown=e=>{
     if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key)) return;
-    e.preventDefault(); setTab(e.key==="Home"?"profile":e.key==="End"?"replay":name==="profile"?"replay":"profile",true);
+    e.preventDefault();const index=tabs.indexOf(name)+(e.key==="ArrowRight"?1:-1);
+    const next=e.key==="Home"?tabs[0]:e.key==="End"?tabs.at(-1):tabs[(index+tabs.length)%tabs.length];
+    setTab(next,true);history.replaceState(null,"","#"+next);
   };
 }
 function drawWave(){
@@ -149,6 +190,9 @@ function setRound(i){
   for(const id of ["decision","result","review"])put(id,r[id]||"本轮无记录");
   put("evidence",r.evidence_ids?.length?"证据编号　"+r.evidence_ids.join(" · "):"本轮没有关联的证据编号");put("r-source",r.source);
   put("original-decision",r.original_decision||"本轮未保存决策原文。");put("original-review",r.original_review||"本轮未保存审查原文。");
+  $("follow-round").disabled=false;$("replay-origin").disabled=false;
+  put("replay-origin","跟进回放第 "+r.number+" 轮 · "+r.title);
+  if ($("origin").value==="replay") updateOrigin();
 }
 $("length").onchange=e=>setLength(Number(e.target.value));$("log").onchange=renderChart;
 $("round-pick").onchange=e=>setRound(Number(e.target.value));$("prev").onclick=()=>setRound(roundIndex-1);$("next").onclick=()=>setRound(roundIndex+1);
@@ -165,6 +209,165 @@ async function load(){
     status.hidden=true;
   } catch {status.textContent="未能读取研究记录。";const retry=document.createElement("button");retry.className="soft";retry.textContent="重试";retry.onclick=load;status.append(retry);}
 }
+const trackedKey="ai4math.showcase.study.v1";
+let tracked=null, lastSession=null, busy=false, spinTimer=null;
+const drafts={fresh:"",replay:"",last:""};
+let draftOrigin="fresh";
+
+function textOf(value,limit=900){
+  const text=typeof value==="string"?value:value==null?"":JSON.stringify(value);
+  return text.length<=limit?text:text.slice(0,limit)+"…";
+}
+function evidenceFor(session,round){
+  return session.evidence?.find(item=>item.id===round?.evidence_id);
+}
+function sourceText(){
+  const mode=$("origin").value;
+  if(mode==="replay" && rounds[roundIndex]){
+    const r=rounds[roundIndex];
+    return ["课题：低自相关二值序列中失衡量与最小能量的关系。",
+      "已归档的第 "+r.number+" 轮 · "+r.title,"研究决策："+r.decision,"实验与核验："+r.result,
+      "审查反馈："+r.review,"来源："+r.source+" · "+r.evidence_ids.join("、")].join("\n");
+  }
+  if(mode==="last" && lastSession){
+    const s=lastSession, r=s.rounds.at(-1), ev=evidenceFor(s,r);
+    return ["上一会话："+s.id,"问题："+textOf(s.problem.statement,1800),"运行方式："+s.mode,"终止原因："+s.termination_reason,
+      r?"最近一轮决策："+textOf(r.action.decision_summary):"尚无已保存的轮次。",
+      ev?"证据 "+ev.id+"："+textOf(ev.result,1000):"",
+      r?.review?.summary?"审查反馈："+textOf(r.review.summary):""].filter(Boolean).join("\n");
+  }
+  return "";
+}
+function updateOrigin(){
+  const origin=$("origin").value, ctx=sourceText();
+  if(origin!==draftOrigin){
+    drafts[draftOrigin]=$("question").value;
+    $("question").value=drafts[origin]||"";
+    draftOrigin=origin;
+  }
+  $("context").hidden=!ctx;put("context-body",ctx);
+  put("prompt-label",ctx?"下一步想研究什么？（可修改）":"数学问题");
+  if(ctx && !$("question").value.trim()){
+    const savedQuestion=origin==="last"?lastSession?.rounds.at(-1)?.review?.next_question:"";
+    $("question").value=savedQuestion || "根据这轮记录提出一个可检验的后续猜想，设计实验寻找反例，并说明结论适用的范围。";
+  }
+  $("question").placeholder=ctx?"例如，提出可验证的后续猜想，设计实验并主动寻找反例。":"例如，哪些正整数可以写成连续三个整数的平方和？";
+}
+function openFollow(origin){
+  $("origin").value=origin;updateOrigin();setTab("new");history.replaceState(null,"","#new");
+  $("question").focus();
+}
+$("origin").onchange=updateOrigin;
+$("follow-round").onclick=()=>openFollow("replay");
+$("follow-live").onclick=()=>openFollow("last");
+function settings(){
+  const dry=$("run-backend").value==="dry_run";
+  $("run-model").disabled=dry;
+  put("settings-label","运行设置 · "+(dry?"离线流程测试":"在线模型")+" · 最多 "+($("run-limit").value||"—")+" 轮");
+  put("launch-study",busy?"研究进行中…":dry?"启动离线流程测试":"启动研究");
+}
+$("run-backend").onchange=settings;$("run-limit").oninput=settings;
+function lock(value){busy=value;$("launch-study").disabled=value;settings();}
+function remember(){
+  try{sessionStorage.setItem(trackedKey,JSON.stringify(tracked));}catch{}
+}
+async function request(path,body){
+  const options=body?{method:"POST",headers:{"Content-Type":"application/json","X-AI4Math-Token":TOKEN},body:JSON.stringify(body)}:{cache:"no-store"};
+  const response=await fetch(path,options);
+  const data=await response.json();
+  if(!response.ok){const error=new Error(data.error||"请求失败");error.status=response.status;throw error;}
+  return data;
+}
+function linkSession(id){
+  $("open-session").hidden=!id;
+  if(id) $("open-session").href="/?id="+encodeURIComponent(id);
+}
+function showSession(s,ended){
+  linkSession(s.id);put("progress-topic",s.problem.title);
+  const total=s.rounds.length, last=s.rounds.slice(-3), list=$("progress-rounds");
+  const reasons={finished:"研究完成",budget_exhausted:"已达到研究预算",backend_failed:"模型调用失败",interrupted:"已中断"};
+  put("progress-count",(s.mode==="dry_run"?"离线流程测试":"在线研究")+" · 已保存 "+total+" 轮 · "+s.evidence.length+" 条证据"+(ended?" · "+(reasons[s.termination_reason]||s.termination_reason):""));
+  list.replaceChildren();list.hidden=!total;list.start=Math.max(1,total-2);
+  for(const r of last){
+    const li=document.createElement("li"), feedback=document.createElement("p");
+    li.textContent=textOf(r.action.decision_summary||r.action.action_type,400);
+    const ev=evidenceFor(s,r);
+    feedback.className="muted";
+    feedback.textContent=[ev?"证据 "+ev.id+" · "+ev.tool:"",r.review?.summary?"审查："+textOf(r.review.summary,320):""].filter(Boolean).join("　");
+    li.append(feedback);list.append(li);
+  }
+  if(ended){
+    lastSession=s;$("last-origin").disabled=false;$("last-origin").hidden=false;$("follow-live").hidden=false;
+    if($("origin").value==="last") updateOrigin();
+    if(s.errors?.length) put("progress-error",textOf(s.errors.at(-1).error||s.errors.at(-1),550));
+  }
+}
+async function monitor(){
+  const record=tracked;if(!record)return;
+  try{
+    let ended=record.done, status;
+    if(!ended){
+      try{status=await request("/api/job?id="+encodeURIComponent(record.job));}
+      catch(err){
+        if(err.message!=="job not found")throw err;
+        if(!record.session){
+          put("progress-state","服务已重启，当前任务状态不可用。可在工作台的已保存会话中查找运行记录。");
+          $("stop-study").hidden=true;lock(false);tracked=null;remember();return;
+        }
+        record.untracked=true;ended=true;
+      }
+      if(tracked!==record)return;
+      if(status){
+        ended=!status.running;record.session=status.session_id||record.session;
+        record.message=status.message;record.backend=status.backend;
+      }
+    }
+    put("progress-state",record.untracked?"服务已重启，显示最后保存的研究记录。":(record.message||"读取会话进度…"));
+    put("progress-error","");$("stop-study").hidden=ended;linkSession(record.session);
+    if(record.session){
+      remember();
+      const s=await request("/api/session?id="+encodeURIComponent(record.session));
+      if(tracked!==record)return;
+      showSession(s,ended && s.termination_reason!=="running");
+    }
+    record.done=ended;remember();lock(!ended);
+    if(!ended)spinTimer=setTimeout(monitor,2200);
+  }catch(err){
+    if(tracked!==record)return;
+    put("progress-error","读取进度失败："+err.message);
+    if(record.done)lock(false);else spinTimer=setTimeout(monitor,4000);
+  }
+}
+$("stop-study").onclick=async()=>{
+  if(!tracked||!busy)return;
+  $("stop-study").disabled=true;
+  try{await request("/api/stop",{job_id:tracked.job});}
+  catch(err){put("progress-error","中断失败："+err.message);}
+  finally{$("stop-study").disabled=false;}
+};
+$("launch-form").onsubmit=async event=>{
+  event.preventDefault();if(busy)return;
+  put("launch-error","");
+  const question=$("question").value.trim(), ctx=sourceText();
+  if(question.length<5){put("launch-error","请至少输入 5 个字符，说明希望智能体研究什么。");$("question").focus();return;}
+  const problem=ctx?"后续研究问题："+question+"\n\n参考上一阶段的已保存记录，先核验相关结论，再开展本次研究。\n"+ctx:question;
+  if(problem.length>12000){put("launch-error","问题和所附记录超过 12000 个字符，请缩短问题描述。");return;}
+  lock(true);
+  try{
+    const backend=$("run-backend").value;
+    const job=await request("/api/start",{problem,backend,model:backend==="dry_run"?"":$("run-model").value.trim(),max_rounds:Number($("run-limit").value)});
+    clearTimeout(spinTimer);
+    tracked={job:job.job_id,session:job.session_id||"",backend,message:job.message,done:false};remember();
+    $("progress-rounds").hidden=true;$("progress-rounds").replaceChildren();put("progress-count","");put("progress-error","");
+    put("progress-topic",textOf(question,300));put("progress-state",job.message);linkSession(job.session_id);
+    $("follow-live").hidden=true;$("stop-study").hidden=!job.running;
+    await monitor();
+  }catch(err){put("launch-error","未能启动研究："+err.message);lock(false);}
+};
+function tabFromUrl(){const key=location.hash.slice(1);setTab(tabs.includes(key)?key:"profile");}
+window.addEventListener("hashchange",tabFromUrl);tabFromUrl();
+try{const entry=JSON.parse(sessionStorage.getItem(trackedKey));if(typeof entry?.job==="string")tracked=entry;}catch{}
+if(tracked){lock(!tracked.done);monitor();}
 load();
 </script>
 </body>

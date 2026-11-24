@@ -2,12 +2,12 @@ from __future__ import annotations
 import argparse
 import importlib.metadata
 import platform
-import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
 import yaml
+from .backends.planner import find_codex_cli
 from .storage import digest, file_hash, now, read_json, write_json, seal_manifest, validate_manifest, source_metadata
 
 
@@ -16,7 +16,7 @@ def doctor(live_probe=False, model=None):
     output.mkdir(parents=True, exist_ok=True)
     previous = read_json(output / "doctor.json") if (output / "doctor.json").exists() else {}
     result = {"time": now(), "python": platform.python_version(), "backend_call_attempts": previous.get("backend_call_attempts",0),
-              "dependencies": {}, "codex": shutil.which("codex"), "font": str(Path("C:/Windows/Fonts/simhei.ttf"))}
+              "dependencies": {}, "codex": find_codex_cli(), "font": str(Path("C:/Windows/Fonts/simhei.ttf"))}
     for package in ["numpy", "pydantic", "matplotlib", "PyYAML", "reportlab", "pypdf", "numba", "pytest"]:
         try:
             result["dependencies"][package] = importlib.metadata.version(package)

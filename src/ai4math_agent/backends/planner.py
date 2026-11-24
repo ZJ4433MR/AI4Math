@@ -14,6 +14,36 @@ class BackendError(RuntimeError):
     pass
 
 
+def find_codex_cli():
+    """Resolve either a standalone CLI or the CLI shipped with Codex Desktop."""
+    executable = shutil.which("codex")
+    if executable:
+        return executable
+    bundled = os.environ.get("CODEX_APP_RUNTIME_CLI_PATH")
+    if bundled and Path(bundled).is_absolute() and os.access(bundled, os.X_OK) and Path(bundled).is_file():
+        return bundled
+    if os.name == "nt":
+        # A regular PowerShell terminal does not inherit Desktop's environment.
+        command = (
+            "[Console]::OutputEncoding = [Text.UTF8Encoding]::new($false); "
+            "(Get-AppxPackage -Name OpenAI.Codex | Sort-Object Version -Descending | "
+            "Select-Object -First 1).InstallLocation"
+        )
+        try:
+            location = subprocess.run(
+                ["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", command],
+                capture_output=True, text=True, encoding="utf-8", timeout=10, check=True,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            ).stdout.strip()
+        except (OSError, subprocess.SubprocessError, UnicodeError):
+            return None
+        if location and Path(location).is_absolute():
+            candidate = Path(location) / "app" / "resources" / "codex.exe"
+            if candidate.is_file():
+                return str(candidate)
+    return None
+
+
 def subprocess_environment():
     """Reuse the user's configured Windows proxy for this child only."""
     environment = os.environ.copy()
@@ -67,9 +97,9 @@ class CodexBackend:
     name = "codex_cli"
 
     def __init__(self, model=None, timeout=180):
-        self.executable = shutil.which("codex")
+        self.executable = find_codex_cli()
         if not self.executable:
-            raise BackendError("codex CLI is not installed or not on PATH")
+            raise BackendError("Codex CLI unavailable. Install the CLI on PATH or use Codex Desktop.")
         self.model = model
         self.timeout = timeout
 

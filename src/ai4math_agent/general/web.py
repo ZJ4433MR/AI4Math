@@ -305,7 +305,7 @@ def serve_general(host="127.0.0.1", port=8765):
                     return self.send(200,PAGE.replace("__TOKEN__",json.dumps(app.token)),"text/html; charset=utf-8")
                 if parsed.path.rstrip("/") == "/showcase":
                     page = Path(__file__).with_name("showcase.html").read_text(encoding="utf-8")
-                    return self.send(200, page, "text/html; charset=utf-8")
+                    return self.send(200, page.replace("__SHOWCASE_TOKEN__", json.dumps(app.token)), "text/html; charset=utf-8")
                 if parsed.path == "/api/showcase":
                     return self.send(200, load_showcase(app.root))
                 if parsed.path=="/api/runs":
