@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI4Math · 数学研究展示</title>
+<style>
+:root {--ink:#102f30;--green:#136e62;--sub:#4a6561;--line:#cdd9d3;--paper:#f5f6f0;--white:#fffefa;--mint:#a9edc5;--mono:"IBM Plex Mono",Consolas,monospace;--sans:Inter,"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+button,select,input{font:inherit}button,select{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #c47827;outline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}.wrap{width:min(1400px,100%);padding:0 clamp(18px,4vw,72px);margin:auto}
+header{background:var(--white);border-bottom:1px solid var(--line)}.bar,.identity,.menu,.hero-head,.toolbar,.legend,.round-nav,.panel-head,.tab-list{display:flex;align-items:center}
+.bar{justify-content:space-between;gap:12px;min-height:67px}.identity{gap:12px;font-size:21px;font-weight:720;letter-spacing:-.035em}.identity small{border-left:1px solid var(--line);padding-left:12px;color:var(--sub);font-size:14px;font-weight:500;letter-spacing:.04em}
+.mark{display:flex;align-items:center;justify-content:center;width:33px;height:33px;background:var(--ink);border-radius:9px;gap:3px}.mark i{width:3px;height:14px;background:var(--mint);transform:skew(-18deg)}.mark i:nth-child(2){height:21px}
+.menu{gap:14px;font-size:14px}.menu a,.soft{border:1px solid var(--line);background:var(--white);border-radius:7px;padding:7px 12px}.menu a:hover,.soft:hover:not(:disabled){background:#e7f0e9}.external{margin-left:7px}.content{padding-top:clamp(16px,2vw,28px);padding-bottom:42px}
+.hero{background:#103f3d;color:#f7fcf6;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:4%;padding:clamp(22px,2.8vw,40px);border-radius:15px;position:relative;overflow:hidden}
+.hero-head{gap:.65em;font-size:13px;letter-spacing:.06em;color:#bae9d4}.hero-head:before{content:"";width:23px;height:2px;background:#9ed7ac}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(31px,3.3vw,52px);line-height:1.28;letter-spacing:-.055em;font-weight:670;margin:8px 0}
+.hero p{color:#e4efe5;max-width:39em;font-size:clamp(15px,1.3vw,19px)}figure{margin:0}.trace{background-color:#0e3837;border:1px solid #49716a;border-radius:9px;padding:12px 15px 8px;min-width:0}
+.trace figcaption,.trace-base{display:flex;justify-content:space-between;align-items:center;gap:12px}.trace figcaption{font-size:13px;color:#c9e8d9}.trace figcaption span:last-child,.trace-base{font:12px/1.5 var(--mono);color:#a4cbb6}.trace canvas{display:block;width:100%;height:91px}.trace-base{border-top:1px solid #446861;padding-top:4px}
+.sheet{margin-top:20px;background:var(--white);border-radius:13px;border:1px solid var(--line);overflow:hidden}.tab-list{padding:0 clamp(12px,2vw,29px);gap:22px;border-bottom:1px solid var(--line)}.tab{background:transparent;border:0;border-bottom:3px solid transparent;padding:15px 2px 12px;margin-bottom:-1px;font-weight:650;color:var(--sub)}.tab[aria-selected=true]{border-color:var(--green);color:var(--green)}
+.panel{padding:clamp(17px,2.1vw,30px)}.panel-head{justify-content:space-between;gap:15px;flex-wrap:wrap}h2{font-size:clamp(22px,2vw,30px);letter-spacing:-.045em}.muted,.doc-line{color:var(--sub);font-size:14px}.toolbar{gap:10px;flex-wrap:wrap;font-size:14px}.toolbar select,.round-nav select{border:1px solid #a1b5aa;padding:5px 9px;border-radius:6px;color:var(--ink);background:#fff}.toolbar label{display:flex;align-items:center;gap:6px}.toolbar input{accent-color:var(--green);width:15px;height:15px}
+.chart-layout{display:grid;grid-template-columns:minmax(0,2.35fr) minmax(220px,1fr);gap:clamp(18px,2.5vw,40px);margin-top:18px}
+.plot-title,.axis-name{font-size:13px;color:var(--sub)}.plot-wrap{padding:7px 5px 0 45px}.plot{height:clamp(165px,18vh,245px);position:relative;border-bottom:1px solid #9eb0a6}
+.tick{border-top:1px dashed #cfdcd4;position:absolute;left:0;right:0}.tick span{position:absolute;right:calc(100% + 7px);transform:translateY(-50%);font:12px var(--mono);color:var(--sub)}.bars{position:absolute;inset:0;display:flex;align-items:stretch;gap:0}
+.bar-point{position:relative;flex:1;min-width:0;border:none;background:transparent;padding:0}.bar-point:hover{background:#2866500c}.stem{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:52%;max-width:55px;min-height:3px;background:#95aea5;border-radius:4px 4px 0 0;border-top:3px solid #709587}
+.bar-point.opt .stem{background:#b2e6c4;border-color:#397f5a}.bar-point[aria-pressed=true] .stem{background:#197465;border-color:#104a42}.bar-point[aria-pressed=true] .axis-label{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:3px}.axis-label{position:absolute;left:50%;top:100%;transform:translateX(-50%);font:13px/24px var(--mono);color:var(--sub)}
+.axis-name{margin-top:25px;text-align:center}.legend{gap:14px;flex-wrap:wrap;color:var(--sub);font-size:12px}.legend span{display:flex;align-items:center;gap:5px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:#95aea5}.legend i.opt{background:#b2e6c4;border:1px solid #397f5a}.legend i.sel{background:#197465}
+.detail{border-radius:9px;background:#edf4ed;padding:16px 19px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.detail h3{font-size:15px;line-height:1.4}.number{font:500 clamp(42px,4.1vw,70px)/1.15 var(--mono);color:#175a4b;letter-spacing:-.075em;margin:5px 0}.bound{font:14px/1.4 var(--mono);margin-bottom:8px}.detail-note{font-size:14px;color:#3b5c51}.doc-line{margin-top:16px;border-top:1px solid var(--line);padding-top:12px;overflow-wrap:anywhere}.doc-line summary{cursor:pointer;width:fit-content}.doc-line p{margin-top:7px}.doc-line code,.archive{font-size:12px;font-family:var(--mono);overflow-wrap:anywhere}
+.round-nav{gap:8px;flex-wrap:wrap;font-size:14px}.round-card{border:1px solid var(--line);border-radius:8px;margin:17px 0 10px;overflow:hidden}.round-title{background:#e9f2e9;padding:12px 17px;display:flex;gap:11px;align-items:baseline}.round-title h3{font-size:19px}.round-title b{font:700 14px var(--mono);color:#176356}.steps{display:grid;grid-template-columns:repeat(3,1fr)}.step{padding:16px 18px;min-width:0}.step+.step{border-left:1px solid var(--line)}.step h4{font-size:14px;color:#216a56;margin:0 0 7px}.step p{font-size:15px;overflow-wrap:anywhere}.evidence{border-top:1px solid var(--line);padding:11px 17px;color:var(--sub);font-size:13px;overflow-wrap:anywhere}.empty,.alert{padding:16px;border:1px dashed #aabcb2;margin:14px 0;color:var(--sub);border-radius:6px}.alert button{margin-left:12px}
+.sample-link{display:inline-flex;align-items:center;color:var(--green);font-size:14px;font-weight:650;margin-top:13px;gap:10px}.sample-link:hover{text-decoration:underline}.doc-line blockquote{margin:5px 0 8px;border-left:3px solid #acd0b8;padding:5px 12px;font-size:14px;line-height:1.6;white-space:pre-wrap}
+@media(min-width:1600px){body{font-size:18px}.step p,.detail-note,.muted{font-size:17px}}
+@media(max-width:900px){.chart-layout{grid-template-columns:minmax(0,1.7fr) minmax(190px,1fr)}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:650px){.bar{min-height:53px}.identity{gap:7px;font-size:17px}.identity small{display:none}.mark{width:29px;height:29px}.hero{grid-template-columns:1fr;gap:16px}.trace canvas{height:70px}.chart-layout{grid-template-columns:1fr}.detail{display:block}.number{font-size:37px}.legend{margin-top:7px}.panel-head{gap:10px}.tab-list{gap:18px}.tab{font-size:15px}.axis-label{font-size:11px}.doc-line code{font-size:11px}.round-title{flex-wrap:wrap;gap:4px 10px}.plot-wrap{padding-left:34px}.toolbar{gap:12px}}
+</style>
+</head>
+<body>
+<header><div class="bar wrap"><div class="identity"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>AI4Math<small>数学研究展示</small></div><nav class="menu"><a href="/">打开智能体工作台<span class="external" aria-hidden="true">↗</span></a></nav></div></header>
+<main class="wrap content">
+  <section class="hero" aria-labelledby="project-title">
+    <div><div class="hero-head">组合优化 · LABS</div><h1 id="project-title">低自相关二值序列</h1><p>固定 +1 与 −1 的数量差，一串符号能达到的最低自相关能量是多少？</p></div>
+    <figure class="trace"><figcaption><span>所选条件下的一组最优序列</span><span id="trace-label">—</span></figcaption><canvas id="wave" aria-label="所选序列取值图"></canvas><div class="trace-base"><span>+1 / −1</span><span id="counts">—</span></div></figure>
+  </section>
+  <div id="status" class="alert" role="status">正在读取研究记录…</div>
+  <section class="sheet">
+    <div class="tab-list" role="tablist" aria-label="展示内容"><button type="button" class="tab" id="profile-tab" role="tab" aria-selected="true" aria-controls="profile">精确能量谱</button><button type="button" class="tab" id="replay-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="replay">智能体迭代回放</button></div>
+    <section class="panel" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="panel-head"><div><h2>失衡量与最低能量</h2><p class="muted">每根柱子对应一种失衡量。选择柱子可查看最低能量和实现它的序列。</p></div><div class="toolbar"><label>序列长度 <select id="length" aria-label="序列长度" disabled></select></label><label><input type="checkbox" id="log" checked disabled>对数纵轴</label></div></div>
+      <div id="no-profile" class="empty" hidden>当前工作区没有可展示的精确枚举记录。</div>
+      <div id="profile-data" hidden><div class="chart-layout"><div><div class="plot-title">条件最低能量 gₙ(b)</div><div class="plot-wrap"><div class="plot"><div id="ticks"></div><div class="bars" id="bars" role="group" aria-label="按失衡量选择结果"></div></div></div><div class="axis-name">失衡量 b</div><div class="legend"><span><i></i>条件最优</span><span><i class="opt"></i>达到全局最优</span><span><i class="sel"></i>当前选择</span></div></div>
+        <aside class="detail" aria-live="polite"><h3 id="detail-title"></h3><div class="number" id="energy"></div><div class="bound" id="bound"></div><p class="detail-note" id="finding"></p></aside>
+      </div><details class="doc-line"><summary>公式、序列与原始记录</summary><p>将序列平移 k 位，重叠位置的符号逐对相乘再相加，得到 Cₖ。能量 E 是所有非零平移下 Cₖ 的平方和。失衡量 b 是 +1 和 −1 数量差的绝对值。</p><p id="signs"></p><p>精确枚举记录 <code id="p-source"></code></p></details></div>
+    </section>
+    <section class="panel" id="replay" role="tabpanel" aria-labelledby="replay-tab" hidden>
+      <div class="panel-head"><div><h2>智能体怎样推进研究</h2><p class="muted">回看已保存的研究会话，逐轮查看决策、工具结果和审查意见。</p></div><div class="round-nav"><button type="button" id="prev" class="soft" disabled aria-label="上一轮">← 上一轮</button><select id="round-pick" aria-label="选择研究轮次" disabled></select><button type="button" id="next" class="soft" disabled aria-label="下一轮">下一轮 →</button></div></div>
+      <div id="no-rounds" class="empty" hidden>当前工作区没有可回放的 LABS 研究轮次。</div>
+      <div id="round-data" hidden>
+        <article class="round-card" aria-live="polite">
+          <div class="round-title"><b id="round-label"></b><h3 id="round-title"></h3></div>
+          <div class="steps">
+            <div class="step"><h4>研究决策</h4><p id="decision"></p></div>
+            <div class="step"><h4>实验与核验</h4><p id="result"></p></div>
+            <div class="step"><h4>审查反馈</h4><p id="review"></p></div>
+          </div><div class="evidence" id="evidence"></div>
+        </article>
+        <details class="doc-line"><summary>查看模型原始记录</summary>
+          <p>本轮决策原文</p><blockquote id="original-decision"></blockquote>
+          <p>审查原文</p><blockquote id="original-review"></blockquote>
+          <p>轮次档案 <code id="r-source"></code></p>
+        </details>
+        <a class="sample-link" href="/?id=general%2F2026-10-09T173130.851756_0000">看智能体如何研究另一个问题<span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </section>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+let profiles = [], rounds = [], activeProfile, activePoint, roundIndex = 0;
+const put = (id,value) => { $(id).textContent = value; };
+const option = (value,label) => new Option(label,String(value));
+function setTab(key,focus=false) {
+  for(const name of ["profile","replay"]) {
+    const chosen = name===key, tab = $(name+"-tab");
+    tab.setAttribute("aria-selected",String(chosen)); tab.tabIndex=chosen?0:-1; $(name).hidden=!chosen;
+    if(chosen && focus) tab.focus();
+  }
+}
+for(const name of ["profile","replay"]) {
+  const tab=$(name+"-tab");
+  tab.onclick=()=>setTab(name);
+  tab.onkeydown=e=>{
+    if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key)) return;
+    e.preventDefault(); setTab(e.key==="Home"?"profile":e.key==="End"?"replay":name==="profile"?"replay":"profile",true);
+  };
+}
+function drawWave(){
+  const canvas=$("wave"), w=canvas.clientWidth, h=canvas.clientHeight, dpr=window.devicePixelRatio||1;
+  canvas.width=Math.round(w*dpr); canvas.height=Math.round(h*dpr);
+  const ctx=canvas.getContext("2d"); if(!ctx || !w) return; ctx.scale(dpr,dpr);
+  const seq=activePoint?.sequence||[]; if(!seq.length) {ctx.fillStyle="#c9e8d9";ctx.font="13px sans-serif";ctx.fillText("尚无序列记录",6,h/2);return;}
+  const dx=(w-8)/seq.length, x=i=>4+i*dx, y=v=>h*(v>0?.22:.77);
+  ctx.strokeStyle="#315a53";ctx.lineWidth=1;ctx.beginPath();
+  for(let i=0;i<=seq.length;i++){ctx.moveTo(x(i),5);ctx.lineTo(x(i),h-5);}
+  for(const row of [.22,.5,.77]){ctx.moveTo(2,h*row);ctx.lineTo(w-2,h*row);}
+  ctx.stroke();ctx.strokeStyle="#a3f1ba";ctx.lineWidth=2.6;ctx.lineJoin="round";ctx.beginPath();
+  seq.forEach((v,i)=>{if(!i) ctx.moveTo(x(i),y(v));else ctx.lineTo(x(i),y(v));ctx.lineTo(x(i+1),y(v));});ctx.stroke();
+}
+window.addEventListener("resize",drawWave);
+function renderDetails(){
+  const p=activeProfile, a=activePoint, plus=a.sequence.filter(v=>v===1).length;
+  put("trace-label","n = "+p.n+" · b = "+a.b); put("counts",a.sequence.length?"(+1) × "+plus+"    (−1) × "+(a.sequence.length-plus):"无序列记录");
+  put("signs",a.sequence.length?"见证序列　"+a.sequence.map(v=>v===1?"+1":"−1").join("  "):"无序列记录");
+  $("wave").setAttribute("aria-label",$("signs").textContent); drawWave();
+  put("detail-title","b = "+a.b+" 时的最低能量");put("energy",a.energy);
+  put("bound",a.lower_bound==null?"":"理论下界  "+a.lower_bound);
+  put("finding","长度 "+p.n+" 的全局最低能量为 "+p.min_energy+"，在 b = "+p.optimal_b.join("、")+" 时达到。");
+  put("p-source",p.source);
+}
+function selectPoint(point){
+  activePoint=point;
+  for(const btn of $("bars").children) btn.setAttribute("aria-pressed",String(Number(btn.value)===point.b));renderDetails();
+}
+function renderChart(){
+  const p=activeProfile, log=$("log").checked, largest=Math.max(...p.points.map(a=>a.energy)), ticks=[];
+  let max;
+  if(log){max=Math.max(1,Math.ceil(Math.log10(Math.max(1,largest)))); for(let i=0;i<=max;i++) ticks.push(10**i);}
+  else {const spacing=10**Math.floor(Math.log10(Math.max(1,largest/4)));const step=([1,2,5,10].find(v=>v*spacing>=largest/4)||10)*spacing;max=step*Math.ceil(largest/step);for(let i=0;i<=max;i+=step) ticks.push(i);}
+  const frac=v=>log?Math.log10(Math.max(1,v))/max:v/max;
+  $("ticks").replaceChildren();$("bars").replaceChildren();
+  for(const v of ticks){const line=document.createElement("div"),label=document.createElement("span");line.className="tick";line.style.bottom=(frac(v)*100)+"%";label.textContent=v;line.append(label);$("ticks").append(line);}
+  for(const a of p.points){
+    const btn=document.createElement("button"), stem=document.createElement("span"), label=document.createElement("span");
+    btn.type="button";btn.value=String(a.b);btn.className="bar-point"+(a.energy===p.min_energy?" opt":"");btn.title="失衡量 "+a.b+"　最低能量 "+a.energy;btn.setAttribute("aria-label",btn.title);
+    stem.className="stem";stem.style.height=(frac(a.energy)*100)+"%";label.className="axis-label";label.textContent=a.b;
+    btn.append(stem,label);btn.onclick=()=>selectPoint(a);$("bars").append(btn);
+  } selectPoint(activePoint);
+}
+function setLength(n){
+  activeProfile=profiles.find(p=>p.n===n);activePoint=activeProfile.points.find(a=>a.energy===activeProfile.min_energy)||activeProfile.points[0];
+  $("length").value=String(n);renderChart();
+}
+function setRound(i){
+  const r=rounds[i];if(!r)return;roundIndex=i;$("round-pick").value=String(i);
+  $("prev").disabled=i===0;$("next").disabled=i===rounds.length-1;
+  put("round-label","ROUND "+String(r.number).padStart(2,"0"));put("round-title",r.title);
+  for(const id of ["decision","result","review"])put(id,r[id]||"本轮无记录");
+  put("evidence",r.evidence_ids?.length?"证据编号　"+r.evidence_ids.join(" · "):"本轮没有关联的证据编号");put("r-source",r.source);
+  put("original-decision",r.original_decision||"本轮未保存决策原文。");put("original-review",r.original_review||"本轮未保存审查原文。");
+}
+$("length").onchange=e=>setLength(Number(e.target.value));$("log").onchange=renderChart;
+$("round-pick").onchange=e=>setRound(Number(e.target.value));$("prev").onclick=()=>setRound(roundIndex-1);$("next").onclick=()=>setRound(roundIndex+1);
+async function load(){
+  const status=$("status");status.hidden=false;status.textContent="正在读取研究记录…";
+  try {
+    const response=await fetch("/api/showcase",{cache:"no-store"}); if(!response.ok)throw Error();
+    const data=await response.json();if(!Array.isArray(data.profiles)||!Array.isArray(data.rounds))throw Error();
+    profiles=data.profiles.filter(p=>Array.isArray(p.points)&&p.points.length);rounds=data.rounds;
+    $("profile-data").hidden=!profiles.length;$("no-profile").hidden=!!profiles.length;$("round-data").hidden=!rounds.length;$("no-rounds").hidden=!!rounds.length;
+    $("length").disabled=$("log").disabled=!profiles.length;$("round-pick").disabled=!rounds.length;
+    if(profiles.length){$("length").replaceChildren(...profiles.map(p=>option(p.n,"n = "+p.n)));setLength(profiles[profiles.length-1].n);}else drawWave();
+    if(rounds.length){$("round-pick").replaceChildren(...rounds.map((r,i)=>option(i,"第 "+r.number+" 轮 / 共 "+rounds.length+" 轮")));setRound(0);}
+    status.hidden=true;
+  } catch {status.textContent="未能读取研究记录。";const retry=document.createElement("button");retry.className="soft";retry.textContent="重试";retry.onclick=load;status.append(retry);}
+}
+load();
+</script>
+</body>
+</html>
