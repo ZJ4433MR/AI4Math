@@ -208,11 +208,14 @@ body{background:#f2f4ee}
 const $ = id => document.getElementById(id);
 const TOKEN=__SHOWCASE_TOKEN__;
 const archive=null /*__CLASSROOM_ARCHIVE__*/;
-const tabs=archive?["profile","replay"]:["profile","replay","new"];
+const tabs=["profile","replay","new"];
 if(archive){
-  for(const el of document.querySelectorAll('#new-tab, #new, #follow-round, .menu a[href="/"], #replay .sample-link')) el.hidden=true;
-  document.querySelector(".identity small").textContent="课堂离线回放";
-  document.title="AI4Math · 课堂离线回放";
+  for(const el of document.querySelectorAll('.menu a[href="/"], #replay .sample-link')) el.hidden=true;
+  document.querySelector(".identity small").textContent="课堂离线展示";
+  document.title="AI4Math · 课堂离线展示";
+  $("progress-state").textContent="离线演示 · 可编辑问题和设置";
+  $("launch-study").disabled=true;
+  $("launch-study").textContent="启动研究（需连接后台）";
 }
 let profiles = [], rounds = [], activeProfile, activePoint, roundIndex = 0;
 const put = (id,value) => { $(id).textContent = value; };
@@ -427,7 +430,7 @@ function settings(){
   const dry=$("run-backend").value==="dry_run";
   $("run-model").disabled=dry;
   put("settings-label","运行设置 · "+(dry?"离线流程测试":"在线模型")+" · 最多 "+($("run-limit").value||"—")+" 轮");
-  put("launch-study",busy?"研究进行中…":dry?"启动离线流程测试":"启动研究");
+  if(!archive)put("launch-study",busy?"研究进行中…":dry?"启动离线流程测试":"启动研究");
 }
 $("run-backend").onchange=settings;$("run-limit").oninput=settings;
 function lock(value){busy=value;$("launch-study").disabled=value;settings();}
@@ -532,7 +535,7 @@ $("stop-study").onclick=async()=>{
   finally{$("stop-study").disabled=false;}
 };
 $("launch-form").onsubmit=async event=>{
-  event.preventDefault();if(busy)return;
+  event.preventDefault();if(archive || busy)return;
   put("launch-error","");
   const question=$("question").value.trim(), ctx=sourceText();
   if(question.length<5){put("launch-error","请至少输入 5 个字符，说明希望智能体研究什么。");$("question").focus();return;}
