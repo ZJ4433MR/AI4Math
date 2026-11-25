@@ -207,7 +207,13 @@ body{background:#f2f4ee}
 "use strict";
 const $ = id => document.getElementById(id);
 const TOKEN=__SHOWCASE_TOKEN__;
-const tabs=["profile","replay","new"];
+const archive=null /*__CLASSROOM_ARCHIVE__*/;
+const tabs=archive?["profile","replay"]:["profile","replay","new"];
+if(archive){
+  for(const el of document.querySelectorAll('#new-tab, #new, #follow-round, .menu a[href="/"], #replay .sample-link')) el.hidden=true;
+  document.querySelector(".identity small").textContent="课堂离线回放";
+  document.title="AI4Math · 课堂离线回放";
+}
 let profiles = [], rounds = [], activeProfile, activePoint, roundIndex = 0;
 const put = (id,value) => { $(id).textContent = value; };
 const option = (value,label) => new Option(label,String(value));
@@ -346,8 +352,12 @@ $("round-pick").onchange=e=>setRound(Number(e.target.value));$("prev").onclick=(
 async function load(){
   const status=$("status");status.hidden=false;status.textContent="正在读取研究记录…";
   try {
-    const response=await fetch("/api/showcase",{cache:"no-store"}); if(!response.ok)throw Error();
-    const data=await response.json();if(!Array.isArray(data.profiles)||!Array.isArray(data.rounds))throw Error();
+    let data=archive;
+    if(!data){
+      const response=await fetch("/api/showcase",{cache:"no-store"}); if(!response.ok)throw Error();
+      data=await response.json();
+    }
+    if(!Array.isArray(data.profiles)||!Array.isArray(data.rounds))throw Error();
     profiles=data.profiles.filter(p=>Array.isArray(p.points)&&p.points.length);rounds=data.rounds;
     $("profile-data").hidden=!profiles.length;$("no-profile").hidden=!!profiles.length;$("round-data").hidden=!rounds.length;$("no-rounds").hidden=!!rounds.length;
     $("length").disabled=$("log").disabled=!profiles.length;$("round-pick").disabled=!rounds.length;
@@ -425,6 +435,7 @@ function remember(){
   try{sessionStorage.setItem(trackedKey,JSON.stringify(tracked));}catch{}
 }
 async function request(path,body){
+  if(archive)throw new Error("离线文件仅用于展示已保存的研究。");
   const options=body?{method:"POST",headers:{"Content-Type":"application/json","X-AI4Math-Token":TOKEN},body:JSON.stringify(body)}:{cache:"no-store"};
   const response=await fetch(path,options);
   const data=await response.json();
@@ -542,7 +553,7 @@ $("launch-form").onsubmit=async event=>{
 };
 function tabFromUrl(){const key=location.hash.slice(1);setTab(tabs.includes(key)?key:"profile");}
 window.addEventListener("hashchange",tabFromUrl);tabFromUrl();
-try{const entry=JSON.parse(sessionStorage.getItem(trackedKey));if(typeof entry?.job==="string")tracked=entry;}catch{}
+if(!archive){try{const entry=JSON.parse(sessionStorage.getItem(trackedKey));if(typeof entry?.job==="string")tracked=entry;}catch{}}
 if(tracked){lock(!tracked.done);monitor();}
 load();
 </script>

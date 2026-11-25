@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI4Math · 数学研究展示</title>
+<style>
+:root {--ink:#102f30;--green:#136e62;--sub:#4a6561;--line:#cdd9d3;--paper:#f5f6f0;--white:#fffefa;--mint:#a9edc5;--mono:"IBM Plex Mono",Consolas,monospace;--sans:Inter,"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+button,select,input{font:inherit}button,select{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #c47827;outline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}.wrap{width:min(1400px,100%);padding:0 clamp(18px,4vw,72px);margin:auto}
+header{background:var(--white);border-bottom:1px solid var(--line)}.bar,.identity,.menu,.hero-head,.toolbar,.legend,.round-nav,.panel-head,.tab-list{display:flex;align-items:center}
+.bar{justify-content:space-between;gap:12px;min-height:67px}.identity{gap:12px;font-size:21px;font-weight:720;letter-spacing:-.035em}.identity small{border-left:1px solid var(--line);padding-left:12px;color:var(--sub);font-size:14px;font-weight:500;letter-spacing:.04em}
+.mark{display:flex;align-items:center;justify-content:center;width:33px;height:33px;background:var(--ink);border-radius:9px;gap:3px}.mark i{width:3px;height:14px;background:var(--mint);transform:skew(-18deg)}.mark i:nth-child(2){height:21px}
+.menu{gap:14px;font-size:14px}.menu a,.soft{border:1px solid var(--line);background:var(--white);border-radius:7px;padding:7px 12px}.menu a:hover,.soft:hover:not(:disabled){background:#e7f0e9}.external{margin-left:7px}.content{padding-top:clamp(16px,2vw,28px);padding-bottom:42px}
+.hero{background:#103f3d;color:#f7fcf6;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:4%;padding:clamp(22px,2.8vw,40px);border-radius:15px;position:relative;overflow:hidden}
+.hero-head{gap:.65em;font-size:13px;letter-spacing:.06em;color:#bae9d4}.hero-head:before{content:"";width:23px;height:2px;background:#9ed7ac}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(31px,3.3vw,52px);line-height:1.28;letter-spacing:-.055em;font-weight:670;margin:8px 0}
+.hero p{color:#e4efe5;max-width:39em;font-size:clamp(15px,1.3vw,19px)}figure{margin:0}.trace{background-color:#0e3837;border:1px solid #49716a;border-radius:9px;padding:12px 15px 8px;min-width:0}
+.trace figcaption,.trace-base{display:flex;justify-content:space-between;align-items:center;gap:12px}.trace figcaption{font-size:13px;color:#c9e8d9}.trace figcaption span:last-child,.trace-base{font:12px/1.5 var(--mono);color:#a4cbb6}.trace canvas{display:block;width:100%;height:91px}.trace-base{border-top:1px solid #446861;padding-top:4px}
+.sheet{margin-top:20px;background:var(--white);border-radius:13px;border:1px solid var(--line);overflow:hidden}.tab-list{padding:0 clamp(12px,2vw,29px);gap:22px;border-bottom:1px solid var(--line)}.tab{background:transparent;border:0;border-bottom:3px solid transparent;padding:15px 2px 12px;margin-bottom:-1px;font-weight:650;color:var(--sub)}.tab[aria-selected=true]{border-color:var(--green);color:var(--green)}
+.panel{padding:clamp(17px,2.1vw,30px)}.panel-head{justify-content:space-between;gap:15px;flex-wrap:wrap}h2{font-size:clamp(22px,2vw,30px);letter-spacing:-.045em}.muted,.doc-line{color:var(--sub);font-size:14px}.toolbar{gap:10px;flex-wrap:wrap;font-size:14px}.toolbar select,.round-nav select{border:1px solid #a1b5aa;padding:5px 9px;border-radius:6px;color:var(--ink);background:#fff}.toolbar label{display:flex;align-items:center;gap:6px}.toolbar input{accent-color:var(--green);width:15px;height:15px}
+.chart-layout{display:grid;grid-template-columns:minmax(0,2.35fr) minmax(220px,1fr);gap:clamp(18px,2.5vw,40px);margin-top:18px}
+.plot-title,.axis-name{font-size:13px;color:var(--sub)}.plot-wrap{padding:7px 5px 0 45px}.plot{height:clamp(165px,18vh,245px);position:relative;border-bottom:1px solid #9eb0a6}
+.tick{border-top:1px dashed #cfdcd4;position:absolute;left:0;right:0}.tick span{position:absolute;right:calc(100% + 7px);transform:translateY(-50%);font:12px var(--mono);color:var(--sub)}.bars{position:absolute;inset:0;display:flex;align-items:stretch;gap:0}
+.bar-point{position:relative;flex:1;min-width:0;border:none;background:transparent;padding:0}.bar-point:hover{background:#2866500c}.stem{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:52%;max-width:55px;min-height:3px;background:#95aea5;border-radius:4px 4px 0 0;border-top:3px solid #709587}
+.bar-point.opt .stem{background:#b2e6c4;border-color:#397f5a}.bar-point[aria-pressed=true] .stem{background:#197465;border-color:#104a42}.bar-point[aria-pressed=true] .axis-label{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:3px}.axis-label{position:absolute;left:50%;top:100%;transform:translateX(-50%);font:13px/24px var(--mono);color:var(--sub)}
+.axis-name{margin-top:25px;text-align:center}.legend{gap:14px;flex-wrap:wrap;color:var(--sub);font-size:12px}.legend span{display:flex;align-items:center;gap:5px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:#95aea5}.legend i.opt{background:#b2e6c4;border:1px solid #397f5a}.legend i.sel{background:#197465}
+.detail{border-radius:9px;background:#edf4ed;padding:16px 19px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.detail h3{font-size:15px;line-height:1.4}.number{font:500 clamp(42px,4.1vw,70px)/1.15 var(--mono);color:#175a4b;letter-spacing:-.075em;margin:5px 0}.bound{font:14px/1.4 var(--mono);margin-bottom:8px}.detail-note{font-size:14px;color:#3b5c51}.doc-line{margin-top:16px;border-top:1px solid var(--line);padding-top:12px;overflow-wrap:anywhere}.doc-line summary{cursor:pointer;width:fit-content}.doc-line p{margin-top:7px}.doc-line code,.archive{font-size:12px;font-family:var(--mono);overflow-wrap:anywhere}
+#profile .plot-wrap{padding-top:26px}
+#profile .bar-point[aria-pressed="true"]{z-index:1}
+#profile .bar-point:is(:hover,:focus-visible){z-index:2}
+#profile .bar-point:is(:hover,:focus-visible,[aria-pressed="true"]) .stem::after{content:attr(data-energy);position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);color:white;background:#215c50;border-radius:4px;padding:2px 5px;font:600 13px/1.35 var(--mono);font-variant-numeric:tabular-nums;pointer-events:none}
+#replay .round-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(38px,1fr));gap:5px;margin:20px 0 12px}
+#replay .round-strip button{min-width:0;min-height:38px;padding:4px;border:1px solid #c4d3c8;border-radius:6px;color:#315548;background:#f3f6ef;font:600 15px/1.4 var(--mono)}
+#replay .round-strip button:hover{background:#e0eddf;border-color:#8ba994}
+#replay .round-strip [aria-current="step"]{background:#194b43;border-color:#194b43;color:#fff}
+#replay .round-card{margin-top:0}
+#replay .round-title{background:#e5efe4}
+#replay .round-title h3{font-size:clamp(21px,2vw,28px)}
+#replay .step p{font-size:clamp(15px,1.15vw,18px);line-height:1.65}
+@media(max-width:650px){#replay .round-strip{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.round-nav{gap:8px;flex-wrap:wrap;font-size:14px}.round-card{border:1px solid var(--line);border-radius:8px;margin:17px 0 10px;overflow:hidden}.round-title{background:#e9f2e9;padding:12px 17px;display:flex;gap:11px;align-items:baseline}.round-title h3{font-size:19px}.round-title b{font:700 14px var(--mono);color:#176356}.steps{display:grid;grid-template-columns:repeat(3,1fr)}.step{padding:16px 18px;min-width:0}.step+.step{border-left:1px solid var(--line)}.step h4{font-size:14px;color:#216a56;margin:0 0 7px}.step p{font-size:15px;overflow-wrap:anywhere}.evidence{border-top:1px solid var(--line);padding:11px 17px;color:var(--sub);font-size:13px;overflow-wrap:anywhere}.empty,.alert{padding:16px;border:1px dashed #aabcb2;margin:14px 0;color:var(--sub);border-radius:6px}.alert button{margin-left:12px}
+.sample-link{display:inline-flex;align-items:center;color:var(--green);font-size:14px;font-weight:650;margin-top:13px;gap:10px}.sample-link:hover{text-decoration:underline}.doc-line blockquote{margin:5px 0 8px;border-left:3px solid #acd0b8;padding:5px 12px;font-size:14px;line-height:1.6;white-space:pre-wrap}
+@media(min-width:1600px){body{font-size:18px}.step p,.detail-note,.muted{font-size:17px}}
+@media(max-width:900px){.chart-layout{grid-template-columns:minmax(0,1.7fr) minmax(190px,1fr)}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:650px){.bar{min-height:53px}.identity{gap:7px;font-size:17px}.identity small{display:none}.mark{width:29px;height:29px}.hero{grid-template-columns:1fr;gap:16px}.trace canvas{height:70px}.chart-layout{grid-template-columns:1fr}.detail{display:block}.number{font-size:37px}.legend{margin-top:7px}.panel-head{gap:10px}.tab-list{gap:18px}.tab{font-size:15px}.axis-label{font-size:11px}.doc-line code{font-size:11px}.round-title{flex-wrap:wrap;gap:4px 10px}.plot-wrap{padding-left:34px}.toolbar{gap:12px}}
+.primary{border:1px solid var(--green);background:var(--green);color:white;padding:8px 15px;border-radius:7px;font-weight:650}.primary:hover:not(:disabled){background:#104f48}
+.research-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3.5vw,54px);margin-top:20px;align-items:start}
+.run-status.monitor{min-width:0;color:#f0faf2;background:#103f3d;border:1px solid #13423a;border-radius:14px;padding:clamp(19px,2.2vw,32px)}
+.monitor .monitor-head{display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid #426964;padding-bottom:16px}
+.monitor .monitor-lamp{flex:none;width:10px;height:10px;border:1px solid #a4c7b4;border-radius:50%;margin-top:10px}
+.monitor[data-state="active"] .monitor-lamp{background:#a2ecb7;box-shadow:0 0 0 4px #a2ecb71c}
+.monitor[data-state="closed"] .monitor-lamp{background:#b9d3c2}
+.monitor .monitor-head h3{color:#fbfff9;font-size:21px;margin:0}
+.monitor #progress-state,.monitor .monitor-hint{color:#c1d8ca;font-size:14px;line-height:1.6}
+.monitor .monitor-guide{margin-top:22px}.monitor .monitor-guide strong{display:block;font-weight:600;color:#e5f2e9}
+.monitor .guide-stages{display:flex;align-items:center;gap:8px;margin:12px 0 16px;color:#b5e5c3;line-height:1.5;font-size:14px;flex-wrap:wrap}
+.monitor .guide-stages i{font-style:normal;color:#81ab96}.monitor .monitor-link{display:inline-flex;align-items:center;gap:6px;color:#b2f2c9;font-size:14px;font-weight:600;text-underline-offset:4px}
+.monitor .monitor-link:hover{text-decoration:underline}.monitor #progress-topic{font-weight:600;line-height:1.5;margin-top:14px}
+.monitor .measurement{display:flex;gap:28px;padding:12px 0;margin:0}.monitor .measurement div{display:grid;gap:3px}
+.monitor .measurement dt{color:#c1d8ca;font-size:13px}.monitor .measurement dd{margin:0;font:500 28px/1.2 var(--mono);color:#f3fcf4}
+.monitor .measurement small{font:14px var(--mono);color:#b1ccba}
+.monitor progress{width:100%;height:5px;display:block;border:0;border-radius:6px;background:#335c55;color:#b2ebc1;overflow:hidden}
+.monitor progress::-webkit-progress-bar{background:#335c55}.monitor progress::-webkit-progress-value{background:#b2ebc1}.monitor progress::-moz-progress-bar{background:#b2ebc1}
+.monitor #progress-count{color:#c1d8ca;margin-top:8px;font-size:13px}
+.monitor ol#progress-rounds{list-style:none;margin:18px 0 4px;padding:0}
+.monitor #progress-rounds li{border-top:1px solid #416860;margin:0;padding:10px 0}
+.monitor #progress-rounds summary{cursor:pointer;color:#c2efcf;font-size:14px;font-weight:650}.monitor #progress-rounds p{margin:6px 0 2px;line-height:1.6;font-size:15px}
+.monitor #progress-rounds .round-proof,.monitor #progress-rounds .round-feedback{font-size:14px;color:#c5ded0}
+.monitor .run-actions .soft{background:#d9edde;color:#133d32;border-color:#c0d8c7}
+.monitor #open-session{color:#b2f2c9}.monitor .error-msg{color:#ffcfad}.monitor a:focus-visible,.monitor summary:focus-visible{outline-color:#ffcf83}
+.research-grid h3{font-size:18px;margin-bottom:6px}.field{display:grid;gap:5px;margin-bottom:14px;font-size:14px;font-weight:600}.field select,.field input,.field textarea{font:inherit;font-weight:400;color:var(--ink);background:white;border:1px solid #a1b5aa;border-radius:6px;padding:8px 10px;width:100%;min-width:0}.field textarea{resize:vertical;min-height:102px}.field textarea:focus-visible{outline:3px solid #c47827;outline-offset:2px}
+.run-settings{margin-bottom:15px;font-size:14px}.run-settings summary,.context-note summary{cursor:pointer;color:var(--green);width:fit-content}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;margin-top:10px}.settings-grid label:last-child{grid-column:1/-1}
+.context-note{font-size:14px;margin:-3px 0 14px;padding:9px 12px;background:#ecf3ed;border-left:3px solid #83af97}.context-note pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}
+.run-status{background:#edf4ed;border-radius:10px;padding:17px 20px;overflow-wrap:anywhere}.run-status ol{margin:12px 0;padding-left:23px}.run-status li{margin-bottom:8px}.run-status .soft{margin:8px 6px 0 0}.run-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.error-msg{color:#94321e;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}.error-msg:not(:empty){margin:9px 0}.tab-list{flex-wrap:wrap;column-gap:clamp(10px,2vw,24px)}.run-detail{margin-top:9px}.run-detail:empty{display:none}
+@media(max-width:750px){.research-grid{grid-template-columns:1fr}.tab-list{column-gap:12px}}
+/* Keep the three views on one navigation rail, including on a projector. */
+body{background:#f2f4ee}
+.bar{min-height:58px}.menu{gap:8px}.menu a,.menu .soft{font-size:14px;line-height:1.45}
+.content{padding-top:16px}
+.content>.tab-list{width:fit-content;max-width:100%;gap:3px;padding:4px;margin:0 0 20px;background:#e5eae2;border:1px solid #ccd6cb;border-radius:11px;flex-wrap:nowrap}
+.content>.tab-list .tab{margin:0;border:0;border-radius:7px;padding:8px clamp(8px,1.5vw,22px);font-size:15px;line-height:1.5}
+.content>.tab-list .tab[aria-selected=true]{background:#194b43;color:#fff}
+.content>.tab-list .tab:hover:not([aria-selected=true]){background:#f3f6ef}
+#new{scroll-margin-block-start:155px}
+.sheet:has(#new:not([hidden])){background:transparent;border:0;border-radius:0;margin:0;overflow:visible}
+#new.panel{padding:0}
+.research-heading{border-bottom:1px solid #c6d2c7;padding:4px 0 20px}
+.research-heading h1{font-family:"Source Serif 4","Songti SC",SimSun,serif;font-weight:700;font-size:clamp(32px,3.8vw,52px);letter-spacing:-.045em;line-height:1.22;margin:0 0 8px}
+.research-heading p{color:#476057;font-size:clamp(15px,1.25vw,18px)}
+.research-grid{gap:clamp(15px,2vw,30px);grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+#launch-form{background:var(--white);padding:clamp(16px,2vw,28px);border:1px solid #cbd6cc;border-radius:14px}
+#launch-form .field{gap:7px;margin-bottom:16px;color:#304d42}
+#launch-form select,#launch-form input{border-color:#bacabf;padding:9px 11px}
+#launch-form textarea{background:#fcfdf9;line-height:1.65;border:1px solid #91ac9d;border-radius:9px;font-size:17px;min-height:120px;padding:12px 14px}
+#launch-form textarea::placeholder{color:#62796b}
+#launch-study{width:100%;min-height:44px;background:#165d4e}
+#launch-study:hover:not(:disabled){background:#104a3d}
+.run-settings{padding:12px 0;border-block:1px solid #dce4da;margin:16px 0}
+.run-settings summary{width:100%;font-weight:600}
+.examples>span{color:#51685d;font-size:13px}
+.example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:6px}
+.example-grid button{display:grid;justify-items:start;align-content:center;gap:2px;text-align:left;background:#f6f8f1;border:1px solid #d6dfd3;border-radius:8px;padding:8px 10px;color:#244c3d}
+.example-grid button:hover,.example-grid button:focus-visible{background:#e8f2e3;border-color:#668e74}
+.example-grid i{font:italic 18px/1.25 Cambria,Georgia,serif}.example-grid span{font-size:13px}
+@media(max-width:750px){.research-grid{grid-template-columns:1fr}.research-heading{padding-bottom:14px}.content>.tab-list{margin-bottom:16px}}
+@media(max-width:400px){.content>.tab-list .tab{font-size:13px;padding:8px}.menu a,.menu .soft{font-size:12px}.example-grid button{padding:7px}.bar{gap:6px}}
+</style>
+</head>
+<body>
+<header><div class="bar wrap"><div class="identity"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>AI4Math<small>数学研究室</small></div><nav class="menu"><button id="fullscreen" type="button" class="soft" hidden>全屏展示</button><a href="/">工作台<span class="external" aria-hidden="true">↗</span></a></nav></div></header>
+<main class="wrap content">
+  <div class="tab-list" role="tablist" aria-label="展示内容"><button type="button" class="tab" id="profile-tab" role="tab" aria-selected="true" aria-controls="profile">精确能量谱</button><button type="button" class="tab" id="replay-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="replay">智能体迭代回放</button><button type="button" class="tab" id="new-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="new">发起新研究</button></div>
+  <section class="hero" id="labs-overview" aria-labelledby="project-title">
+    <div><div class="hero-head">组合优化 · LABS</div><h1 id="project-title">低自相关二值序列</h1><p>固定 +1 与 −1 的数量差，一串符号能达到的最低自相关能量是多少？</p></div>
+    <figure class="trace"><figcaption><span>所选条件下的一组最优序列</span><span id="trace-label">—</span></figcaption><canvas id="wave" aria-label="所选序列取值图"></canvas><div class="trace-base"><span>+1 / −1</span><span id="counts">—</span></div></figure>
+  </section>
+  <div id="status" class="alert" role="status">正在读取研究记录…</div>
+  <section class="sheet">
+    <section class="panel" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="panel-head"><div><h2>失衡量与最低能量</h2><p class="muted">每根柱子对应一种失衡量。选择柱子可查看最低能量和实现它的序列。</p></div><div class="toolbar"><label>序列长度 <select id="length" aria-label="序列长度" disabled></select></label><label><input type="checkbox" id="log" checked disabled>对数纵轴</label></div></div>
+      <div id="no-profile" class="empty" hidden>当前工作区没有可展示的精确枚举记录。</div>
+      <div id="profile-data" hidden><div class="chart-layout"><div><div class="plot-title">条件最低能量 gₙ(b)</div><div class="plot-wrap"><div class="plot"><div id="ticks"></div><div class="bars" id="bars" role="group" aria-label="按失衡量选择结果"></div></div></div><div class="axis-name">失衡量 b</div><div class="legend"><span><i></i>条件最优</span><span><i class="opt"></i>达到全局最优</span><span><i class="sel"></i>当前选择</span></div></div>
+        <aside class="detail" aria-live="polite"><h3 id="detail-title"></h3><div class="number" id="energy"></div><div class="bound" id="bound"></div><p class="detail-note" id="finding"></p></aside>
+      </div><details class="doc-line"><summary>公式、序列与原始记录</summary><p>将序列平移 k 位，重叠位置的符号逐对相乘再相加，得到 Cₖ。能量 E 是所有非零平移下 Cₖ 的平方和。失衡量 b 是 +1 和 −1 数量差的绝对值。</p><p id="signs"></p><p>精确枚举记录 <code id="p-source"></code></p></details></div>
+    </section>
+    <section class="panel" id="replay" role="tabpanel" aria-labelledby="replay-tab" hidden>
+      <div class="panel-head"><div><h2>智能体怎样推进研究</h2><p class="muted">回看已保存的研究会话，逐轮查看决策、工具结果和审查意见。</p></div><div class="round-nav"><button type="button" id="prev" class="soft" disabled aria-label="上一轮">← 上一轮</button><select id="round-pick" aria-label="选择研究轮次" disabled></select><button type="button" id="next" class="soft" disabled aria-label="下一轮">下一轮 →</button><button type="button" id="follow-round" class="primary" disabled>从这一轮继续研究</button></div></div>
+      <div id="no-rounds" class="empty" hidden>当前工作区没有可回放的 LABS 研究轮次。</div>
+      <div id="round-data" hidden>
+        <div class="round-strip" id="round-strip" role="toolbar" aria-label="研究轮次导航，使用左右方向键切换"></div>
+        <article class="round-card" aria-live="polite">
+          <div class="round-title"><b id="round-label"></b><h3 id="round-title"></h3></div>
+          <div class="steps">
+            <div class="step"><h4>研究决策</h4><p id="decision"></p></div>
+            <div class="step"><h4>实验与核验</h4><p id="result"></p></div>
+            <div class="step"><h4>审查反馈</h4><p id="review"></p></div>
+          </div><div class="evidence" id="evidence"></div>
+        </article>
+        <details class="doc-line"><summary>查看模型原始记录</summary>
+          <p>本轮决策原文</p><blockquote id="original-decision"></blockquote>
+          <p>审查原文</p><blockquote id="original-review"></blockquote>
+          <p>轮次档案 <code id="r-source"></code></p>
+        </details>
+        <a class="sample-link" href="/?id=general%2F2026-10-09T173130.851756_0000">看智能体如何研究另一个问题<span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="panel" id="new" role="tabpanel" aria-labelledby="new-tab" hidden>
+      <div class="research-heading">
+        <h1>发起数学研究</h1>
+        <p>提出一个问题，或沿着已有证据继续追问。</p>
+      </div>
+      <div class="research-grid">
+        <form id="launch-form">
+          <label class="field">研究起点<select id="origin"><option value="fresh">输入新的数学问题</option><option id="replay-origin" value="replay" disabled>跟进回放中的研究</option><option id="last-origin" value="last" hidden disabled>跟进刚结束的会话</option></select></label>
+          <details id="context" class="context-note" hidden><summary id="context-title">查看引用的研究记录</summary><pre id="context-body"></pre></details>
+          <label class="field"><span id="prompt-label">数学问题</span><textarea id="question" required minlength="5" maxlength="12000" placeholder="例如，哪些正整数可以写成连续三个整数的平方和？"></textarea></label>
+          <div id="examples" class="examples" role="group" aria-label="可选研究题目">
+            <span>试试这些题目</span>
+            <div class="example-grid">
+              <button type="button" data-example="sums"><i aria-hidden="true">∑ k²</i><span>平方和公式</span></button>
+              <button type="button" data-example="primes"><i aria-hidden="true">n² + n + 41</i><span>素数的边界</span></button>
+              <button type="button" data-example="labs"><i aria-hidden="true">±1</i><span>序列与失衡</span></button>
+            </div>
+          </div>
+          <details class="run-settings"><summary id="settings-label">运行设置 · 在线模型 · 最多 4 轮</summary>
+            <div class="settings-grid">
+              <label class="field">运行方式<select id="run-backend"><option value="codex_cli">在线模型（Codex CLI）</option><option value="dry_run">离线流程测试（无模型调用）</option></select></label>
+              <label class="field">最多轮数<input id="run-limit" type="number" required min="1" max="40" step="1" value="4"></label>
+              <label class="field">模型名称<input id="run-model" value="gpt-6.1-sol" maxlength="100"></label>
+            </div>
+          </details>
+          <p id="launch-error" class="error-msg" role="alert"></p>
+          <button id="launch-study" class="primary" type="submit">启动研究</button>
+        </form>
+        <aside class="run-status monitor" id="run-monitor" aria-labelledby="progress-title" data-state="idle">
+          <div class="monitor-head">
+            <span class="monitor-lamp" aria-hidden="true"></span>
+            <div><h3 id="progress-title">研究进度</h3><p id="progress-state" role="status">等待启动</p></div>
+          </div>
+          <div class="monitor-guide" id="monitor-guide">
+            <strong>智能体怎样研究？</strong>
+            <div class="guide-stages"><span>提出猜想</span><i aria-hidden="true">→</i><span>检验证据</span><i aria-hidden="true">→</i><span>修订下一步</span></div>
+            <a class="monitor-link" href="#replay">查看已有研究回放 <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="run-detail" id="progress-topic"></p>
+          <div id="progress-metrics" hidden>
+            <dl class="measurement">
+              <div><dt>已保存轮次 / 轮数上限</dt><dd><span id="saved-rounds"></span><small id="round-budget"></small></dd></div>
+              <div><dt>已记录证据</dt><dd id="saved-evidence"></dd></div>
+            </dl>
+            <progress id="round-meter" aria-label="已保存轮次占轮数上限的比例"></progress>
+            <p id="progress-count"></p>
+          </div>
+          <ol id="progress-rounds" hidden></ol><p class="error-msg" id="progress-error"></p>
+          <div class="run-actions"><button type="button" class="soft" id="stop-study" hidden>中断研究</button><button type="button" class="soft" id="follow-live" hidden>基于本次结果继续追问</button></div>
+          <a class="sample-link" id="open-session" hidden>查看完整会话 →</a>
+        </aside>
+      </div>
+    </section>
+  </section>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const TOKEN=null;
+const archive={"profiles":[{"n":2,"min_energy":1,"optimal_b":[0,2],"points":[{"b":0,"energy":1,"lower_bound":1,"sequence":[1,-1]},{"b":2,"energy":1,"lower_bound":1,"sequence":[1,1]}],"source":"results/exact/profile_002.json"},{"n":3,"min_energy":1,"optimal_b":[1],"points":[{"b":1,"energy":1,"lower_bound":1,"sequence":[1,1,-1]},{"b":3,"energy":5,"lower_bound":5,"sequence":[1,1,1]}],"source":"results/exact/profile_003.json"},{"n":4,"min_energy":2,"optimal_b":[2],"points":[{"b":0,"energy":6,"lower_bound":2,"sequence":[1,-1,-1,1]},{"b":2,"energy":2,"lower_bound":2,"sequence":[1,-1,1,1]},{"b":4,"energy":14,"lower_bound":14,"sequence":[1,1,1,1]}],"source":"results/exact/profile_004.json"},{"n":5,"min_energy":2,"optimal_b":[3],"points":[{"b":1,"energy":6,"lower_bound":2,"sequence":[1,-1,-1,-1,1]},{"b":3,"energy":2,"lower_bound":2,"sequence":[1,-1,1,1,1]},{"b":5,"energy":30,"lower_bound":30,"sequence":[1,1,1,1,1]}],"source":"results/exact/profile_005.json"},{"n":6,"min_energy":7,"optimal_b":[0,2,4],"points":[{"b":0,"energy":7,"lower_bound":3,"sequence":[1,1,-1,-1,1,-1]},{"b":2,"energy":7,"lower_bound":3,"sequence":[1,-1,-1,1,1,1]},{"b":4,"energy":7,"lower_bound":7,"sequence":[1,-1,1,1,1,1]},{"b":6,"energy":55,"lower_bound":55,"sequence":[1,1,1,1,1,1]}],"source":"results/exact/profile_006.json"},{"n":7,"min_energy":3,"optimal_b":[1],"points":[{"b":1,"energy":3,"lower_bound":3,"sequence":[1,1,1,-1,-1,1,-1]},{"b":3,"energy":7,"lower_bound":3,"sequence":[1,-1,-1,1,1,1,1]},{"b":5,"energy":15,"lower_bound":15,"sequence":[1,1,-1,1,1,1,1]},{"b":7,"energy":91,"lower_bound":91,"sequence":[1,1,1,1,1,1,1]}],"source":"results/exact/profile_007.json"},{"n":8,"min_energy":8,"optimal_b":[2],"points":[{"b":0,"energy":12,"lower_bound":4,"sequence":[1,-1,-1,-1,1,-1,1,1]},{"b":2,"energy":8,"lower_bound":4,"sequence":[1,-1,-1,1,-1,1,1,1]},{"b":4,"energy":12,"lower_bound":4,"sequence":[1,-1,-1,1,1,1,1,1]},{"b":6,"energy":32,"lower_bound":32,"sequence":[1,1,-1,1,1,1,1,1]},{"b":8,"energy":140,"lower_bound":140,"sequence":[1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_008.json"},{"n":9,"min_energy":12,"optimal_b":[3],"points":[{"b":1,"energy":16,"lower_bound":4,"sequence":[1,1,-1,-1,-1,1,-1,1,1]},{"b":3,"energy":12,"lower_bound":4,"sequence":[1,-1,1,-1,-1,1,1,1,1]},{"b":5,"energy":20,"lower_bound":12,"sequence":[1,1,-1,1,-1,1,1,1,1]},{"b":7,"energy":56,"lower_bound":56,"sequence":[1,1,1,-1,1,1,1,1,1]},{"b":9,"energy":204,"lower_bound":204,"sequence":[1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_009.json"},{"n":10,"min_energy":13,"optimal_b":[0,2,4],"points":[{"b":0,"energy":13,"lower_bound":5,"sequence":[1,-1,-1,1,-1,-1,-1,1,1,1]},{"b":2,"energy":13,"lower_bound":5,"sequence":[1,-1,1,-1,-1,-1,-1,1,1,-1]},{"b":4,"energy":13,"lower_bound":5,"sequence":[1,-1,1,-1,-1,1,1,1,1,1]},{"b":6,"energy":29,"lower_bound":21,"sequence":[1,1,-1,1,-1,1,1,1,1,1]},{"b":8,"energy":93,"lower_bound":89,"sequence":[1,1,1,-1,1,1,1,1,1,1]},{"b":10,"energy":285,"lower_bound":285,"sequence":[1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_010.json"},{"n":11,"min_energy":5,"optimal_b":[1],"points":[{"b":1,"energy":5,"lower_bound":5,"sequence":[1,1,1,-1,-1,-1,1,-1,-1,1,-1]},{"b":3,"energy":13,"lower_bound":5,"sequence":[1,1,1,1,-1,1,-1,-1,1,1,-1]},{"b":5,"energy":21,"lower_bound":9,"sequence":[1,-1,1,-1,-1,1,1,1,1,1,1]},{"b":7,"energy":45,"lower_bound":41,"sequence":[1,1,1,-1,1,1,-1,1,1,1,1]},{"b":9,"energy":141,"lower_bound":137,"sequence":[1,1,1,1,-1,1,1,1,1,1,1]},{"b":11,"energy":385,"lower_bound":385,"sequence":[1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_011.json"},{"n":12,"min_energy":10,"optimal_b":[4],"points":[{"b":0,"energy":18,"lower_bound":6,"sequence":[1,-1,1,-1,-1,1,-1,-1,-1,1,1,1]},{"b":2,"energy":14,"lower_bound":6,"sequence":[1,-1,-1,-1,1,1,1,-1,1,1,-1,1]},{"b":4,"energy":10,"lower_bound":6,"sequence":[1,-1,-1,1,1,-1,1,-1,1,1,1,1]},{"b":6,"energy":30,"lower_bound":18,"sequence":[1,1,-1,-1,1,-1,1,1,1,1,1,1]},{"b":8,"energy":74,"lower_bound":66,"sequence":[1,1,1,-1,1,1,-1,1,1,1,1,1]},{"b":10,"energy":206,"lower_bound":198,"sequence":[1,1,1,1,-1,1,1,1,1,1,1,1]},{"b":12,"energy":506,"lower_bound":506,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_012.json"},{"n":13,"min_energy":6,"optimal_b":[5],"points":[{"b":1,"energy":18,"lower_bound":6,"sequence":[1,-1,-1,-1,-1,1,1,-1,1,1,1,-1,1]},{"b":3,"energy":14,"lower_bound":6,"sequence":[1,-1,-1,1,1,-1,-1,-1,-1,-1,1,-1,1]},{"b":5,"energy":6,"lower_bound":6,"sequence":[1,-1,1,-1,1,1,-1,-1,1,1,1,1,1]},{"b":7,"energy":42,"lower_bound":30,"sequence":[1,1,-1,1,1,1,-1,1,-1,1,1,1,1]},{"b":9,"energy":114,"lower_bound":106,"sequence":[1,1,1,1,-1,1,1,1,-1,1,1,1,1]},{"b":11,"energy":286,"lower_bound":274,"sequence":[1,1,1,1,1,-1,1,1,1,1,1,1,1]},{"b":13,"energy":650,"lower_bound":650,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_013.json"},{"n":14,"min_energy":19,"optimal_b":[2,4,6],"points":[{"b":0,"energy":35,"lower_bound":7,"sequence":[1,-1,-1,1,1,-1,-1,-1,-1,1,-1,1,1,1]},{"b":2,"energy":19,"lower_bound":7,"sequence":[1,-1,-1,1,-1,1,-1,-1,-1,1,1,1,1,1]},{"b":4,"energy":19,"lower_bound":7,"sequence":[1,-1,1,-1,-1,1,1,-1,-1,1,1,1,1,1]},{"b":6,"energy":19,"lower_bound":15,"sequence":[1,-1,1,-1,1,1,-1,-1,1,1,1,1,1,1]},{"b":8,"energy":67,"lower_bound":55,"sequence":[1,1,1,-1,1,-1,1,1,-1,1,1,1,1,1]},{"b":10,"energy":163,"lower_bound":155,"sequence":[1,1,1,1,-1,1,1,1,-1,1,1,1,1,1]},{"b":12,"energy":387,"lower_bound":371,"sequence":[1,1,1,1,1,-1,1,1,1,1,1,1,1,1]},{"b":14,"energy":819,"lower_bound":819,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_014.json"},{"n":15,"min_energy":15,"optimal_b":[3],"points":[{"b":1,"energy":27,"lower_bound":7,"sequence":[1,-1,-1,-1,-1,1,-1,1,-1,-1,1,1,-1,1,1]},{"b":3,"energy":15,"lower_bound":7,"sequence":[1,1,1,1,1,-1,-1,1,1,-1,-1,1,-1,1,-1]},{"b":5,"energy":23,"lower_bound":7,"sequence":[1,-1,1,-1,-1,1,1,-1,-1,1,1,1,1,1,1]},{"b":7,"energy":35,"lower_bound":27,"sequence":[1,1,-1,-1,1,1,-1,1,-1,1,1,1,1,1,1]},{"b":9,"energy":99,"lower_bound":83,"sequence":[1,1,1,-1,1,-1,1,1,-1,1,1,1,1,1,1]},{"b":11,"energy":231,"lower_bound":219,"sequence":[1,1,1,1,-1,1,1,1,-1,1,1,1,1,1,1]},{"b":13,"energy":507,"lower_bound":487,"sequence":[1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1]},{"b":15,"energy":1015,"lower_bound":1015,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_015.json"},{"n":16,"min_energy":24,"optimal_b":[4],"points":[{"b":0,"energy":32,"lower_bound":8,"sequence":[1,-1,-1,-1,-1,1,-1,1,-1,-1,1,1,-1,1,1,1]},{"b":2,"energy":28,"lower_bound":8,"sequence":[1,-1,1,-1,-1,1,-1,-1,-1,1,-1,-1,-1,1,1,1]},{"b":4,"energy":24,"lower_bound":8,"sequence":[1,-1,1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1]},{"b":6,"energy":28,"lower_bound":12,"sequence":[1,-1,1,-1,1,1,-1,1,1,-1,-1,1,1,1,1,1]},{"b":8,"energy":56,"lower_bound":44,"sequence":[1,1,1,-1,-1,1,1,-1,1,-1,1,1,1,1,1,1]},{"b":10,"energy":140,"lower_bound":128,"sequence":[1,1,1,1,-1,1,1,-1,1,1,1,-1,1,1,1,1]},{"b":12,"energy":320,"lower_bound":300,"sequence":[1,1,1,1,-1,1,1,1,-1,1,1,1,1,1,1,1]},{"b":14,"energy":652,"lower_bound":624,"sequence":[1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1,1]},{"b":16,"energy":1240,"lower_bound":1240,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_016.json"},{"n":17,"min_energy":32,"optimal_b":[3],"points":[{"b":1,"energy":36,"lower_bound":8,"sequence":[1,1,-1,1,-1,-1,1,-1,-1,-1,1,-1,-1,-1,1,1,1]},{"b":3,"energy":32,"lower_bound":8,"sequence":[1,-1,-1,1,-1,1,-1,-1,1,1,-1,-1,-1,-1,-1,1,1]},{"b":5,"energy":40,"lower_bound":8,"sequence":[1,1,-1,-1,-1,1,1,-1,-1,1,-1,1,1,1,1,1,1]},{"b":7,"energy":44,"lower_bound":24,"sequence":[1,-1,1,-1,1,1,-1,1,1,-1,-1,1,1,1,1,1,1]},{"b":9,"energy":92,"lower_bound":72,"sequence":[1,1,-1,1,-1,1,1,1,-1,-1,1,1,1,1,1,1,1]},{"b":11,"energy":200,"lower_bound":180,"sequence":[1,1,1,1,-1,1,1,-1,1,1,1,-1,1,1,1,1,1]},{"b":13,"energy":420,"lower_bound":396,"sequence":[1,1,1,1,1,-1,1,1,1,1,-1,1,1,1,1,1,1]},{"b":15,"energy":820,"lower_bound":784,"sequence":[1,1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1,1]},{"b":17,"energy":1496,"lower_bound":1496,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_017.json"},{"n":18,"min_energy":25,"optimal_b":[0,2,6],"points":[{"b":0,"energy":25,"lower_bound":9,"sequence":[1,-1,-1,1,1,-1,-1,1,-1,1,-1,-1,-1,-1,1,1,1,1]},{"b":2,"energy":25,"lower_bound":9,"sequence":[1,1,-1,-1,1,1,-1,-1,-1,-1,-1,1,-1,1,1,-1,1,-1]},{"b":4,"energy":33,"lower_bound":9,"sequence":[1,1,-1,-1,-1,-1,1,-1,1,1,-1,1,1,1,-1,1,1,1]},{"b":6,"energy":25,"lower_bound":9,"sequence":[1,1,-1,-1,1,1,1,-1,1,-1,-1,1,-1,1,1,1,1,1]},{"b":8,"energy":49,"lower_bound":37,"sequence":[1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,1,1,1]},{"b":10,"energy":129,"lower_bound":105,"sequence":[1,1,1,-1,1,1,-1,1,-1,1,1,1,-1,1,1,1,1,1]},{"b":12,"energy":281,"lower_bound":253,"sequence":[1,1,1,1,-1,1,-1,1,1,1,-1,1,1,1,1,1,1,1]},{"b":14,"energy":545,"lower_bound":517,"sequence":[1,1,1,1,1,-1,1,1,1,1,-1,1,1,1,1,1,1,1]},{"b":16,"energy":1017,"lower_bound":973,"sequence":[1,1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1,1,1]},{"b":18,"energy":1785,"lower_bound":1785,"sequence":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}],"source":"results/exact/profile_018.json"}],"rounds":[{"number":1,"title":"\u63d0\u51fa\u5e73\u8861\u731c\u60f3","decision":"\u5148\u95ee\u957f\u5ea6 18 \u65f6\uff0c\u80fd\u5426\u627e\u5230\u4e00\u4e2a\u6b63\u8d1f\u53f7\u4e00\u6837\u591a\u7684\u5168\u5c40\u6700\u4f18\u5e8f\u5217\u3002","result":"\u5df2\u767b\u8bb0\u731c\u60f3\u53ca\u53cd\u9a73\u6761\u4ef6\uff0c\u7b49\u5f85\u6838\u9a8c\u3002","review":"\u672c\u8f6e\u767b\u8bb0\u4e86\u731c\u60f3\u3002\u8fd8\u9700\u8981\u5728\u5b8c\u6574\u679a\u4e3e\u7ed3\u679c\u4e2d\u5bfb\u627e\u5e73\u8861\u7684\u6700\u4f18\u5e8f\u5217\u3002","evidence_ids":["EV001"],"original_decision":"Register balanced-optimum existence at n=18 first; separately test whether all optima are balanced before choosing any balance restriction.","original_review":"EV001 registers the n=18 existence claim but supplies no evidence that a balanced global minimizer exists.","source":"results/research/2026-10-09T145817.516168_0000/rounds/001.json"},{"number":2,"title":"\u6838\u9a8c\u5b58\u5728\u6027","decision":"\u8bfb\u53d6\u5df2\u72ec\u7acb\u6838\u9a8c\u7684\u957f\u5ea6 18 \u6761\u4ef6\u80fd\u91cf\u8868\uff0c\u68c0\u67e5\u5931\u8861\u91cf\u4e3a\u96f6\u7684\u90a3\u4e00\u7ec4\u3002","result":"\u5168\u5c40\u6700\u5c0f\u80fd\u91cf\u4e3a 25\uff0c\u5728\u5931\u8861\u91cf 0\u30012\u30016 \u5904\u5747\u8fbe\u5230\u3002","review":"\u786e\u5b9e\u5b58\u5728\u5e73\u8861\u7684\u6700\u4f18\u5e8f\u5217\u3002\u6700\u4f18\u503c\u4e5f\u51fa\u73b0\u5728\u5176\u4ed6\u5931\u8861\u7ec4\uff0c\u503c\u5f97\u68c0\u9a8c\u66f4\u5f3a\u7684\u731c\u60f3\u3002","evidence_ids":["EV002"],"original_decision":"Respond to feedback by checking the registered existence claim against trusted exact profiles before selecting a search restriction. Register the distinct all-optima balance claim next.","original_review":"EV002 exactly verifies that a balanced global minimizer exists at n=18, with optimum energy 25. The complete profile also reports unbalanced optima at b=2 and b=6, refuting the distinct all-optima balance claim at n=18.","source":"results/research/2026-10-09T145817.516168_0000/rounds/002.json"},{"number":3,"title":"\u63d0\u51fa\u66f4\u5f3a\u7684\u731c\u60f3","decision":"\u628a\u547d\u9898\u6539\u6210\u201c\u957f\u5ea6 18 \u7684\u6bcf\u4e2a\u6700\u4f18\u5e8f\u5217\u90fd\u5e73\u8861\u201d\uff0c\u5e76\u767b\u8bb0\u53cd\u9a73\u5b83\u6240\u9700\u7684\u8bc1\u636e\u3002","result":"\u5df2\u767b\u8bb0\u731c\u60f3\u53ca\u53cd\u9a73\u6761\u4ef6\uff0c\u7b49\u5f85\u6838\u9a8c\u3002","review":"\u5931\u8861\u91cf\u4e3a 2 \u6216 6 \u7684\u6700\u4f18\u89e3\u5df2\u7ed9\u51fa\u53cd\u4f8b\u7ebf\u7d22\u3002\u4e0b\u4e00\u6b65\u53ef\u4ee5\u63d0\u53d6\u5177\u4f53\u5e8f\u5217\u3002","evidence_ids":["EV003"],"original_decision":"Register the distinct all-optima claim for explicit falsification. EV002 reports optima at b=2 and b=6, so abandon balance as a mandatory search restriction and compare unrestricted and skew searches at development lengths.","original_review":"EV002\u2019s complete n=18 profile reports global minimizers at b=2 and b=6, refuting the claim that every global minimizer has b=0. EV003 only registers the claim.","source":"results/research/2026-10-09T145817.516168_0000/rounds/003.json"},{"number":4,"title":"\u5efa\u7acb\u641c\u7d22\u57fa\u7ebf","decision":"\u653e\u5f00\u5e73\u8861\u9650\u5236\uff0c\u5728\u957f\u5ea6 31 \u7684\u5e8f\u5217\u4e2d\u8fd0\u884c\u7981\u5fcc\u641c\u7d22\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 75\u3001\u5931\u8861\u91cf 7 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u5f97\u5230\u4e00\u4e2a\u80fd\u72ec\u7acb\u590d\u7b97\u7684\u5019\u9009\u5e8f\u5217\u3002\u5b83\u7684\u80fd\u91cf\u7ed9\u51fa\u4e86\u5168\u5c40\u6700\u5c0f\u503c\u7684\u4e0a\u754c\u3002","evidence_ids":["EV004"],"original_decision":"EV002 distinguishes balanced existence from universal balance, so drop mandatory balance restriction. Begin an unrestricted baseline at n=31; compare skew search with equal budgets before freezing a policy. The search aims to find low-energy witnesses.","original_review":"EV004 reports a valid unrestricted n=31 witness with E=75 and b=7 after 100,000 evaluations. This establishes an achievable energy, not global optimality or superiority over skew search.","source":"results/research/2026-10-09T145817.516168_0000/rounds/004.json"},{"number":5,"title":"\u6bd4\u8f83\u659c\u5bf9\u79f0\u641c\u7d22","decision":"\u5728\u957f\u5ea6 31 \u4e0a\u56fa\u5b9a\u968f\u673a\u79cd\u5b50\u548c\u8bc4\u4ef7\u6b21\u6570\uff0c\u628a\u641c\u7d22\u9650\u5236\u5728\u659c\u5bf9\u79f0\u5e8f\u5217\u4e2d\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 79\u3001\u5931\u8861\u91cf 1 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u672c\u6b21\u65e0\u7ea6\u675f\u641c\u7d22\u627e\u5230\u4e86\u66f4\u4f4e\u7684\u80fd\u91cf\u3002\u6bcf\u79cd\u65b9\u6cd5\u53ea\u8fd0\u884c\u4e86\u4e00\u4e2a\u968f\u673a\u79cd\u5b50\u3002","evidence_ids":["EV005"],"original_decision":"Compare skew-restricted search against EV004 at the same length, seed and evaluation budget. Treat EV004 as an unrestricted mixed baseline, since its effective skew fraction was 0.5; defer policy freezing until comparative evidence is available.","original_review":"EV005 supplies a validated n=31 witness with E=79 and b=1 after 100,000 evaluations. EV004 achieved lower energy, E=75, with b=7 at the matched seed and budget. This is a single-run empirical comparison.","source":"results/research/2026-10-09T145817.516168_0000/rounds/005.json"},{"number":6,"title":"\u6539\u53d8\u5b9e\u9a8c\u957f\u5ea6","decision":"\u5728\u957f\u5ea6 47 \u4e0a\u5efa\u7acb\u65b0\u7684\u65e0\u7ea6\u675f\u57fa\u7ebf\uff0c\u7ed9\u914d\u5bf9\u5b9e\u9a8c\u4fdd\u7559\u76f8\u540c\u9884\u7b97\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 215\u3001\u5931\u8861\u91cf 9 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u8bb0\u5f55\u672c\u6b21\u5019\u9009\u80fd\u91cf\uff0c\u7b49\u5f85\u540c\u9884\u7b97\u7684\u659c\u5bf9\u79f0\u5b9e\u9a8c\u3002","evidence_ids":["EV006"],"original_decision":"The matched n=31 runs favor the unrestricted mixed baseline (E=75 versus 79), so retain unrestricted search and defer any skew-only policy. Extend comparison to n=47, reserving budget for its matched skew run and both methods at n=67.","original_review":"EV006 supplies a validated n=47 witness with E=215, b=9 and F\u22485.1372 after 100,000 evaluations, including 95,879 unique evaluations.","source":"results/research/2026-10-09T145817.516168_0000/rounds/006.json"},{"number":7,"title":"\u89c2\u5bdf\u65b9\u6cd5\u6392\u540d\u53cd\u8f6c","decision":"\u5728\u957f\u5ea6 47 \u4e0a\u8fd0\u884c\u914d\u5bf9\u7684\u659c\u5bf9\u79f0\u641c\u7d22\uff0c\u6bd4\u8f83\u4e24\u79cd\u65b9\u6cd5\u627e\u5230\u7684\u6700\u4f4e\u80fd\u91cf\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 135\u3001\u5931\u8861\u91cf 7 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u8fd9\u6b21\u659c\u5bf9\u79f0\u641c\u7d22\u8868\u73b0\u66f4\u597d\uff0c\u65b9\u6cd5\u7684\u6392\u5e8f\u4e0e\u957f\u5ea6 31 \u7684\u5b9e\u9a8c\u76f8\u53cd\u3002","evidence_ids":["EV007"],"original_decision":"Run the matched n=47 skew comparison against EV006's E=215 at the same seed and budget. Keep the policy unfrozen; reserve the remaining 200,000 evaluations for both methods at n=67.","original_review":"EV007 reports a validated n=47 witness with E=135, b=7 and F\u22488.1815 after 100,000 evaluations (88,732 unique), improving on EV006\u2019s E=215 at the matched seed and budget.","source":"results/research/2026-10-09T145817.516168_0000/rounds/007.json"},{"number":8,"title":"\u68c0\u9a8c\u66f4\u957f\u5e8f\u5217","decision":"\u524d\u4e24\u7ec4\u5b9e\u9a8c\u7684\u6392\u540d\u4e0d\u540c\u3002\u7ee7\u7eed\u5728\u957f\u5ea6 67 \u4e0a\u5efa\u7acb\u65e0\u7ea6\u675f\u57fa\u7ebf\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 457\u3001\u5931\u8861\u91cf 7 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u5019\u9009\u5e8f\u5217\u5df2\u6838\u9a8c\uff0c\u53ef\u4ee5\u7528\u76f8\u540c\u79cd\u5b50\u548c\u9884\u7b97\u6bd4\u8f83\u53e6\u4e00\u79cd\u65b9\u6cd5\u3002","evidence_ids":["EV008"],"original_decision":"EV007 reverses the n=31 method ordering, so replace the provisional unrestricted preference with a mixed-policy comparison. Run the n=67 baseline now and reserve 100,000 evaluations for its matched skew run before freezing policy.","original_review":"EV008 supplies a validated n=67 witness with E=457, b=7 and F\u22484.9114 after 100,000 evaluations (97,088 unique). It establishes the seed-13 baseline for the pending matched comparison.","source":"results/research/2026-10-09T145817.516168_0000/rounds/008.json"},{"number":9,"title":"\u5b8c\u6210\u7b2c\u4e09\u7ec4\u6bd4\u8f83","decision":"\u5c06\u5269\u4f59\u641c\u7d22\u9884\u7b97\u7528\u4e8e\u957f\u5ea6 67 \u7684\u659c\u5bf9\u79f0\u641c\u7d22\u3002","result":"\u8bc4\u4ef7 100,000 \u6b21\uff0c\u627e\u5230\u80fd\u91cf 241\u3001\u5931\u8861\u91cf 9 \u7684\u5019\u9009\u5e8f\u5217\u3002","review":"\u672c\u6b21\u659c\u5bf9\u79f0\u641c\u7d22\u5f97\u5230\u66f4\u4f4e\u7684\u80fd\u91cf\uff0c\u5374\u6709\u66f4\u5927\u7684\u5931\u8861\u91cf\u3002","evidence_ids":["EV009"],"original_decision":"Spend the reserved 100,000 evaluations on the matched n=67 skew run. The method ordering differs at n=31 and n=47, so retain a provisional mixed preference and defer freezing until this comparison returns.","original_review":"Validated EV009 reports n=67, E=241, b=9 and F\u22489.3133 after 100,000 evaluations (94,251 unique), improving energy over EV008\u2019s E=457 at the matched seed and budget while increasing imbalance from 7 to 9.","source":"results/research/2026-10-09T145817.516168_0000/rounds/009.json"},{"number":10,"title":"\u6838\u9a8c\u5177\u4f53\u53cd\u4f8b","decision":"\u56de\u5230\u957f\u5ea6 18 \u7684\u5f3a\u731c\u60f3\uff0c\u4ece\u5b8c\u6574\u679a\u4e3e\u7ed3\u679c\u4e2d\u63d0\u53d6\u4e00\u4e2a\u5931\u8861\u7684\u5168\u5c40\u6700\u4f18\u5e8f\u5217\u3002","result":"\u53cd\u4f8b\u7684\u5931\u8861\u91cf\u4e3a 2\uff0c\u80fd\u91cf\u4e3a 25\uff0c\u8fbe\u5230\u8be5\u957f\u5ea6\u7684\u5168\u5c40\u6700\u4f18\u3002","review":"\u4e00\u4e2a\u5931\u8861\u7684\u6700\u4f18\u5e8f\u5217\u5c31\u8db3\u4ee5\u63a8\u7ffb\u201c\u6bcf\u4e2a\u6700\u4f18\u5e8f\u5217\u90fd\u5e73\u8861\u201d\u3002\u5e73\u8861\u6700\u4f18\u5e8f\u5217\u540c\u6837\u5b58\u5728\u3002","evidence_ids":["EV010"],"original_decision":"Check the stronger all-optima claim separately from verified balanced existence. Search budget is exhausted; EV009 supports shifting the eventual mixed policy toward skew while retaining unrestricted search because n=31 favored it.","original_review":"EV010 refutes all_optima_balanced_18: the verified complete profile has optimum E=25 at b=0,2,6, with an explicit optimal counterexample at b=2. Balanced optimal solutions still exist.","source":"results/research/2026-10-09T145817.516168_0000/rounds/010.json"},{"number":11,"title":"\u51bb\u7ed3\u6df7\u5408\u7b56\u7565","decision":"\u7efc\u5408\u4e09\u4e2a\u5f00\u53d1\u957f\u5ea6\u7684\u914d\u5bf9\u7ed3\u679c\uff0c\u4e3a\u4e0b\u4e00\u9636\u6bb5\u9009\u5b9a\u4e24\u79cd\u641c\u7d22\u7684\u9884\u7b97\u6bd4\u4f8b\u3002","result":"\u51bb\u7ed3\u641c\u7d22\u9884\u7b97\u5206\u914d\uff0c\u659c\u5bf9\u79f0\u641c\u7d22\u5360 65%\uff0c\u65e0\u7ea6\u675f\u641c\u7d22\u5360 35%\u3002","review":"\u8fd9\u4e00\u6bd4\u4f8b\u6765\u81ea\u5f00\u53d1\u5b9e\u9a8c\u3002\u8fd8\u9700\u5728\u65b0\u7684\u957f\u5ea6\u548c\u968f\u673a\u79cd\u5b50\u4e0a\u68c0\u9a8c\u6548\u679c\u3002","evidence_ids":["EV011"],"original_decision":"Freeze a skew-favoring mixed policy after matched development runs: skew achieved lower energy at n=47 and 67, while unrestricted search won at n=31. EV010 rejects mandatory optimal balance at n=18; EV002 verifies balanced existence separately. The evaluation budget is exhausted.","original_review":"The frozen 0.65 skew allocation is a provisional, untested policy informed by mixed development results, not established superiority. EV010 refutes mandatory optimal balance only at n=18; balanced optima still exist. EV011 verifies the summary only.","source":"results/research/2026-10-09T145817.516168_0000/rounds/011.json"},{"number":12,"title":"\u4f9d\u636e\u5ba1\u8ba1\u4fee\u6b63\u89e3\u91ca","decision":"\u6838\u5bf9\u6bcf\u6b21\u641c\u7d22\u5b9e\u9645\u6267\u884c\u7684\u9650\u5236\uff0c\u7ea0\u6b63\u5148\u524d\u5bf9\u53c2\u6570\u9ed8\u8ba4\u503c\u7684\u89e3\u8bfb\u3002","result":"\u51bb\u7ed3\u641c\u7d22\u9884\u7b97\u5206\u914d\uff0c\u659c\u5bf9\u79f0\u641c\u7d22\u5360 65%\uff0c\u65e0\u7ea6\u675f\u641c\u7d22\u5360 35%\u3002","review":"\u57fa\u7ebf\u5168\u7a0b\u65e0\u7ea6\u675f\uff0c\u659c\u5bf9\u79f0\u65b9\u6cd5\u5168\u7a0b\u53d7\u9650\u3002\u5019\u9009\u80fd\u91cf\u6709\u6548\uff0c\u5404\u65b9\u6cd5\u6309\u8bc4\u4ef7\u6b21\u6570\u914d\u5bf9\u3002","evidence_ids":["EV012"],"original_decision":"Accept the audit correction: fixed_tabu runs were entirely unrestricted (actual skew fraction 0), and skew runs entirely skew-restricted (fraction 1). Their energies and comparisons remain valid. Retain the proposed 0.65 allocation: skew won at n=47 and 67, unrestricted at n=31. This mixture remains untested; no holdout result exists. Freeze defaults with no balance restriction.","original_review":"Accept the metadata correction: fixed_tabu was fully unrestricted and skew fully restricted; energies remain valid. At 100,000 evaluations each, unrestricted achieved E=75 versus 79 at n=31; skew achieved 135 versus 215 at n=47 and 241 versus 457 at n=67. Freeze 65% skew allocation only as an untested proposal, retaining tabu_scale=0.11, restart_scale=1.0, perturb_bits=0 and no balance restriction.","source":"results/research/2026-10-09T145817.516168_0000/rounds/012.json"}],"session_id":"research/2026-10-09T145817.516168_0000"};
+const tabs=archive?["profile","replay"]:["profile","replay","new"];
+if(archive){
+  for(const el of document.querySelectorAll('#new-tab, #new, #follow-round, .menu a[href="/"], #replay .sample-link')) el.hidden=true;
+  document.querySelector(".identity small").textContent="课堂离线回放";
+  document.title="AI4Math · 课堂离线回放";
+}
+let profiles = [], rounds = [], activeProfile, activePoint, roundIndex = 0;
+const put = (id,value) => { $(id).textContent = value; };
+const option = (value,label) => new Option(label,String(value));
+const fullscreenButton = $("fullscreen");
+if(document.fullscreenEnabled){
+  fullscreenButton.hidden=false;
+  fullscreenButton.onclick=async()=>{
+    try{
+      if(document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    }catch{
+      fullscreenButton.textContent="请使用浏览器全屏功能";
+    }
+  };
+  document.addEventListener("fullscreenchange",()=>{
+    const active=Boolean(document.fullscreenElement);
+    fullscreenButton.textContent=active?"退出全屏":"全屏展示";
+    fullscreenButton.setAttribute("aria-pressed",String(active));
+  });
+}
+const exampleQuestions={
+  sums:"研究前 n 个正整数的平方和。先从小例子提出公式，再尝试证明它对所有正整数都成立。",
+  primes:"研究 n²+n+41 在非负整数上何时取合数。请寻找最小反例，并核验此前每一个取值。",
+  labs:"研究长度为 18 的低自相关二值序列。按失衡量比较最低能量，并检验所有最优序列是否都平衡。"
+};
+for(const button of $("examples").querySelectorAll("button")){
+  button.onclick=()=>{
+    $("question").value=exampleQuestions[button.dataset.example];
+    $("question").focus();
+  };
+}
+function setTab(key,focus=false) {
+  const overview=$("labs-overview"), wasHidden=overview.hidden;
+  overview.hidden=key==="new";
+  if(wasHidden && !overview.hidden) drawWave();
+  for(const name of tabs) {
+    const chosen = name===key, tab = $(name+"-tab");
+    tab.setAttribute("aria-selected",String(chosen)); tab.tabIndex=chosen?0:-1; $(name).hidden=!chosen;
+    if(chosen && focus) tab.focus();
+  }
+}
+for(const name of tabs) {
+  const tab=$(name+"-tab");
+  tab.onclick=()=>{setTab(name);history.replaceState(null,"","#"+name);};
+  tab.onkeydown=e=>{
+    if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key)) return;
+    e.preventDefault();const index=tabs.indexOf(name)+(e.key==="ArrowRight"?1:-1);
+    const next=e.key==="Home"?tabs[0]:e.key==="End"?tabs.at(-1):tabs[(index+tabs.length)%tabs.length];
+    setTab(next,true);history.replaceState(null,"","#"+next);
+  };
+}
+function drawWave(){
+  const canvas=$("wave"), w=canvas.clientWidth, h=canvas.clientHeight, dpr=window.devicePixelRatio||1;
+  canvas.width=Math.round(w*dpr); canvas.height=Math.round(h*dpr);
+  const ctx=canvas.getContext("2d"); if(!ctx || !w) return; ctx.scale(dpr,dpr);
+  const seq=activePoint?.sequence||[]; if(!seq.length) {ctx.fillStyle="#c9e8d9";ctx.font="13px sans-serif";ctx.fillText("尚无序列记录",6,h/2);return;}
+  const dx=(w-8)/seq.length, x=i=>4+i*dx, y=v=>h*(v>0?.22:.77);
+  ctx.strokeStyle="#315a53";ctx.lineWidth=1;ctx.beginPath();
+  for(let i=0;i<=seq.length;i++){ctx.moveTo(x(i),5);ctx.lineTo(x(i),h-5);}
+  for(const row of [.22,.5,.77]){ctx.moveTo(2,h*row);ctx.lineTo(w-2,h*row);}
+  ctx.stroke();ctx.strokeStyle="#a3f1ba";ctx.lineWidth=2.6;ctx.lineJoin="round";ctx.beginPath();
+  seq.forEach((v,i)=>{if(!i) ctx.moveTo(x(i),y(v));else ctx.lineTo(x(i),y(v));ctx.lineTo(x(i+1),y(v));});ctx.stroke();
+}
+window.addEventListener("resize",drawWave);
+function renderDetails(){
+  const p=activeProfile, a=activePoint, plus=a.sequence.filter(v=>v===1).length;
+  put("trace-label","n = "+p.n+" · b = "+a.b); put("counts",a.sequence.length?"(+1) × "+plus+"    (−1) × "+(a.sequence.length-plus):"无序列记录");
+  put("signs",a.sequence.length?"见证序列　"+a.sequence.map(v=>v===1?"+1":"−1").join("  "):"无序列记录");
+  $("wave").setAttribute("aria-label",$("signs").textContent); drawWave();
+  put("detail-title","b = "+a.b+" 时的最低能量");put("energy",a.energy);
+  put("bound",a.lower_bound==null?"":"理论下界  "+a.lower_bound);
+  put("finding","长度 "+p.n+" 的全局最低能量为 "+p.min_energy+"，在 b = "+p.optimal_b.join("、")+" 时达到。");
+  put("p-source",p.source);
+}
+function selectPoint(point){
+  activePoint=point;
+  for(const btn of $("bars").children) btn.setAttribute("aria-pressed",String(Number(btn.value)===point.b));renderDetails();
+}
+function renderChart(){
+  const p=activeProfile, log=$("log").checked, largest=Math.max(...p.points.map(a=>a.energy)), ticks=[];
+  let max;
+  if(log){max=Math.max(1,Math.ceil(Math.log10(Math.max(1,largest)))); for(let i=0;i<=max;i++) ticks.push(10**i);}
+  else {const spacing=10**Math.floor(Math.log10(Math.max(1,largest/4)));const step=([1,2,5,10].find(v=>v*spacing>=largest/4)||10)*spacing;max=step*Math.ceil(largest/step);for(let i=0;i<=max;i+=step) ticks.push(i);}
+  const frac=v=>log?Math.log10(Math.max(1,v))/max:v/max;
+  $("ticks").replaceChildren();$("bars").replaceChildren();
+  for(const v of ticks){const line=document.createElement("div"),label=document.createElement("span");line.className="tick";line.style.bottom=(frac(v)*100)+"%";label.textContent=v;line.append(label);$("ticks").append(line);}
+  for(const a of p.points){
+    const btn=document.createElement("button"), stem=document.createElement("span"), label=document.createElement("span");
+    btn.type="button";btn.value=String(a.b);btn.className="bar-point"+(a.energy===p.min_energy?" opt":"");btn.title="失衡量 "+a.b+"　最低能量 "+a.energy;btn.setAttribute("aria-label",btn.title);
+    stem.className="stem";stem.dataset.energy=String(a.energy);stem.style.height=(frac(a.energy)*100)+"%";label.className="axis-label";label.textContent=a.b;
+    btn.append(stem,label);btn.onclick=()=>selectPoint(a);$("bars").append(btn);
+  } selectPoint(activePoint);
+}
+function setLength(n){
+  activeProfile=profiles.find(p=>p.n===n);activePoint=activeProfile.points.find(a=>a.energy===activeProfile.min_energy)||activeProfile.points[0];
+  $("length").value=String(n);renderChart();
+}
+function renderRoundStrip(){
+  const strip=$("round-strip");
+  strip.replaceChildren(...rounds.map((round,index)=>{
+    const button=document.createElement("button");
+    button.type="button";
+    button.textContent=String(round.number).padStart(2,"0");
+    button.title="第 "+round.number+" 轮 · "+round.title;
+    button.setAttribute("aria-label",button.title);
+    button.onclick=()=>setRound(index);
+    return button;
+  }));
+  strip.onkeydown=event=>{
+    const keys={ArrowLeft:roundIndex-1,ArrowRight:roundIndex+1,Home:0,End:rounds.length-1};
+    if(!Object.hasOwn(keys,event.key))return;
+    event.preventDefault();
+    const index=Math.min(rounds.length-1,Math.max(0,keys[event.key]));
+    setRound(index);
+    strip.children[index].focus();
+  };
+}
+function setRound(i){
+  const r=rounds[i];if(!r)return;roundIndex=i;$("round-pick").value=String(i);
+  Array.from($("round-strip").children).forEach((button,index)=>{
+    button.tabIndex=index===i?0:-1;
+    if(index===i) button.setAttribute("aria-current","step");
+    else button.removeAttribute("aria-current");
+  });
+  $("prev").disabled=i===0;$("next").disabled=i===rounds.length-1;
+  put("round-label","ROUND "+String(r.number).padStart(2,"0"));put("round-title",r.title);
+  for(const id of ["decision","result","review"])put(id,r[id]||"本轮无记录");
+  put("evidence",r.evidence_ids?.length?"证据编号　"+r.evidence_ids.join(" · "):"本轮没有关联的证据编号");put("r-source",r.source);
+  put("original-decision",r.original_decision||"本轮未保存决策原文。");put("original-review",r.original_review||"本轮未保存审查原文。");
+  $("follow-round").disabled=false;$("replay-origin").disabled=false;
+  put("replay-origin","跟进回放第 "+r.number+" 轮 · "+r.title);
+  if ($("origin").value==="replay") updateOrigin();
+}
+$("length").onchange=e=>setLength(Number(e.target.value));$("log").onchange=renderChart;
+$("round-pick").onchange=e=>setRound(Number(e.target.value));$("prev").onclick=()=>setRound(roundIndex-1);$("next").onclick=()=>setRound(roundIndex+1);
+async function load(){
+  const status=$("status");status.hidden=false;status.textContent="正在读取研究记录…";
+  try {
+    let data=archive;
+    if(!data){
+      const response=await fetch("/api/showcase",{cache:"no-store"}); if(!response.ok)throw Error();
+      data=await response.json();
+    }
+    if(!Array.isArray(data.profiles)||!Array.isArray(data.rounds))throw Error();
+    profiles=data.profiles.filter(p=>Array.isArray(p.points)&&p.points.length);rounds=data.rounds;
+    $("profile-data").hidden=!profiles.length;$("no-profile").hidden=!!profiles.length;$("round-data").hidden=!rounds.length;$("no-rounds").hidden=!!rounds.length;
+    $("length").disabled=$("log").disabled=!profiles.length;$("round-pick").disabled=!rounds.length;
+    if(profiles.length){$("length").replaceChildren(...profiles.map(p=>option(p.n,"n = "+p.n)));setLength(profiles[profiles.length-1].n);}else drawWave();
+    if(rounds.length){$("round-pick").replaceChildren(...rounds.map((r,i)=>option(i,"第 "+r.number+" 轮 / 共 "+rounds.length+" 轮")));renderRoundStrip();setRound(0);}
+    status.hidden=true;
+  } catch {status.textContent="未能读取研究记录。";const retry=document.createElement("button");retry.className="soft";retry.textContent="重试";retry.onclick=load;status.append(retry);}
+}
+const trackedKey="ai4math.showcase.study.v1";
+let tracked=null, lastSession=null, busy=false, spinTimer=null;
+const drafts={fresh:"",replay:"",last:""};
+let draftOrigin="fresh";
+
+function textOf(value,limit=900){
+  const text=typeof value==="string"?value:value==null?"":JSON.stringify(value);
+  return text.length<=limit?text:text.slice(0,limit)+"…";
+}
+function evidenceFor(session,round){
+  return session.evidence?.find(item=>item.id===round?.evidence_id);
+}
+function sourceText(){
+  const mode=$("origin").value;
+  if(mode==="replay" && rounds[roundIndex]){
+    const r=rounds[roundIndex];
+    return ["课题：低自相关二值序列中失衡量与最小能量的关系。",
+      "已归档的第 "+r.number+" 轮 · "+r.title,"研究决策："+r.decision,"实验与核验："+r.result,
+      "审查反馈："+r.review,"来源："+r.source+" · "+r.evidence_ids.join("、")].join("\n");
+  }
+  if(mode==="last" && lastSession){
+    const s=lastSession, r=s.rounds.at(-1), ev=evidenceFor(s,r);
+    return ["上一会话："+s.id,"问题："+textOf(s.problem.statement,1800),"运行方式："+s.mode,"终止原因："+s.termination_reason,
+      r?"最近一轮决策："+textOf(r.action.decision_summary):"尚无已保存的轮次。",
+      ev?"证据 "+ev.id+"："+textOf(ev.result,1000):"",
+      r?.review?.summary?"审查反馈："+textOf(r.review.summary):""].filter(Boolean).join("\n");
+  }
+  return "";
+}
+function updateOrigin(){
+  const origin=$("origin").value, ctx=sourceText();
+  $("examples").hidden=origin!=="fresh";
+  if(origin!==draftOrigin){
+    drafts[draftOrigin]=$("question").value;
+    $("question").value=drafts[origin]||"";
+    draftOrigin=origin;
+  }
+  $("context").hidden=!ctx;put("context-body",ctx);
+  if(ctx){
+    const r=rounds[roundIndex];
+    const cited=origin==="replay" ? "回放第 "+r.number+" 轮 · "+r.evidence_ids.join("、") : "上一会话 · "+textOf(lastSession.problem.title,40);
+    put("context-title","已引用："+cited);
+  }
+  put("prompt-label",ctx?"下一步想研究什么？（可修改）":"数学问题");
+  if(ctx && !$("question").value.trim()){
+    const savedQuestion=origin==="last"?lastSession?.rounds.at(-1)?.review?.next_question:"";
+    $("question").value=savedQuestion || "根据这轮记录提出一个可检验的后续猜想，设计实验寻找反例，并说明结论适用的范围。";
+  }
+  $("question").placeholder=ctx?"例如，提出可验证的后续猜想，设计实验并主动寻找反例。":"例如，哪些正整数可以写成连续三个整数的平方和？";
+}
+function openFollow(origin){
+  $("origin").value=origin;updateOrigin();setTab("new");history.replaceState(null,"","#new");
+  $("question").focus();
+}
+$("origin").onchange=updateOrigin;
+$("follow-round").onclick=()=>openFollow("replay");
+$("follow-live").onclick=()=>openFollow("last");
+function settings(){
+  const dry=$("run-backend").value==="dry_run";
+  $("run-model").disabled=dry;
+  put("settings-label","运行设置 · "+(dry?"离线流程测试":"在线模型")+" · 最多 "+($("run-limit").value||"—")+" 轮");
+  put("launch-study",busy?"研究进行中…":dry?"启动离线流程测试":"启动研究");
+}
+$("run-backend").onchange=settings;$("run-limit").oninput=settings;
+function lock(value){busy=value;$("launch-study").disabled=value;settings();}
+function remember(){
+  try{sessionStorage.setItem(trackedKey,JSON.stringify(tracked));}catch{}
+}
+async function request(path,body){
+  if(archive)throw new Error("离线文件仅用于展示已保存的研究。");
+  const options=body?{method:"POST",headers:{"Content-Type":"application/json","X-AI4Math-Token":TOKEN},body:JSON.stringify(body)}:{cache:"no-store"};
+  const response=await fetch(path,options);
+  const data=await response.json();
+  if(!response.ok){const error=new Error(data.error||"请求失败");error.status=response.status;throw error;}
+  return data;
+}
+function linkSession(id){
+  $("open-session").hidden=!id;
+  if(id) $("open-session").href="/?id="+encodeURIComponent(id);
+}
+function showSession(s,ended){
+  linkSession(s.id);put("progress-topic",s.problem.title);
+  const total=s.rounds.length, limit=s.limits?.max_rounds, list=$("progress-rounds"), meter=$("round-meter");
+  const reasons={finished:"研究完成",budget_exhausted:"已达到研究预算",backend_failed:"模型调用失败",interrupted:"已中断"};
+  $("progress-metrics").hidden=false;
+  put("saved-rounds",total);put("saved-evidence",s.evidence.length);
+  const hasLimit=Number.isInteger(limit)&&limit>0;
+  put("round-budget",hasLimit?" / "+limit:" / 未记录");meter.hidden=!hasLimit;
+  if(hasLimit){meter.max=limit;meter.value=total;}
+  put("progress-count",s.mode==="dry_run"?"离线流程测试":"在线研究");
+  if(ended)put("progress-state",reasons[s.termination_reason]||s.termination_reason);
+  // Round records are appended when saved. Leave expanded details and focus intact between polls.
+  const key=s.id+"/"+total;
+  if(list.dataset.record!==key){
+    list.dataset.record=key;list.replaceChildren();list.hidden=!total;
+    for(const r of s.rounds.slice(-3).reverse()){
+      const li=document.createElement("li"), detail=document.createElement("details");
+      const label=document.createElement("summary"), decision=document.createElement("p");
+      label.textContent="第 "+r.index+" 轮 · "+({plan:"制定计划",tool:"调用工具",propose:"提出猜想",revise:"修订命题",proof:"尝试证明",finish:"整理结论"}[r.action.action_type]||r.action.action_type);
+      decision.textContent=textOf(r.action.decision_summary,400);
+      detail.open=r===s.rounds.at(-1);detail.append(label,decision);
+      const ev=evidenceFor(s,r);
+      if(ev){
+        const proof=document.createElement("p");proof.className="round-proof";
+        proof.textContent=["证据 "+ev.id,ev.tool,ev.proof_level_label].filter(Boolean).join(" · ");
+        detail.append(proof);
+      }
+      if(r.review?.summary){
+        const review=document.createElement("p");review.className="round-feedback";
+        review.textContent="审查："+textOf(r.review.summary,320);detail.append(review);
+      }
+      li.append(detail);list.append(li);
+    }
+  }
+  if(ended){
+    lastSession=s;$("last-origin").disabled=false;$("last-origin").hidden=false;$("follow-live").hidden=false;
+    if($("origin").value==="last") updateOrigin();
+    if(s.errors?.length) put("progress-error",textOf(s.errors.at(-1).error||s.errors.at(-1),550));
+  }
+}
+async function monitor(){
+  const record=tracked;if(!record)return;
+  $("monitor-guide").hidden=true;
+  try{
+    let ended=record.done, status;
+    if(!ended){
+      try{status=await request("/api/job?id="+encodeURIComponent(record.job));}
+      catch(err){
+        if(err.message!=="job not found")throw err;
+        if(!record.session){
+          put("progress-state","服务已重启，当前任务状态不可用。可在工作台的已保存会话中查找运行记录。");
+          $("run-monitor").dataset.state="closed";$("stop-study").hidden=true;lock(false);tracked=null;remember();return;
+        }
+        record.untracked=true;ended=true;
+      }
+      if(tracked!==record)return;
+      if(status){
+        ended=!status.running;record.session=status.session_id||record.session;
+        record.message=status.message;record.backend=status.backend;
+      }
+    }
+    $("run-monitor").dataset.state=ended?"closed":"active";
+    put("progress-state",record.untracked?"服务已重启，显示最后保存的研究记录。":(record.message||"读取会话进度…"));
+    put("progress-error","");$("stop-study").hidden=ended;linkSession(record.session);
+    if(record.session){
+      remember();
+      const s=await request("/api/session?id="+encodeURIComponent(record.session));
+      if(tracked!==record)return;
+      showSession(s,ended && s.termination_reason!=="running");
+    }
+    record.done=ended;remember();lock(!ended);
+    if(!ended)spinTimer=setTimeout(monitor,2200);
+  }catch(err){
+    if(tracked!==record)return;
+    put("progress-error","读取进度失败："+err.message);
+    if(record.done)lock(false);else spinTimer=setTimeout(monitor,4000);
+  }
+}
+$("stop-study").onclick=async()=>{
+  if(!tracked||!busy)return;
+  $("stop-study").disabled=true;
+  try{await request("/api/stop",{job_id:tracked.job});}
+  catch(err){put("progress-error","中断失败："+err.message);}
+  finally{$("stop-study").disabled=false;}
+};
+$("launch-form").onsubmit=async event=>{
+  event.preventDefault();if(busy)return;
+  put("launch-error","");
+  const question=$("question").value.trim(), ctx=sourceText();
+  if(question.length<5){put("launch-error","请至少输入 5 个字符，说明希望智能体研究什么。");$("question").focus();return;}
+  const problem=ctx?"后续研究问题："+question+"\n\n参考上一阶段的已保存记录，先核验相关结论，再开展本次研究。\n"+ctx:question;
+  if(problem.length>12000){put("launch-error","问题和所附记录超过 12000 个字符，请缩短问题描述。");return;}
+  lock(true);
+  try{
+    const backend=$("run-backend").value;
+    const job=await request("/api/start",{problem,backend,model:backend==="dry_run"?"":$("run-model").value.trim(),max_rounds:Number($("run-limit").value)});
+    clearTimeout(spinTimer);
+    tracked={job:job.job_id,session:job.session_id||"",backend,message:job.message,done:false};remember();
+    $("monitor-guide").hidden=true;$("progress-metrics").hidden=true;
+    $("progress-rounds").hidden=true;$("progress-rounds").replaceChildren();put("progress-count","");put("progress-error","");
+    put("progress-topic",textOf(question,300));put("progress-state",job.message);linkSession(job.session_id);
+    $("follow-live").hidden=true;$("stop-study").hidden=!job.running;
+    await monitor();
+  }catch(err){put("launch-error","未能启动研究："+err.message);lock(false);}
+};
+function tabFromUrl(){const key=location.hash.slice(1);setTab(tabs.includes(key)?key:"profile");}
+window.addEventListener("hashchange",tabFromUrl);tabFromUrl();
+if(!archive){try{const entry=JSON.parse(sessionStorage.getItem(trackedKey));if(typeof entry?.job==="string")tracked=entry;}catch{}}
+if(tracked){lock(!tracked.done);monitor();}
+load();
+</script>
+</body>
+</html>
